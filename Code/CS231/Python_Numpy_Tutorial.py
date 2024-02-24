@@ -69,3 +69,5 @@ print(nums[:-1])
 print(nums[-1:])
 nums[2:4] = [8, 5]
 print(nums)
+
+# for loop
