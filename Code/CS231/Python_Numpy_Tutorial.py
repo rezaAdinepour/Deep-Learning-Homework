@@ -23,3 +23,11 @@ print(t or f)
 print(t != f) # logical xor
 print('-'*20)
 
+# strings
+hello = "hello"
+world = "world!"
+print(hello, world)
+print(len(hello))
+print(hello[-1])
+hw = "%s %s %d" %(hello, world, 12)
+print(hw)
