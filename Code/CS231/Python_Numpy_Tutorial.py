@@ -56,3 +56,16 @@ xs.append("hello")
 print(xs)
 xs.pop()
 print(xs)
+print('-'*20)
+
+
+nums = list(range(5))
+print(nums)
+print(nums[2:4])
+print(nums[2:])
+print(nums[:2])
+print(nums[:])
+print(nums[:-1])
+print(nums[-1:])
+nums[2:4] = [8, 5]
+print(nums)
