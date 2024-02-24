@@ -43,3 +43,16 @@ print(s.rjust(5))
 print(s.center(7))
 print(s.replace('e', '(ee)'))
 print('  world  '.strip())
+print('-'*20)
+
+
+# lists
+xs = [1, 2, 3]
+print(xs, xs[2])
+print(xs[-1])
+xs[0] = "fp"
+print(xs)
+xs.append("hello")
+print(xs)
+xs.pop()
+print(xs)
