@@ -69,5 +69,34 @@ print(nums[:-1])
 print(nums[-1:])
 nums[2:4] = [8, 5]
 print(nums)
+print('-'*20)
+
 
 # for loop
+animals = ["cat", "dog", "monkey"]
+for animal in animals:
+    print(animal)
+print('-'*20)
+
+
+
+for idx, animal in enumerate(animals):
+    print("#%d: %s" %(idx + 1, animal)) 
+print('-'*20)
+
+
+nums = [1, 2, 3]
+square = []
+for i in nums:
+    square.append(i ** 2)
+print(square)
+print('-'*20)
+
+
+
+nums = [0, 1, 2, 3, 4]
+even_squares = [x ** 2 for x in nums if x % 2 == 0]
+print(even_squares)
+
+
+
