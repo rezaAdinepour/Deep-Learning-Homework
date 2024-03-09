@@ -32,7 +32,7 @@ y_tensor = torch.tensor(y.values, dtype=torch.float32).to(device).view(-1, 1)
 
 # Split the dataset into training, testing, and validation sets
 X_train, X_temp, y_train, y_temp = train_test_split(X_tensor, y_tensor, test_size=0.3, random_state=42) 
-X_test, X_val, y_test, y_val = train_test_split(X_temp, y_temp, test_size=2/3, random_state=42)
+X_val, X_test, y_val, y_test = train_test_split(X_temp, y_temp, test_size=2/3, random_state=42)
 
 
 print("Training set size:", len(X_train))
@@ -64,11 +64,8 @@ plt.show()
 
 
 model = Perceptron()
-if torch.cuda.is_available():
-    model = model.to('cuda')
-    print("Model is using GPU")
-else:
-    print("Model is using CPU")
+model = model.to('cuda')
+
 
 
 # Define the loss function and the optimizer
