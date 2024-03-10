@@ -117,6 +117,9 @@ plt.title("Dataset samples and decision boundary")
 plt.legend()
 plt.show()
 
+
+
+
     # # Plot the loss and save it as an image file
     # plt.figure(figsize=(10, 5))
     # plt.plot(train_losses, label='Training loss')
