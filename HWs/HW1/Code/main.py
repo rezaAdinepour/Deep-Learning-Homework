@@ -10,6 +10,9 @@ from torch import nn, optim
 import imageio
 import glob
 from SLP import*
+from sklearn.metrics import confusion_matrix, accuracy_score
+import seaborn as sns
+
 
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -71,6 +74,7 @@ model = model.to('cuda')
 # Define the loss function and the optimizer
 criterion = nn.BCELoss()
 optimizer = optim.SGD(model.parameters(), lr=0.01)
+EPOCH = 2
 
 
 # Create DataLoaders
@@ -79,12 +83,15 @@ val_data = TensorDataset(X_val, y_val)
 train_loader = DataLoader(train_data, batch_size=32, shuffle=True)
 val_loader = DataLoader(val_data, batch_size=32, shuffle=True)
 
+# Initialize lists to store losses and accuracies
+
 
 # Train the perceptron
-for epoch in range(100):
+for epoch in range(EPOCH):
     model.train()
     train_losses = []
-    for inputs, labels in train_loader:
+    train_accuracies = []
+    for i, (inputs, labels) in enumerate(train_loader):
         optimizer.zero_grad()
         output = model(inputs)
         loss = criterion(output, labels)
@@ -92,7 +99,42 @@ for epoch in range(100):
         optimizer.step()
         train_losses.append(loss.item())
 
-    print("Epoch: {}/100, Loss: {:.4f}".format(epoch+1, np.mean(train_losses)))
+        # Calculate accuracy
+        model.eval()
+        with torch.no_grad():
+            train_output = model(X_train)
+        train_preds = (train_output > 0.5).float()
+        train_acc = accuracy_score(y_train.cpu().numpy(), train_preds.cpu().numpy())
+
+        # Store losses and accuracies
+        train_losses.append(np.mean(train_losses))
+        train_accuracies.append(train_acc)
+
+
+
+
+        # Get the weights of the model
+        w = list(model.parameters())
+        w0 = w[0].data.cpu().numpy()
+        w1 = w[1].data.cpu().numpy()
+
+        # Compute the line equation
+        line_x = np.linspace(-10, 10, 100)
+        line_y = (-w1 - w0[0][0]*line_x) / w0[0][1]
+
+        # Plot the points and the decision boundary
+        plt.cla()
+        plt.scatter(X_train[:, 0].cpu().numpy(), X_train[:, 1].cpu().numpy(), c=y_train[:, 0].cpu().numpy(), cmap='jet', marker='.')
+        plt.plot(line_x, line_y)
+        plt.xlim(-10, 10)
+        plt.ylim(-10, 10)
+        plt.text(-10, 11, 'epoch|iter = {:2d}|{:2d}'.format(epoch, i), fontdict={'size': 14, 'color':  'black'})
+        plt.pause(0.0001)
+
+    print(f"Epoch: {epoch+1}/{EPOCH}, Train Loss: {train_losses[-1]:.4f}, Train Acc: {train_acc:.4f}")
+
+    # print("Epoch: {}/{}, Loss: {:.4f}".format(epoch+1, EPOCH, np.mean(train_losses)))
+    # print("Epoch: {}/{}, Loss: {:.4f}".format(epoch+1, EPOCH, np.mean(train_losses)))
     
 
 # Generate a grid of points
@@ -115,21 +157,50 @@ plt.xlabel('x')
 plt.ylabel('y')
 plt.title("Dataset samples and decision boundary")
 plt.legend()
+
+
+# Plot losses
+plt.figure(figsize=(9, 7))
+plt.plot(train_losses, label='Training Loss')
+plt.xlabel('Epoch')
+plt.ylabel('Loss')
+plt.legend()
+
+# Plot accuracies
+plt.figure(figsize=(9, 7))
+plt.plot(train_accuracies, label='Training Accuracy')
+plt.xlabel('Epoch')
+plt.ylabel('Accuracy')
+plt.legend()
+
+
+
+# Compute confusion matrix for training set
+model.eval()
+with torch.no_grad():
+    train_output = model(X_train)
+train_preds = (train_output > 0.5).float()
+cm = confusion_matrix(y_train.cpu().numpy(), train_preds.cpu().numpy())
+
+# Plot confusion matrix
+plt.figure(figsize=(9, 7))
+sns.heatmap(cm, annot=True, fmt='d')
+plt.xlabel('Predicted')
+plt.ylabel('True')
+
+
+
+
+
+
 plt.show()
 
 
 
 
-    # # Plot the loss and save it as an image file
-    # plt.figure(figsize=(10, 5))
-    # plt.plot(train_losses, label='Training loss')
-    # plt.title("Epoch: {}/100".format(epoch+1))
-    # plt.legend()
-    # plt.savefig('images/epoch_{}.png'.format(epoch+1))
-    # plt.close()
 
-# # Create a GIF from the image files
-# images = []
-# for filename in glob.glob('images/*.png'):
-#     images.append(imageio.imread(filename))
-# imageio.mimsave('training.gif', images)
+
+
+
+
+
