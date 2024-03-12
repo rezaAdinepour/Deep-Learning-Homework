@@ -34,7 +34,7 @@ plt.scatter(X_train[:, 0].cpu().numpy(), X_train[:, 1].cpu().numpy(), c=y_train.
 # plt.show()
 
 num_of_inputs = 2
-epochs = 10
+epochs = 50
 learning_rate = 0.01
 w = np.random.random(num_of_inputs + 1) - 0.5
 
