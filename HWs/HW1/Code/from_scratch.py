@@ -34,12 +34,12 @@ plt.scatter(X_train[:, 0].cpu().numpy(), X_train[:, 1].cpu().numpy(), c=y_train.
 # plt.show()
 
 num_of_inputs = 2
-epochs = 100
+epochs = 10
 learning_rate = 0.01
 w = np.random.random(num_of_inputs + 1) - 0.5
 
 
 
-perceptron = single_layer_perceptron(2, 1, 0.01)
-perceptron.train(X_tensor.cpu().numpy(), y_tensor.cpu().numpy(), 1)
+perceptron = single_layer_perceptron(num_of_inputs, epochs, learning_rate)
+perceptron.train(X_tensor.cpu().numpy(), y_tensor.cpu().numpy(), epochs)
 

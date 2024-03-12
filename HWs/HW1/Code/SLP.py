@@ -120,15 +120,23 @@ class single_layer_perceptron():
                 loss = (label - prediction) ** 2
                 train_loss += loss
 
-                plt.cla()
-                plt.scatter(X[:, 0], X[:, 1], c=y, cmap='jet', marker='.')
-                line_x = np.arange(-2, 2, 0.1)
-                line_y = (-self.w[0] - self.w[1] * line_x) / self.w[2]
-                plt.plot(line_x, line_y)
-                plt.xlim(-0.1, 1.1)
-                plt.ylim(-0.1, 1.1)
-                plt.text(-0.1, 1.1, 'epoch|iter = {:2d}|{:2d}'.format(EPOCH, i), fontdict={'size': 14, 'color':  'black'})
-                plt.pause(0.01)
+            plt.cla()
+            plt.scatter(X[:, 0], X[:, 1], c=y, cmap='jet', marker='.')
+            # line_x = np.arange(-2, 2, 0.1)
+            # line_y = (-self.w[0] - self.w[1] * line_x) / self.w[2]
+            # plt.plot(line_x, line_y)
+            # plt.xlim(-0.1, 1.1)
+            # plt.ylim(-0.1, 1.1)
+            # plt.text(-0.1, 1.1, 'epoch|iter = {:2d}|{:2d}'.format(EPOCH, i), fontdict={'size': 14, 'color':  'black'})
+            # plt.pause(0.01)
+
+            line_x = np.arange(-10, 10, 0.1)
+            line_y = (-self.w[0] - self.w[1] * line_x) / self.w[2]
+            plt.plot(line_x, line_y)
+            plt.xlim(-10, 10)
+            plt.ylim(-10, 10)
+            plt.text(-10, 10, 'epoch = {:2d}'.format(EPOCH), fontdict={'size': 14, 'color':  'black'})
+            plt.pause(0.01)
 
             # Calculate accuracy
             accuracy = (i - fail_count) / i
@@ -150,16 +158,18 @@ class single_layer_perceptron():
 
         fig = plt.figure(figsize=(9, 7))
         x = np.arange(EPOCH + 1)
-        plt.plot(x, self.loss_history, marker='o')
+        plt.plot(x, self.loss_history, color='red', label='loss', alpha=0.3, marker='o')
         plt.title("Loss history")
         plt.xlabel("Epochs")
         plt.ylabel("Loss")
+        plt.legend()
 
         fig = plt.figure(figsize=(9, 7))
-        plt.plot(x, self.accuracy_history, marker='o')
+        plt.plot(x, self.accuracy_history, color='blue', label='accuracy', alpha=0.3, marker='o')
         plt.title("Accuracy history")
         plt.xlabel("Epochs")
         plt.ylabel("Accuracy")
+        plt.legend()
 
         # Plot confusion matrix
         plt.figure(figsize=(8, 6))

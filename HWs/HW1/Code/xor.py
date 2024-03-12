@@ -8,7 +8,7 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 
 data = torch.tensor([ [0, 0], [0, 1], [1, 0], [1, 1] ], device=device)
-label = torch.tensor([1, 1, 1, 0])
+label = torch.tensor([0, 1, 1, 0])
 print(data.shape)
 print(data)
 
@@ -23,7 +23,7 @@ w = np.random.random(num_of_inputs + 1) - 0.5
 
 
 perceptron = single_layer_perceptron(num_of_inputs, epochs, lr)
-_, loss_history, accuracy_history = perceptron.train(data.cpu().numpy(), label.cpu().numpy(), epochs)
+_, loss_history, accuracy_history = perceptron.train(data.cpu().numpy() ** 2, label.cpu().numpy(), epochs)
 
 
 plt.show()
