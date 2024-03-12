@@ -3,6 +3,8 @@ import torch.nn as nn
 import torch.optim as optim
 import numpy as np
 import matplotlib.pyplot as plt
+from sklearn.metrics import confusion_matrix
+import seaborn as sns
 
 
 class Perceptron(nn.Module):
@@ -134,10 +136,13 @@ class single_layer_perceptron():
             self.loss_history.append(np.mean(train_loss))
             self.accuracy_history.append(np.mean(accuracy))
 
-            print(f"Epoch: {EPOCH+1}, Loss: {np.mean(train_loss):.4f}, Accuracy: {np.mean(accuracy):.4f}")
-
-
+            # Calculate final predictions
+            final_predictions = [self.predict(inputs) for inputs in X]
             
+            # Create confusion matrix
+            cm = confusion_matrix(y, final_predictions)
+
+            print(f"Epoch: {EPOCH+1}, Loss: {np.mean(train_loss):.4f}, Accuracy: {np.mean(accuracy):.4f}")
 
             if (fail_count == 0):
                 plt.show()
@@ -155,6 +160,14 @@ class single_layer_perceptron():
         plt.title("Accuracy history")
         plt.xlabel("Epochs")
         plt.ylabel("Accuracy")
+
+        # Plot confusion matrix
+        plt.figure(figsize=(8, 6))
+        sns.heatmap(cm, annot=True, cmap='Blues', fmt='d')
+        plt.title('Confusion Matrix')
+        plt.xlabel('Predicted')
+        plt.ylabel('True')
+        plt.show()
 
         loss_history = np.array(self.loss_history)
         accuracy_history = np.array(self.accuracy_history)
