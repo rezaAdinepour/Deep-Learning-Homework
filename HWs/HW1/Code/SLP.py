@@ -172,7 +172,9 @@ class single_layer_perceptron():
         loss_history = np.array(self.loss_history)
         accuracy_history = np.array(self.accuracy_history)
 
-        return loss_history, accuracy_history
+        print("final weight: {}" .format(self.w))
+
+        return self.w, loss_history, accuracy_history
     
 
     # def plot_loss(self, loss_history, epochs=100):

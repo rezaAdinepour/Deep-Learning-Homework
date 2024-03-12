@@ -23,8 +23,7 @@ w = np.random.random(num_of_inputs + 1) - 0.5
 
 
 perceptron = single_layer_perceptron(num_of_inputs, epochs, lr)
-loss_history, accuracy_history = perceptron.train(data.cpu().numpy(), label.cpu().numpy(), epochs)
-
+_, loss_history, accuracy_history = perceptron.train(data.cpu().numpy(), label.cpu().numpy(), epochs)
 
 
 plt.show()
