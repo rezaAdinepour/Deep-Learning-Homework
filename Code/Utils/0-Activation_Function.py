@@ -45,7 +45,7 @@ color = ['black', 'blue', 'red', 'yellow', 'green', 'orange', 'purple', 'red']
 plt.figure(figsize=(12, 9))
 for i in range(len(title)):
     plt.subplot(m, n, i + 1)
-    plt.plot(x.cpu().numpy(), y[i].cpu().numpy(), color=color[i])
+    plt.plot(x.cpu().detach().numpy(), y[i].cpu().detach().numpy(), color=color[i])
     plt.title(title[i])
     plt.xlabel('x')
     plt.ylabel('y')
