@@ -8,7 +8,6 @@ from GPU_Available import*
 clear = lambda: os.system('clear') # if you use windows, change 'clear' argument with 'cls'
 clear()
 
-
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 # check GPU
