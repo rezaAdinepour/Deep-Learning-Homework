@@ -116,8 +116,8 @@ class single_layer_perceptron():
                     self.w[0] += self.learning_rate * (label - prediction)
                     fail_count += 1
 
-                # Calculate loss
-                loss = (label - prediction) ** 2
+                # Calculate loss = MSE = 1/N * (w'x - y)**2
+                loss = ((prediction - label) ** 2).mean()
                 train_loss += loss
 
             plt.cla()
