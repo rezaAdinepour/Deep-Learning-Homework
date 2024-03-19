@@ -19,7 +19,6 @@ class Perceptron(nn.Module):
 
 
 
-
 # class single_layer_perceptron():
 #     def __init__(self, input_neurons=2, epoch=100, learning_rate=0.01):
 #         self.w = np.random.rand(input_neurons + 1) - 0.5
