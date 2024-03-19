@@ -3,7 +3,7 @@ import torch.nn as nn
 import torch.optim as optim
 import numpy as np
 import matplotlib.pyplot as plt
-from sklearn.metrics import confusion_matrix
+from sklearn.metrics import confusion_matrix, f1_score
 import seaborn as sns
 
 
@@ -94,6 +94,7 @@ class single_layer_perceptron():
         self.learning_rate = learning_rate
         self.loss_history = []
         self.accuracy_history = []
+        
 
     def predict(self, inputs):
         summation = np.dot(inputs, self.w[1:]) + self.w[0]
@@ -105,10 +106,12 @@ class single_layer_perceptron():
             fail_count = 0
             i = 0
             train_loss = 0
+            predicted_labels = []
 
             for inputs, label in zip(X, y):
                 i = i + 1
                 prediction = self.predict(inputs)
+                predicted_labels.append(prediction)
 
                 if (label != prediction):
                     self.w[1:] += self.learning_rate * (label - prediction) * inputs.reshape(inputs.shape[0])
@@ -182,8 +185,10 @@ class single_layer_perceptron():
         accuracy_history = np.array(self.accuracy_history)
 
         print("final weight: {}" .format(self.w))
+        f1 = f1_score(y, predicted_labels)
+        print("F1 score:", f1)
 
-        return self.w, loss_history, accuracy_history
+        return self.w, f1, loss_history, accuracy_history
     
 
     # def plot_loss(self, loss_history, epochs=100):
