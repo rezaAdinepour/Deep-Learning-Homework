@@ -41,5 +41,18 @@ w = np.random.random(num_of_inputs + 1) - 0.5
 
 
 perceptron = single_layer_perceptron(num_of_inputs, epochs, learning_rate)
-new_weight, F1_score, loss_his, acc_his = perceptron.train(X_tensor.cpu().numpy(), y_tensor.cpu().numpy(), epochs)
+new_weight, F1_score, avg_loss, avg_acc = perceptron.train(X_tensor.cpu().numpy(), y_tensor.cpu().numpy(), epochs)
+print(f"Average loss: {avg_loss:.4f}, Average accuracy: {avg_acc:.4f}, F1 score: {F1_score:.4f}")
+
+print('-'*50)
+
+# Test with validation set
+val_loss, val_accuracy, val_f1 = perceptron.test(X_val.cpu().numpy(), y_val.cpu().numpy())
+print(f"Validation Loss: {val_loss:.4f}, Validation Accuracy: {val_accuracy:.4f}, Val F1: {val_f1:.4f}")
+
+# Test with test set
+test_loss, test_accuracy, test_f1 = perceptron.test(X_test.cpu().numpy(), y_test.cpu().numpy())
+print(f"Test Loss: {test_loss:.4f}, Test Accuracy: {test_accuracy:.4f}, Test F1: {test_f1:.4f}")
+
+
 

@@ -98,7 +98,8 @@ class single_layer_perceptron():
 
     def predict(self, inputs):
         summation = np.dot(inputs, self.w[1:]) + self.w[0]
-        activation = 1.0 if (summation > 0.0) else 0.0
+        # activation = 1.0 if (summation > 0.0) else 0.0
+        activation = np.where(summation > 0.0, 1.0, 0.0)
         return activation
     
     def train(self, X, y, epochs=100):
@@ -119,7 +120,7 @@ class single_layer_perceptron():
                     fail_count += 1
 
                 # Calculate loss = MSE = 1/N * (w'x - y)**2
-                loss = ((prediction - label) ** 2).mean()
+                loss = ((prediction - label) ** 2).mean() / 100
                 train_loss += loss
 
             plt.cla()
@@ -184,12 +185,53 @@ class single_layer_perceptron():
         loss_history = np.array(self.loss_history)
         accuracy_history = np.array(self.accuracy_history)
 
-        print("final weight: {}" .format(self.w))
-        f1 = f1_score(y, predicted_labels)
-        print("F1 score:", f1)
+        avg_loss = loss_history.mean()
+        avg_accuracy = accuracy_history.mean()
 
-        return self.w, f1, loss_history, accuracy_history
+        f1 = f1_score(y, predicted_labels)
+
+        plt.show()
+
+        return self.w, f1, avg_loss, avg_accuracy
     
+
+    
+    def test(self, X, y):
+        # Initialize variables
+        total_loss = 0
+        total_correct = 0
+        predicted_labels = []
+
+        # Iterate over all samples
+        for inputs, label in zip(X, y):
+            # Make a prediction
+            prediction = self.predict(inputs)
+            predicted_labels.append(prediction)
+
+            # Calculate loss (MSE)
+            loss = ((prediction - label) ** 2).mean()
+            total_loss += loss
+
+            # Check if prediction is correct
+            if prediction == label:
+                total_correct += 1
+
+        # Calculate average loss and accuracy
+        avg_loss = total_loss / len(X)
+        accuracy = total_correct / len(X)
+
+        # Calculate F1 score
+        f1 = f1_score(y, predicted_labels)
+
+        return np.mean(avg_loss), np.mean(accuracy), f1
+
+
+
+
+
+
+
+
 
     # def plot_loss(self, loss_history, epochs=100):
     #     x = np.arange(epochs)
