@@ -29,19 +29,19 @@ X = df[['x', 'y']]
 y = df["label"]
 
 
-# Convert the data to PyTorch tensors
-X_tensor = torch.tensor(X.values, dtype=torch.float32).to(device)
-y_tensor = torch.tensor(y.values, dtype=torch.float32).to(device).view(-1, 1)
+# # Convert the data to PyTorch tensors
+# X_tensor = torch.tensor(X.values, dtype=torch.float32).to(device)
+# y_tensor = torch.tensor(y.values, dtype=torch.float32).to(device).view(-1, 1)
 
 
-# Create a PolynomialFeatures object
-poly = PolynomialFeatures(degree=3, include_bias=True)
+# # Create a PolynomialFeatures object
+# poly = PolynomialFeatures(degree=3, include_bias=True)
 
-# Transform the features
-X_poly = poly.fit_transform(X)
+# # Transform the features
+# X_poly = poly.fit_transform(X)
 
-# Convert the data to PyTorch tensors
-X_tensor = torch.tensor(X_poly, dtype=torch.float32).to(device)
+# # Convert the data to PyTorch tensors
+# X_tensor = torch.tensor(X_poly, dtype=torch.float32).to(device)
 
 
 
