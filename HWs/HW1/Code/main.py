@@ -76,12 +76,14 @@ class SingleLayerPerceptron(nn.Module):
 
     def forward(self, x):
         return torch.sigmoid(self.fc(x))
+    
+
 
 # Initialize the model
-model = SingleLayerPerceptron(X_train.shape[1]).to(device)
+model = SingleLayerPerceptron(X_train.size(1)).to(device)
 
 # Define loss function and optimizer
-criterion = nn.BCELoss()
+criterion = nn.MSELoss()
 optimizer = optim.SGD(model.parameters(), lr=0.01)
 
 # Convert labels to integer type
@@ -127,21 +129,38 @@ for epoch in range(epochs):
     val_losses.append(val_loss.item())
     val_accuracies.append(val_accuracy)
 
-    print(f'Epoch {epoch+1}/{epochs}, Loss: {loss.item():.4f}, Accuracy: {train_accuracy:.4f}, F1 Score: {train_f1:.4f}')
+    print(f"Epoch {epoch+1}/{epochs}, Loss: {loss.item():.4f}, Accuracy: {train_accuracy:.4f}, F1 Score: {train_f1:.4f}")
 
 # Plot training loss and accuracy
 plt.figure(figsize=(12, 4))
 plt.subplot(1, 2, 1)
-plt.plot(train_losses, label='Train Loss')
-plt.plot(val_losses, label='Validation Loss')
+plt.plot(train_losses, label="Train Loss")
+plt.plot(val_losses, label="Validation Loss")
 plt.legend()
 plt.subplot(1, 2, 2)
-plt.plot(train_accuracies, label='Train Accuracy')
-plt.plot(val_accuracies, label='Validation Accuracy')
+plt.plot(train_accuracies, label="Train Accuracy")
+plt.plot(val_accuracies, label="Validation Accuracy")
 plt.legend()
-plt.show()
+
+print("-"*50)
 
 
+# Test phase
+test_outputs = model(X_test)
+test_loss = criterion(test_outputs, y_test.float())
+test_predicted = torch.round(test_outputs.data)
+test_correct = (test_predicted == y_test).sum().item()
+test_accuracy = test_correct / y_test.size(0)
+test_f1 = f1_score(y_test.cpu().numpy(), test_predicted.cpu().numpy())
+test_cm = confusion_matrix(y_test.cpu().numpy(), test_predicted.cpu().numpy())
+
+val_outputs = model(X_val)
+val_loss = criterion(val_outputs, y_val.float())
+val_predicted = torch.round(val_outputs.data)
+val_correct = (val_predicted == y_val).sum().item()
+val_accuracy = val_correct / y_val.size(0)
+val_f1 = f1_score(y_val.cpu().numpy(), val_predicted.cpu().numpy())
+val_cm = confusion_matrix(y_val.cpu().numpy(), val_predicted.cpu().numpy())
 
 
 
@@ -152,20 +171,14 @@ train_f1 = f1_score(y_train.cpu().numpy(), train_predicted.cpu().numpy())
 train_cm = confusion_matrix(y_train.cpu().numpy(), train_predicted.cpu().numpy())
 
 # Calculate F1 score and confusion matrix for validation set
-val_predicted = torch.round(model(X_val).data)
-val_f1 = f1_score(y_val.cpu().numpy(), val_predicted.cpu().numpy())
 val_cm = confusion_matrix(y_val.cpu().numpy(), val_predicted.cpu().numpy())
 
-# Test the model
-test_outputs = model(X_test)
-test_loss = criterion(test_outputs, y_test.float())
-test_predicted = torch.round(test_outputs.data)
-test_correct = (test_predicted == y_test).sum().item()
-test_accuracy = test_correct / y_test.size(0)
-test_f1 = f1_score(y_test.cpu().numpy(), test_predicted.cpu().numpy())
-test_cm = confusion_matrix(y_test.cpu().numpy(), test_predicted.cpu().numpy())
 
-print(f'Train F1 Score: {train_f1:.4f}, Validation F1 Score: {val_f1:.4f}, Test F1 Score: {test_f1:.4f}')
+
+print(f"Test loss: {test_loss:.4f}, Test Accuracy: {test_accuracy:.4f}, Test F1 Score: {test_f1:.4f}")
+print(f"Validation loss: {val_loss:.4f}, Validation Accuracy: {val_accuracy:.4f}, Validation F1 Score: {val_f1:.4f}")
+
+
 
 # Plot confusion matrices
 fig, axs = plt.subplots(1, 3, figsize=(15, 5))
