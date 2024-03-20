@@ -10,6 +10,9 @@ from SLP import single_layer_perceptron
 from sklearn.metrics import confusion_matrix
 import seaborn as sns
 from sklearn.metrics import f1_score
+from sklearn.preprocessing import PolynomialFeatures
+
+
 
 
 
@@ -29,6 +32,20 @@ y = df["label"]
 # Convert the data to PyTorch tensors
 X_tensor = torch.tensor(X.values, dtype=torch.float32).to(device)
 y_tensor = torch.tensor(y.values, dtype=torch.float32).to(device).view(-1, 1)
+
+
+# # Create a PolynomialFeatures object
+# poly = PolynomialFeatures(degree=3, include_bias=True)
+
+# # Transform the features
+# X_poly = poly.fit_transform(X)
+
+# # Convert the data to PyTorch tensors
+# X_tensor = torch.tensor(X_poly, dtype=torch.float32).to(device)
+
+
+
+
 
 
 # Split the dataset into training, testing, and validation sets

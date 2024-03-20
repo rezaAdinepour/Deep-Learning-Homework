@@ -5,6 +5,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.metrics import confusion_matrix, f1_score
 import seaborn as sns
+import torch.nn.functional as F
 
 
 # Define the single layer perceptron network
@@ -15,6 +16,17 @@ class single_layer_perceptron(nn.Module):
 
     def forward(self, x):
         return torch.sigmoid(self.fc(x))
+    
+
+class MLP(nn.Module):
+    def __init__(self, input_size, hidden_size):
+        super(MLP, self).__init__()
+        self.fc1 = nn.Linear(input_size, hidden_size)
+        self.fc2 = nn.Linear(hidden_size, 1)
+
+    def forward(self, x):
+        x = F.relu(self.fc1(x))
+        return torch.sigmoid(self.fc2(x))
 
 
 
@@ -134,12 +146,12 @@ class Single_Layer_Perceptron():
             # plt.text(-0.1, 1.1, 'epoch|iter = {:2d}|{:2d}'.format(EPOCH, i), fontdict={'size': 14, 'color':  'black'})
             # plt.pause(0.01)
 
-            line_x = np.arange(-10, 10, 0.1)
+            line_x = np.arange(-50, 100, 0.1)
             line_y = (-self.w[0] - self.w[1] * line_x) / self.w[2]
             plt.plot(line_x, line_y)
-            plt.xlim(-10, 10)
-            plt.ylim(-10, 10)
-            plt.text(-10, 10, 'epoch = {:2d}'.format(EPOCH), fontdict={'size': 14, 'color':  'black'})
+            plt.xlim(-5, 100)
+            plt.ylim(-5, 100)
+            plt.text(-5, 100, 'epoch = {:2d}'.format(EPOCH), fontdict={'size': 14, 'color':  'black'})
             plt.pause(0.01)
 
             # Calculate accuracy
