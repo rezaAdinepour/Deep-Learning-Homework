@@ -120,6 +120,10 @@ for epoch in range(epochs):
 
     print(f"Epoch {epoch+1}/{epochs}, Loss: {loss.item():.4f}, Accuracy: {train_accuracy:.4f}, F1 Score: {train_f1:.4f}")
 
+print('-'*80)
+print(f"Validation Loss: {sum(val_losses) / len(val_losses):.4f}, Validation Accuracy: {sum(val_accuracies) / len(val_accuracies):.4f}, Validation F1 Score: {val_f1:.4f}")
+
+
 # Plot training loss and accuracy
 plt.figure(figsize=(12, 4))
 plt.subplot(1, 2, 1)
@@ -142,14 +146,6 @@ test_correct = (test_predicted == y_test).sum().item()
 test_accuracy = test_correct / y_test.size(0)
 test_f1 = f1_score(y_test.cpu().numpy(), test_predicted.cpu().numpy())
 test_cm = confusion_matrix(y_test.cpu().numpy(), test_predicted.cpu().numpy())
-
-val_outputs = model(X_val)
-val_loss = criterion(val_outputs, y_val.float())
-val_predicted = torch.round(val_outputs.data)
-val_correct = (val_predicted == y_val).sum().item()
-val_accuracy = val_correct / y_val.size(0)
-val_f1 = f1_score(y_val.cpu().numpy(), val_predicted.cpu().numpy())
-val_cm = confusion_matrix(y_val.cpu().numpy(), val_predicted.cpu().numpy())
 
 
 
