@@ -5,14 +5,10 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 import torch
-from torch.utils.data import TensorDataset, DataLoader
 from torch import nn, optim
-import imageio
-import glob
-from SLP import*
-from sklearn.metrics import confusion_matrix, accuracy_score
+from SLP import single_layer_perceptron
+from sklearn.metrics import confusion_matrix
 import seaborn as sns
-import torch.nn.functional as F
 from sklearn.metrics import f1_score
 
 
@@ -68,19 +64,12 @@ plt.show()
 
 
 
-# Define the single layer perceptron network
-class SingleLayerPerceptron(nn.Module):
-    def __init__(self, input_size):
-        super(SingleLayerPerceptron, self).__init__()
-        self.fc = nn.Linear(input_size, 1)
 
-    def forward(self, x):
-        return torch.sigmoid(self.fc(x))
     
 
 
 # Initialize the model
-model = SingleLayerPerceptron(X_train.size(1)).to(device)
+model = single_layer_perceptron(X_train.size(1)).to(device)
 
 # Define loss function and optimizer
 criterion = nn.MSELoss()
@@ -177,6 +166,7 @@ val_cm = confusion_matrix(y_val.cpu().numpy(), val_predicted.cpu().numpy())
 
 print(f"Test loss: {test_loss:.4f}, Test Accuracy: {test_accuracy:.4f}, Test F1 Score: {test_f1:.4f}")
 print(f"Validation loss: {val_loss:.4f}, Validation Accuracy: {val_accuracy:.4f}, Validation F1 Score: {val_f1:.4f}")
+print("Final weights:", model.fc.weight.data)
 
 
 
@@ -191,6 +181,8 @@ axs[1].set_title('Validation Confusion Matrix')
 
 sns.heatmap(test_cm, annot=True, fmt='d', ax=axs[2])
 axs[2].set_title('Test Confusion Matrix')
+
+
 
 plt.show()
 

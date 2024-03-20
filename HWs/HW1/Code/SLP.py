@@ -7,11 +7,12 @@ from sklearn.metrics import confusion_matrix, f1_score
 import seaborn as sns
 
 
-class Perceptron(nn.Module):
-    def __init__(self):
-        super(Perceptron, self).__init__()
-        self.fc = nn.Linear(2, 1)
-        
+# Define the single layer perceptron network
+class single_layer_perceptron(nn.Module):
+    def __init__(self, input_size):
+        super(single_layer_perceptron, self).__init__()
+        self.fc = nn.Linear(input_size, 1)
+
     def forward(self, x):
         return torch.sigmoid(self.fc(x))
 
@@ -88,7 +89,7 @@ class Perceptron(nn.Module):
 
 
 
-class single_layer_perceptron():
+class Single_Layer_Perceptron():
     def __init__(self, input_neurons=2, epoch=100, learning_rate=0.01):
         self.w = np.random.rand(input_neurons + 1) - 0.5
         self.learning_rate = learning_rate
