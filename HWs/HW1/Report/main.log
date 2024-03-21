@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023/Debian) (preloaded format=xelatex 2024.3.15)  21 MAR 2024 23:54
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023/Debian) (preloaded format=xelatex 2024.3.15)  22 MAR 2024 00:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1573,6 +1573,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 149--150
 
 Underfull \hbox (badness 10000) in paragraph at lines 156--157
 [][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 163--166
+[]\TU/lmtt/m/n/12 Validation Loss: 0.4572, Validation Accuracy: 0.5167, Validat
+ion F1[]
  []
 
 [10]) [11] 
