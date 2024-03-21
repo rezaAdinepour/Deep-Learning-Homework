@@ -159,34 +159,55 @@
 		\captionof{figure}{داده های شکسته شده به سه بخش}
 		\label{داده های شکسته شده به سه بخش}
 	\end{center}
+	
+	
+	زیر مسئله شماره ۱ در قسمت قبل حل شده است و وزن های آن به صورت زیر بدست آورده شد:
+	\begin{eqnarray*}
+		w_0=2.8, &w_1=-1, &w_2=-1.12
+	\end{eqnarray*}
+	
+	برای دو زیر مسئله دیگر هم، همانند قسمت قبل وزن‌ها را بدست می‌اوریم.
+	
+	\begin{eqnarray*}
+		P_1=\begin{bmatrix}
+			2.5\\
+			0
+		\end{bmatrix}
+		P_2&=&\begin{bmatrix}
+			-1.5\\
+			1.7
+		\end{bmatrix}
+		\rightarrow m=\frac{\Delta y}{\Delta x}=\frac{y_2-y_1}{x_2-x_1}=\frac{-1.5-2.5}{-1.7-0}=\frac{-4}{-1.7}=\boxed{2.35}\\
+		y-0&=&2.35(x-2.5)\rightarrow \boxed{y=2.35x-5.88}\\
+		\rightarrow x_1&=&\frac{-w_2}{w_1}x_2-\frac{w_0}{w_1} \rightarrow \begin{cases}
+			\frac{-w_2}{w_1}=2.35 \rightarrow w_2=-2.35w_1\\
+			\frac{-w_0}{w_1}=-5.88 \rightarrow w_0=5.88w_1 
+		\end{cases}\\
+		\text{Assume}\qquad w_0&=&5.88 \rightarrow \text{\hl{$w_1=1$}}, \text{\hl{$w_2=-2.35$}}
+	\end{eqnarray*}
 \end{qsolve}
 
 
-زیر مسئله شماره ۱ در قسمت قبل حل شده است و وزن های آن به صورت زیر بدست آورده شد:
-\begin{eqnarray*}
-	w_0=2.8, &w_1=-1, &w_2=-1.12
-\end{eqnarray*}
 
-برای دو زیر مسئله دیگر هم، همانند قسمت قبل وزن‌ها را بدست می‌اوریم.
-
-\begin{eqnarray*}
-	P_1=\begin{bmatrix}
-		2.5\\
-		0
-	\end{bmatrix}
-	P_2&=&\begin{bmatrix}
-		-1.5\\
-		1.7
-	\end{bmatrix}
-	\rightarrow m=\frac{\Delta y}{\Delta x}=\frac{y_2-y_1}{x_2-x_1}=\frac{-1.5-2.5}{-1.7-0}=\frac{-4}{-1.7}=\boxed{2.35}\\
-	y-0&=&2.35(x-2.5)\rightarrow \boxed{y=2.35x-5.88}\\
-	\rightarrow x_1&=&\frac{-w_2}{w_1}x_2-\frac{w_0}{w_1}
-\end{eqnarray*}
-
-
-
-
-
+\begin{qsolve}
+	\begin{eqnarray*}
+		P_1=\begin{bmatrix}
+			-1.5\\
+			-1.7
+		\end{bmatrix}
+		P_2&=&\begin{bmatrix}
+			0\\
+			2.8
+		\end{bmatrix}
+		\rightarrow m=\frac{\Delta y}{\Delta x}=\frac{y_2-y_1}{x_2-x_1}=\frac{0+1.5}{2.8+1.7}=\frac{1.5}{4.5}=\boxed{0.33}\\
+		y-2.8&=&0.33(x-0)\rightarrow \boxed{y=0.33x+2.8}\\
+		\rightarrow x_1&=&\frac{-w_2}{w_1}x_2-\frac{w_0}{w_1} \rightarrow \begin{cases}
+			\frac{-w_2}{w_1}=0.33 \rightarrow w_2=-0.33w_1\\
+			\frac{-w_0}{w_1}=2.8 \rightarrow w_0=-2.8w_1 
+		\end{cases}\\
+		\text{Assume}\qquad w_0&=&2.8 \rightarrow \text{\hl{$w_1=-1$}}, \text{\hl{$w_2=0.33$}}
+	\end{eqnarray*}
+\end{qsolve}
 
 %
 %
