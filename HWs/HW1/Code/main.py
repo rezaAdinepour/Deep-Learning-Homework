@@ -30,8 +30,8 @@ y = df["label"]
 
 
 # # Convert the data to PyTorch tensors
-# X_tensor = torch.tensor(X.values, dtype=torch.float32).to(device)
-# y_tensor = torch.tensor(y.values, dtype=torch.float32).to(device).view(-1, 1)
+X_tensor = torch.tensor(X.values, dtype=torch.float32).to(device)
+y_tensor = torch.tensor(y.values, dtype=torch.float32).to(device).view(-1, 1)
 
 
 # # Create a PolynomialFeatures object
@@ -63,17 +63,39 @@ print("Validation set size:", len(X_val))
 class0 = X_tensor[y_tensor.flatten() == 0]
 class1 = X_tensor[y_tensor.flatten() == 1]
 
+class0_test = X_test[y_test.flatten() == 0]
+class1_test = X_test[y_test.flatten() == 1]
+
+class0_val = X_val[y_val.flatten() == 0]
+class1_val = X_val[y_val.flatten() == 1]
+
 
 
 # Plot data
-plt.figure(figsize=(9, 7))
+plt.figure(figsize=(25, 7))
 
+plt.subplot(1, 3, 1)
 plt.scatter(class0[:, 0].cpu().numpy(), class0[:, 1].cpu().numpy(), label="Class 0", marker='.')
 plt.scatter(class1[:, 0].cpu().numpy(), class1[:, 1].cpu().numpy(), label="Class 1", marker='x')
-
 plt.xlabel('x')
 plt.ylabel('y')
 plt.title("Dataset samples")
+plt.legend()
+
+plt.subplot(1, 3, 2)
+plt.scatter(class0_test[:, 0].cpu().numpy(), class0_test[:, 1].cpu().numpy(), label="Class 0", marker='.')
+plt.scatter(class1_test[:, 0].cpu().numpy(), class1_test[:, 1].cpu().numpy(), label="Class 1", marker='x')
+plt.xlabel('x')
+plt.ylabel('y')
+plt.title("Testing set samples")
+plt.legend()
+
+plt.subplot(1, 3, 3)
+plt.scatter(class0_val[:, 0].cpu().numpy(), class0_val[:, 1].cpu().numpy(), label="Class 0", marker='.')
+plt.scatter(class1_val[:, 0].cpu().numpy(), class1_val[:, 1].cpu().numpy(), label="Class 1", marker='x')
+plt.xlabel('x')
+plt.ylabel('y')
+plt.title("Validation set samples")
 plt.legend()
 
 plt.show()
