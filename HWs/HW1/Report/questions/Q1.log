@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023/Debian) (preloaded format=xelatex 2024.3.15)  21 MAR 2024 16:52
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023/Debian) (preloaded format=xelatex 2024.3.15)  21 MAR 2024 20:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2031,15 +2031,15 @@ Overfull \hbox (43.8247pt too wide) in paragraph at lines 88--89
  []
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 115--115
+Overfull \hbox (20.0pt too wide) in paragraph at lines 90--90
 [] 
  []
 
 ! Extra }, or forgotten \endgroup.
 <template> }
             $\@eqnsel \endtemplate 
-l.121 ^^I^^I^^I^^I-
-                   2.8w_1-w_0=0
+l.96 ^^I^^I^^I^^I-
+                  2.8w_1-w_0=0
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
 you forgot something else, as in `\hbox{$x}'. In such cases
@@ -2049,8 +2049,8 @@ deleted material, e.g., by typing `I$}'.
 ! Missing \endgroup inserted.
 <inserted text> 
                 \endgroup 
-l.121 ^^I^^I^^I^^I-
-                   2.8w_1-w_0=0
+l.96 ^^I^^I^^I^^I-
+                  2.8w_1-w_0=0
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
 With luck, this will get me unwedged. But if you
@@ -2060,8 +2060,8 @@ my insertion and my current dilemma will both disappear.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.121 ^^I^^I^^I^^I-
-                   2.8w_1-w_0=0
+l.96 ^^I^^I^^I^^I-
+                  2.8w_1-w_0=0
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
 With luck, this will get me unwedged. But if you
@@ -2069,14 +2069,14 @@ really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
 
-! LaTeX Error: \begin{eqnarray*} on input line 115 ended by \end{cases}.
+! LaTeX Error: \begin{eqnarray*} on input line 90 ended by \end{cases}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.122 ^^I^^I^^I\end{cases}
-                          
+l.97 ^^I^^I^^I\end{cases}
+                         
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
@@ -2084,8 +2084,8 @@ or  <return>  to continue without it.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.122 ^^I^^I^^I\end{cases}
-                          
+l.97 ^^I^^I^^I\end{cases}
+                         
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
 With luck, this will get me unwedged. But if you
@@ -2095,8 +2095,8 @@ my insertion and my current dilemma will both disappear.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.122 ^^I^^I^^I\end{cases}
-                          
+l.97 ^^I^^I^^I\end{cases}
+                         
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
 With luck, this will get me unwedged. But if you
@@ -2106,8 +2106,8 @@ my insertion and my current dilemma will both disappear.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.122 ^^I^^I^^I\end{cases}
-                          
+l.97 ^^I^^I^^I\end{cases}
+                         
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
 With luck, this will get me unwedged. But if you
@@ -2117,15 +2117,15 @@ my insertion and my current dilemma will both disappear.
 ! Missing \cr inserted.
 <inserted text> 
                 \cr 
-l.122 ^^I^^I^^I\end{cases}
-                          
+l.97 ^^I^^I^^I\end{cases}
+                         
 I'm guessing that you meant to end an alignment here.
 
 ! Missing { inserted.
 <inserted text> 
                 {
-l.122 ^^I^^I^^I\end{cases}
-                          
+l.97 ^^I^^I^^I\end{cases}
+                         
 I've put in what seems to be necessary to fix
 the current column of the current alignment.
 Try to go on, since this might almost work.
@@ -2133,27 +2133,27 @@ Try to go on, since this might almost work.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.122 ^^I^^I^^I\end{cases}
-                          
+l.97 ^^I^^I^^I\end{cases}
+                         
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-Overfull \hbox (130.66902pt too wide) in alignment at lines 115--122
+Overfull \hbox (130.66902pt too wide) in alignment at lines 90--97
  [][][] []
  []
 
 ! Missing $$ inserted.
 <to be read again> 
                    \endgroup 
-l.122 ^^I^^I^^I\end{cases}
-                          
+l.97 ^^I^^I^^I\end{cases}
+                         
 Displays can use special alignments (like \eqalignno)
 only if nothing but the alignment itself is between $$'s.
 
 ! Undefined control sequence.
-l.123 ^^I^^I^^I\text
-                    {assume} &w_0&=2.8 \rightarrow \text{\hl{$w_1=-1$}}, \te...
+l.98 ^^I^^I^^I\text
+                   {assume} &w_0&=2.8 \rightarrow \text{\hl{$w_1=-1$}}, \tex...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -2167,8 +2167,8 @@ Missing character: There is no u ("75) in font nullfont!
 Missing character: There is no m ("6D) in font nullfont!
 Missing character: There is no e ("65) in font nullfont!
 ! Misplaced alignment tab character &.
-l.123 ^^I^^I^^I\text{assume} &
-                              w_0&=2.8 \rightarrow \text{\hl{$w_1=-1$}}, \te...
+l.98 ^^I^^I^^I\text{assume} &
+                             w_0&=2.8 \rightarrow \text{\hl{$w_1=-1$}}, \tex...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
 simple: Just type `I\&' now. But if some right brace
@@ -2180,14 +2180,14 @@ Missing character: There is no w ("77) in font nullfont!
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.123 ^^I^^I^^I\text{assume} &w_
-                                0&=2.8 \rightarrow \text{\hl{$w_1=-1$}}, \te...
+l.98 ^^I^^I^^I\text{assume} &w_
+                               0&=2.8 \rightarrow \text{\hl{$w_1=-1$}}, \tex...
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 ! Misplaced alignment tab character &.
-l.123 ^^I^^I^^I\text{assume} &w_0&
-                                  =2.8 \rightarrow \text{\hl{$w_1=-1$}}, \te...
+l.98 ^^I^^I^^I\text{assume} &w_0&
+                                 =2.8 \rightarrow \text{\hl{$w_1=-1$}}, \tex...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
 simple: Just type `I\&' now. But if some right brace
@@ -2196,7 +2196,7 @@ you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
 ! Undefined control sequence.
-l.123 ...\text{assume} &w_0&=2.8 \rightarrow \text
+l.98 ...I\text{assume} &w_0&=2.8 \rightarrow \text
                                                   {\hl{$w_1=-1$}}, \text{\hl...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2205,7 +2205,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.123 ...t{assume} &w_0&=2.8 \rightarrow \text{\hl
+l.98 ...xt{assume} &w_0&=2.8 \rightarrow \text{\hl
                                                   {$w_1=-1$}}, \text{\hl{$w_...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2216,7 +2216,7 @@ and I'll forget about whatever was undefined.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.123 ...assume} &w_0&=2.8 \rightarrow \text{\hl{$
+l.98 ...{assume} &w_0&=2.8 \rightarrow \text{\hl{$
                                                   w_1=-1$}}, \text{\hl{$w_2=...
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -2227,7 +2227,7 @@ my insertion and my current dilemma will both disappear.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.123 ...assume} &w_0&=2.8 \rightarrow \text{\hl{$
+l.98 ...{assume} &w_0&=2.8 \rightarrow \text{\hl{$
                                                   w_1=-1$}}, \text{\hl{$w_2=...
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -2239,26 +2239,26 @@ Missing character: There is no w ("77) in font nullfont!
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.123 ...sume} &w_0&=2.8 \rightarrow \text{\hl{$w_
+l.98 ...ssume} &w_0&=2.8 \rightarrow \text{\hl{$w_
                                                   1=-1$}}, \text{\hl{$w_2=-1...
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 ! Too many }'s.
-l.123 ...&w_0&=2.8 \rightarrow \text{\hl{$w_1=-1$}
+l.98 ... &w_0&=2.8 \rightarrow \text{\hl{$w_1=-1$}
                                                   }, \text{\hl{$w_2=-1.12$}}
 You've closed more groups than you opened.
 Such booboos are generally harmless, so keep going.
 
 ! Too many }'s.
-l.123 ...w_0&=2.8 \rightarrow \text{\hl{$w_1=-1$}}
+l.98 ...&w_0&=2.8 \rightarrow \text{\hl{$w_1=-1$}}
                                                   , \text{\hl{$w_2=-1.12$}}
 You've closed more groups than you opened.
 Such booboos are generally harmless, so keep going.
 
 Missing character: There is no , ("2C) in font nullfont!
 ! Undefined control sequence.
-l.123 ...8 \rightarrow \text{\hl{$w_1=-1$}}, \text
+l.98 ....8 \rightarrow \text{\hl{$w_1=-1$}}, \text
                                                   {\hl{$w_2=-1.12$}}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2267,7 +2267,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.123 ...ightarrow \text{\hl{$w_1=-1$}}, \text{\hl
+l.98 ...rightarrow \text{\hl{$w_1=-1$}}, \text{\hl
                                                   {$w_2=-1.12$}}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2278,8 +2278,8 @@ and I'll forget about whatever was undefined.
 ! Misplaced alignment tab character &.
 \reserved@a ->&
                 & &
-l.124 ^^I^^I\end{eqnarray*}
-                           
+l.99 ^^I^^I\end{eqnarray*}
+                          
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
 simple: Just type `I\&' now. But if some right brace
@@ -2290,8 +2290,8 @@ might try typing `S' now just to see what is salvageable.
 ! Misplaced alignment tab character &.
 \reserved@a ->& &
                   &
-l.124 ^^I^^I\end{eqnarray*}
-                           
+l.99 ^^I^^I\end{eqnarray*}
+                          
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
 simple: Just type `I\&' now. But if some right brace
@@ -2302,8 +2302,8 @@ might try typing `S' now just to see what is salvageable.
 ! Misplaced alignment tab character &.
 \reserved@a ->& & &
                    
-l.124 ^^I^^I\end{eqnarray*}
-                           
+l.99 ^^I^^I\end{eqnarray*}
+                          
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
 simple: Just type `I\&' now. But if some right brace
@@ -2314,8 +2314,8 @@ might try typing `S' now just to see what is salvageable.
 ! Misplaced \cr.
 \@@eqncr ...l \@eqnswtrue \global \@eqcnt \z@ \cr 
                                                   
-l.124 ^^I^^I\end{eqnarray*}
-                           
+l.99 ^^I^^I\end{eqnarray*}
+                          
 I can't figure out why you would want to use a tab mark
 or \cr or \span just now. If something like a right brace
 up above has ended a previous alignment prematurely,
@@ -2325,38 +2325,38 @@ might try typing `S' now just to see what is salvageable.
 ! Too many }'s.
 \endeqnarray ->\@@eqncr \egroup 
                                 \global \advance \c@equation \m@ne $$\@ignor...
-l.124 ^^I^^I\end{eqnarray*}
-                           
+l.99 ^^I^^I\end{eqnarray*}
+                          
 You've closed more groups than you opened.
 Such booboos are generally harmless, so keep going.
 
 
-Overfull \hbox (15.04164pt too wide) in paragraph at lines 122--124
+Overfull \hbox (15.04164pt too wide) in paragraph at lines 97--99
  $[] \OT1/cmr/m/n/10 =
  []
 
 
-Overfull \hbox (25.55554pt too wide) in paragraph at lines 122--124
+Overfull \hbox (25.55554pt too wide) in paragraph at lines 97--99
 \OT1/cmr/m/n/10 2\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 8 \OMS/cmsy/m/n/10 !
  []
 
 
-Overfull \hbox (15.04164pt too wide) in paragraph at lines 122--124
+Overfull \hbox (15.04164pt too wide) in paragraph at lines 97--99
 []$$[] \OT1/cmr/m/n/10 =
  []
 
 
-Overfull \hbox (12.77782pt too wide) in paragraph at lines 122--124
+Overfull \hbox (12.77782pt too wide) in paragraph at lines 97--99
 \OMS/cmsy/m/n/10 ^^@\OT1/cmr/m/n/10 1$
  []
 
 
-Overfull \hbox (22.2008pt too wide) in paragraph at lines 122--124
+Overfull \hbox (22.2008pt too wide) in paragraph at lines 97--99
 \OML/cmm/m/it/10 w[] \OT1/cmr/m/n/10 =
  []
 
 
-Overfull \hbox (25.55563pt too wide) in paragraph at lines 122--124
+Overfull \hbox (25.55563pt too wide) in paragraph at lines 97--99
 \OMS/cmsy/m/n/10 ^^@\OT1/cmr/m/n/10 1\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 12$
  []
 
@@ -2367,8 +2367,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.124 ^^I^^I\end{eqnarray*}
-                           
+l.99 ^^I^^I\end{eqnarray*}
+                          
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
@@ -2376,8 +2376,8 @@ or  <return>  to continue without it.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.124 ^^I^^I\end{eqnarray*}
-                           
+l.99 ^^I^^I\end{eqnarray*}
+                          
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
 With luck, this will get me unwedged. But if you
@@ -2387,16 +2387,16 @@ my insertion and my current dilemma will both disappear.
 ! Display math should end with $$.
 <to be read again> 
                    \endgroup 
-l.124 ^^I^^I\end{eqnarray*}
-                           
+l.99 ^^I^^I\end{eqnarray*}
+                          
 The `$' that I just saw supposedly matches a previous `$$'.
 So I shall assume that you typed `$$' both times.
 
 ! Extra \endgroup.
 <recently read> \endgroup 
                           
-l.124 ^^I^^I\end{eqnarray*}
-                           
+l.99 ^^I^^I\end{eqnarray*}
+                          
 Things are pretty mixed up, but I think the worst is over.
 
 Missing character: There is no ذ ("630) in font nullfont!
@@ -2503,7 +2503,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.126 ^^I\end{qsolve}
+l.101 ^^I\end{qsolve}
                      
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -2512,12 +2512,12 @@ or  <return>  to continue without it.
 ! Extra \endgroup.
 <recently read> \endgroup 
                           
-l.126 ^^I\end{qsolve}
+l.101 ^^I\end{qsolve}
                      
 Things are pretty mixed up, but I think the worst is over.
 
 
-Overfull \hbox (11.6453pt too wide) in paragraph at lines 124--127
+Overfull \hbox (11.6453pt too wide) in paragraph at lines 99--102
              $\OML/cmm/m/it/10 w[]$
  []
 
@@ -2528,7 +2528,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.146 ^^I\item ح
+l.106 ^^I\item ح
                 ال شکل \lr{b-1} را درنظر بگیرید. چرا مسئله جداپذیر خطی نیست؟...
 
 Try typing  <return>  to proceed.
@@ -2541,7 +2541,7 @@ Missing character: There is no ش ("634) in font nullfont!
 Missing character: There is no ک ("6A9) in font nullfont!
 Missing character: There is no ل ("644) in font nullfont!
 ! Undefined control sequence.
-l.146 ^^I\item حال شکل \lr
+l.106 ^^I\item حال شکل \lr
                           {b-1} را درنظر بگیرید. چرا مسئله جداپذیر خطی نیست؟...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2769,34 +2769,14 @@ Missing character: There is no ش ("634) in font nullfont!
 Missing character: There is no د ("62F) in font nullfont!
 Missing character: There is no . ("2E) in font nullfont!
 
-! LaTeX Error: \begin{document} ended by \end{enumerate}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.147 \end{enumerate}
-                     
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-! Extra \endgroup.
-<recently read> \endgroup 
-                          
-l.147 \end{enumerate}
-                     
-Things are pretty mixed up, but I think the worst is over.
-
-
 ! LaTeX Error: Environment qsolve undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.150 \begin{qsolve}
-                    
+l.110 ^^I\begin{qsolve}
+                       
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
@@ -3049,27 +3029,27 @@ Missing character: There is no ا ("627) in font nullfont!
 Missing character: There is no د ("62F) in font nullfont!
 Missing character: There is no . ("2E) in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 151--152
+Overfull \hbox (20.0pt too wide) in paragraph at lines 111--112
 []
  []
 
 
-Overfull \hbox (19.6pt too wide) in paragraph at lines 151--152
+Overfull \hbox (19.6pt too wide) in paragraph at lines 111--112
 \TU/lmr/bx/n/10 جداپذیر
  []
 
 
-Overfull \hbox (8.4pt too wide) in paragraph at lines 151--152
+Overfull \hbox (8.4pt too wide) in paragraph at lines 111--112
 \TU/lmr/bx/n/10 خطی
  []
 
 
-Overfull \hbox (22.79001pt too wide) in paragraph at lines 151--152
+Overfull \hbox (22.79001pt too wide) in paragraph at lines 111--112
 \TU/lmr/bx/n/10 نمی‌باشد.
  []
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 153--153
+Overfull \hbox (20.0pt too wide) in paragraph at lines 113--113
 [] 
  []
 
@@ -3085,11 +3065,31 @@ Missing character: There is no ی (U+06CC) in font [lmroman10-bold]:mapping=tex-
 text;!
 Missing character: There is no ش (U+0634) in font [lmroman10-bold]:mapping=tex-
 text;!
+Missing character: There is no ا (U+0627) in font [lmroman10-bold]:mapping=tex-
+text;!
 Missing character: There is no ب (U+0628) in font [lmroman10-bold]:mapping=tex-
 text;!
 Missing character: There is no ع (U+0639) in font [lmroman10-bold]:mapping=tex-
 text;!
+Missing character: There is no ا (U+0627) in font [lmroman10-bold]:mapping=tex-
+text;!
 Missing character: There is no د (U+062F) in font [lmroman10-bold]:mapping=tex-
+text;!
+Missing character: There is no و (U+0648) in font [lmroman10-bold]:mapping=tex-
+text;!
+Missing character: There is no ی (U+06CC) in font [lmroman10-bold]:mapping=tex-
+text;!
+Missing character: There is no ژ (U+0698) in font [lmroman10-bold]:mapping=tex-
+text;!
+Missing character: There is no گ (U+06AF) in font [lmroman10-bold]:mapping=tex-
+text;!
+Missing character: There is no ی (U+06CC) in font [lmroman10-bold]:mapping=tex-
+text;!
+Missing character: There is no ه (U+0647) in font [lmroman10-bold]:mapping=tex-
+text;!
+Missing character: There is no ا (U+0627) in font [lmroman10-bold]:mapping=tex-
+text;!
+Missing character: There is no ی (U+06CC) in font [lmroman10-bold]:mapping=tex-
 text;!
 Missing character: There is no م (U+0645) in font [lmroman10-bold]:mapping=tex-
 text;!
@@ -3231,17 +3231,27 @@ Missing character: There is no ی ("6CC) in font nullfont!
 Missing character: There is no م ("645) in font nullfont!
 Missing character: There is no . ("2E) in font nullfont!
 
-Overfull \hbox (16.8pt too wide) in paragraph at lines 154--156
+Overfull \hbox (16.8pt too wide) in paragraph at lines 114--116
 \TU/lmr/bx/n/10 افزایش
  []
 
 
-Overfull \hbox (8.4pt too wide) in paragraph at lines 154--156
-\TU/lmr/bx/n/10 بعد
+Overfull \hbox (14.0pt too wide) in paragraph at lines 114--116
+\TU/lmr/bx/n/10 ابعاد
  []
 
 
-Overfull \hbox (17.19pt too wide) in paragraph at lines 154--156
+Overfull \hbox (14.0pt too wide) in paragraph at lines 114--116
+\TU/lmr/bx/n/10 ویژگی
+ []
+
+
+Overfull \hbox (8.4pt too wide) in paragraph at lines 114--116
+\TU/lmr/bx/n/10 های
+ []
+
+
+Overfull \hbox (17.19pt too wide) in paragraph at lines 114--116
 \TU/lmr/bx/n/10 مسئله: 
  []
 
@@ -3701,52 +3711,52 @@ Missing character: There is no ر ("631) in font nullfont!
 Missing character: There is no د ("62F) in font nullfont!
 Missing character: There is no . ("2E) in font nullfont!
 
-Overfull \hbox (11.2pt too wide) in paragraph at lines 157--159
+Overfull \hbox (11.2pt too wide) in paragraph at lines 117--119
 \TU/lmr/bx/n/10 دادن
  []
 
 
-Overfull \hbox (14.0pt too wide) in paragraph at lines 157--159
+Overfull \hbox (14.0pt too wide) in paragraph at lines 117--119
 \TU/lmr/bx/n/10 ورودی
  []
 
 
-Overfull \hbox (11.2pt too wide) in paragraph at lines 157--159
+Overfull \hbox (11.2pt too wide) in paragraph at lines 117--119
 \TU/lmr/bx/n/10 هایی
  []
 
 
-Overfull \hbox (5.6pt too wide) in paragraph at lines 157--159
+Overfull \hbox (5.6pt too wide) in paragraph at lines 117--119
 \TU/lmr/bx/n/10 با
  []
 
 
-Overfull \hbox (11.2pt too wide) in paragraph at lines 157--159
+Overfull \hbox (11.2pt too wide) in paragraph at lines 117--119
 \TU/lmr/bx/n/10 توان
  []
 
 
-Overfull \hbox (11.2pt too wide) in paragraph at lines 157--159
+Overfull \hbox (11.2pt too wide) in paragraph at lines 117--119
 \TU/lmr/bx/n/10 بالا
  []
 
 
-Overfull \hbox (5.6pt too wide) in paragraph at lines 157--159
+Overfull \hbox (5.6pt too wide) in paragraph at lines 117--119
 \TU/lmr/bx/n/10 به
  []
 
 
-Overfull \hbox (14.0pt too wide) in paragraph at lines 157--159
+Overfull \hbox (14.0pt too wide) in paragraph at lines 117--119
 \TU/lmr/bx/n/10 عنوان
  []
 
 
-Overfull \hbox (14.0pt too wide) in paragraph at lines 157--159
+Overfull \hbox (14.0pt too wide) in paragraph at lines 117--119
 \TU/lmr/bx/n/10 ورودی
  []
 
 
-Overfull \hbox (14.39pt too wide) in paragraph at lines 157--159
+Overfull \hbox (14.39pt too wide) in paragraph at lines 117--119
 \TU/lmr/bx/n/10 شبکه: 
  []
 
@@ -4131,24 +4141,681 @@ Missing character: There is no م ("645) in font nullfont!
 Missing character: There is no و ("648) in font nullfont!
 Missing character: There is no د ("62F) in font nullfont!
 Missing character: There is no . ("2E) in font nullfont!
+Missing character: There is no س ("633) in font nullfont!
+Missing character: There is no ا ("627) in font nullfont!
+Missing character: There is no خ ("62E) in font nullfont!
+Missing character: There is no ت ("62A) in font nullfont!
+Missing character: There is no ا ("627) in font nullfont!
+Missing character: There is no ر ("631) in font nullfont!
+Missing character: There is no ا ("627) in font nullfont!
+Missing character: There is no ی ("6CC) in font nullfont!
+Missing character: There is no ن ("646) in font nullfont!
+Missing character: There is no م ("645) in font nullfont!
+Missing character: There is no د ("62F) in font nullfont!
+Missing character: There is no ل ("644) in font nullfont!
+Missing character: There is no د ("62F) in font nullfont!
+Missing character: There is no ر ("631) in font nullfont!
+Missing character: There is no « ("AB) in font nullfont!
+Missing character: There is no ش ("634) in font nullfont!
+Missing character: There is no ک ("6A9) in font nullfont!
+Missing character: There is no ل ("644) in font nullfont!
+! Undefined control sequence.
+<write> ...شبکه ۳ لایه پیشنهادی' on page \thepage 
+                                                  \space undefined\on@line .^^J
+l.121 ...در «شکل \ref{معماری شبکه ۳ لایه پیشنهادی}
+                                                  » آورده شده است.
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
 
-Overfull \hbox (11.2pt too wide) in paragraph at lines 160--162
+
+LaTeX Warning: Reference `معماری شبکه ۳ لایه پیشنهادی' on page  undefined on in
+put line 121.
+
+Missing character: There is no » ("BB) in font nullfont!
+Missing character: There is no آ ("622) in font nullfont!
+Missing character: There is no و ("648) in font nullfont!
+Missing character: There is no ر ("631) in font nullfont!
+Missing character: There is no د ("62F) in font nullfont!
+Missing character: There is no ه ("647) in font nullfont!
+Missing character: There is no ش ("634) in font nullfont!
+Missing character: There is no د ("62F) in font nullfont!
+Missing character: There is no ه ("647) in font nullfont!
+Missing character: There is no ا ("627) in font nullfont!
+Missing character: There is no س ("633) in font nullfont!
+Missing character: There is no ت ("62A) in font nullfont!
+Missing character: There is no . ("2E) in font nullfont!
+
+Overfull \hbox (11.2pt too wide) in paragraph at lines 120--122
 \TU/lmr/bx/n/10 اضاف
  []
 
 
-Overfull \hbox (11.2pt too wide) in paragraph at lines 160--162
+Overfull \hbox (11.2pt too wide) in paragraph at lines 120--122
 \TU/lmr/bx/n/10 کردن
  []
 
 
-Overfull \hbox (11.2pt too wide) in paragraph at lines 160--162
+Overfull \hbox (11.2pt too wide) in paragraph at lines 120--122
 \TU/lmr/bx/n/10 لایه
  []
 
 
-Overfull \hbox (14.39pt too wide) in paragraph at lines 160--162
+Overfull \hbox (14.39pt too wide) in paragraph at lines 120--122
 \TU/lmr/bx/n/10 مخفی: 
+ []
+
+
+Overfull \hbox (10.86pt too wide) in paragraph at lines 120--122
+[]
+ []
+
+Missing character: There is no ا ("627) in font nullfont!
+Missing character: There is no م ("645) in font nullfont!
+Missing character: There is no ا ("627) in font nullfont!
+Missing character: There is no م ("645) in font nullfont!
+Missing character: There is no ش ("634) in font nullfont!
+Missing character: There is no ک ("6A9) in font nullfont!
+Missing character: There is no ل ("644) in font nullfont!
+Missing character: There is no ی ("6CC) in font nullfont!
+Missing character: There is no ک ("6A9) in font nullfont!
+Missing character: There is no ه ("647) in font nullfont!
+Missing character: There is no و ("648) in font nullfont!
+Missing character: There is no ج ("62C) in font nullfont!
+Missing character: There is no و ("648) in font nullfont!
+Missing character: There is no د ("62F) in font nullfont!
+Missing character: There is no د ("62F) in font nullfont!
+Missing character: There is no ا ("627) in font nullfont!
+Missing character: There is no ر ("631) in font nullfont!
+Missing character: There is no د ("62F) in font nullfont!
+Missing character: There is no آ ("622) in font nullfont!
+Missing character: There is no ن ("646) in font nullfont!
+Missing character: There is no ا ("627) in font nullfont!
+Missing character: There is no س ("633) in font nullfont!
+Missing character: There is no ت ("62A) in font nullfont!
+Missing character: There is no ک ("6A9) in font nullfont!
+Missing character: There is no ه ("647) in font nullfont!
+Missing character: There is no د ("62F) in font nullfont!
+Missing character: There is no ر ("631) in font nullfont!
+Missing character: There is no ص ("635) in font nullfont!
+Missing character: There is no و ("648) in font nullfont!
+Missing character: There is no ر ("631) in font nullfont!
+Missing character: There is no ت ("62A) in font nullfont!
+Missing character: There is no س ("633) in font nullfont!
+Missing character: There is no و ("648) in font nullfont!
+Missing character: There is no ا ("627) in font nullfont!
+Missing character: There is no ل ("644) in font nullfont!
+Missing character: There is no ا ("627) in font nullfont!
+Missing character: There is no ز ("632) in font nullfont!
+Missing character: There is no م ("645) in font nullfont!
+Missing character: There is no ا ("627) in font nullfont!
+Missing character: There is no خ ("62E) in font nullfont!
+Missing character: There is no و ("648) in font nullfont!
+Missing character: There is no ا ("627) in font nullfont!
+Missing character: There is no س ("633) in font nullfont!
+Missing character: There is no ت ("62A) in font nullfont!
+Missing character: There is no ه ("647) in font nullfont!
+Missing character: There is no ش ("634) in font nullfont!
+Missing character: There is no د ("62F) in font nullfont!
+Missing character: There is no ه ("647) in font nullfont!
+Missing character: There is no و ("648) in font nullfont!
+Missing character: There is no ز ("632) in font nullfont!
+Missing character: There is no ن ("646) in font nullfont!
+Missing character: There is no ه ("647) in font nullfont!
+Missing character: There is no ا ("627) in font nullfont!
+Missing character: There is no ی ("6CC) in font nullfont!
+Missing character: There is no ش ("634) in font nullfont!
+Missing character: There is no ب ("628) in font nullfont!
+Missing character: There is no ک ("6A9) in font nullfont!
+Missing character: There is no ه ("647) in font nullfont!
+Missing character: There is no ر ("631) in font nullfont!
+Missing character: There is no ا ("627) in font nullfont!
+Missing character: There is no ب ("628) in font nullfont!
+Missing character: There is no د ("62F) in font nullfont!
+Missing character: There is no س ("633) in font nullfont!
+Missing character: There is no ت ("62A) in font nullfont!
+Missing character: There is no آ ("622) in font nullfont!
+Missing character: There is no و ("648) in font nullfont!
+Missing character: There is no ر ("631) in font nullfont!
+Missing character: There is no ی ("6CC) in font nullfont!
+Missing character: There is no م ("645) in font nullfont!
+Missing character: There is no ، ("60C) in font nullfont!
+Missing character: There is no ا ("627) in font nullfont!
+Missing character: There is no گ ("6AF) in font nullfont!
+Missing character: There is no ر ("631) in font nullfont!
+Missing character: There is no ا ("627) in font nullfont!
+Missing character: There is no ز ("632) in font nullfont!
+Missing character: There is no ا ("627) in font nullfont!
+Missing character: There is no ی ("6CC) in font nullfont!
+Missing character: There is no ن ("646) in font nullfont!
+Missing character: There is no س ("633) in font nullfont!
+Missing character: There is no ا ("627) in font nullfont!
+Missing character: There is no خ ("62E) in font nullfont!
+Missing character: There is no ت ("62A) in font nullfont!
+Missing character: There is no ا ("627) in font nullfont!
+Missing character: There is no ر ("631) in font nullfont!
+Missing character: There is no ب ("628) in font nullfont!
+Missing character: There is no ر ("631) in font nullfont!
+Missing character: There is no ا ("627) in font nullfont!
+Missing character: There is no ی ("6CC) in font nullfont!
+Missing character: There is no ح ("62D) in font nullfont!
+Missing character: There is no ل ("644) in font nullfont!
+Missing character: There is no ا ("627) in font nullfont!
+Missing character: There is no س ("633) in font nullfont!
+Missing character: There is no ت ("62A) in font nullfont!
+Missing character: There is no ف ("641) in font nullfont!
+Missing character: There is no ا ("627) in font nullfont!
+Missing character: There is no د ("62F) in font nullfont!
+Missing character: There is no ه ("647) in font nullfont!
+Missing character: There is no ک ("6A9) in font nullfont!
+Missing character: There is no ن ("646) in font nullfont!
+Missing character: There is no ی ("6CC) in font nullfont!
+Missing character: There is no م ("645) in font nullfont!
+Missing character: There is no ، ("60C) in font nullfont!
+Missing character: There is no ب ("628) in font nullfont!
+Missing character: There is no ه ("647) in font nullfont!
+Missing character: There is no د ("62F) in font nullfont!
+Missing character: There is no ل ("644) in font nullfont!
+Missing character: There is no ی ("6CC) in font nullfont!
+Missing character: There is no ل ("644) in font nullfont!
+Missing character: There is no ن ("646) in font nullfont!
+Missing character: There is no د ("62F) in font nullfont!
+Missing character: There is no ا ("627) in font nullfont!
+Missing character: There is no ش ("634) in font nullfont!
+Missing character: There is no ت ("62A) in font nullfont!
+Missing character: There is no ن ("646) in font nullfont!
+Missing character: There is no م ("645) in font nullfont!
+Missing character: There is no ق ("642) in font nullfont!
+Missing character: There is no د ("62F) in font nullfont!
+Missing character: There is no ا ("627) in font nullfont!
+Missing character: There is no ر ("631) in font nullfont!
+Missing character: There is no و ("648) in font nullfont!
+Missing character: There is no ر ("631) in font nullfont!
+Missing character: There is no و ("648) in font nullfont!
+Missing character: There is no د ("62F) in font nullfont!
+Missing character: There is no ی ("6CC) in font nullfont!
+Missing character: There is no ه ("647) in font nullfont!
+Missing character: There is no ا ("627) in font nullfont!
+Missing character: There is no ن ("646) in font nullfont!
+Missing character: There is no م ("645) in font nullfont!
+Missing character: There is no ی ("6CC) in font nullfont!
+Missing character: There is no ‌ ("200C) in font nullfont!
+Missing character: There is no ت ("62A) in font nullfont!
+Missing character: There is no و ("648) in font nullfont!
+Missing character: There is no ا ("627) in font nullfont!
+Missing character: There is no ن ("646) in font nullfont!
+Missing character: There is no ۳ ("6F3) in font nullfont!
+Missing character: There is no و ("648) in font nullfont!
+Missing character: There is no ز ("632) in font nullfont!
+Missing character: There is no ن ("646) in font nullfont!
+Missing character: There is no ل ("644) in font nullfont!
+Missing character: There is no ا ("627) in font nullfont!
+Missing character: There is no ی ("6CC) in font nullfont!
+Missing character: There is no ه ("647) in font nullfont!
+Missing character: There is no م ("645) in font nullfont!
+Missing character: There is no ت ("62A) in font nullfont!
+Missing character: There is no ص ("635) in font nullfont!
+Missing character: There is no ل ("644) in font nullfont!
+Missing character: There is no ب ("628) in font nullfont!
+Missing character: There is no ه ("647) in font nullfont!
+Missing character: There is no خ ("62E) in font nullfont!
+Missing character: There is no ر ("631) in font nullfont!
+Missing character: There is no و ("648) in font nullfont!
+Missing character: There is no ج ("62C) in font nullfont!
+Missing character: There is no ی ("6CC) in font nullfont!
+Missing character: There is no ر ("631) in font nullfont!
+Missing character: There is no ا ("627) in font nullfont!
+Missing character: There is no ب ("628) in font nullfont!
+Missing character: There is no د ("62F) in font nullfont!
+Missing character: There is no س ("633) in font nullfont!
+Missing character: There is no ت ("62A) in font nullfont!
+Missing character: There is no آ ("622) in font nullfont!
+Missing character: There is no و ("648) in font nullfont!
+Missing character: There is no ر ("631) in font nullfont!
+Missing character: There is no د ("62F) in font nullfont!
+Missing character: There is no . ("2E) in font nullfont!
+Missing character: There is no ش (U+0634) in font [lmroman10-bold]:mapping=tex-
+text;!
+Missing character: There is no ک (U+06A9) in font [lmroman10-bold]:mapping=tex-
+text;!
+Missing character: There is no س (U+0633) in font [lmroman10-bold]:mapping=tex-
+text;!
+Missing character: There is no ت (U+062A) in font [lmroman10-bold]:mapping=tex-
+text;!
+Missing character: There is no ن (U+0646) in font [lmroman10-bold]:mapping=tex-
+text;!
+Missing character: There is no م (U+0645) in font [lmroman10-bold]:mapping=tex-
+text;!
+Missing character: There is no س (U+0633) in font [lmroman10-bold]:mapping=tex-
+text;!
+Missing character: There is no ئ (U+0626) in font [lmroman10-bold]:mapping=tex-
+text;!
+Missing character: There is no ل (U+0644) in font [lmroman10-bold]:mapping=tex-
+text;!
+Missing character: There is no ه (U+0647) in font [lmroman10-bold]:mapping=tex-
+text;!
+Missing character: There is no ب (U+0628) in font [lmroman10-bold]:mapping=tex-
+text;!
+Missing character: There is no ه (U+0647) in font [lmroman10-bold]:mapping=tex-
+text;!
+Missing character: There is no ۳ (U+06F3) in font [lmroman10-bold]:mapping=tex-
+text;!
+Missing character: There is no ز (U+0632) in font [lmroman10-bold]:mapping=tex-
+text;!
+Missing character: There is no ی (U+06CC) in font [lmroman10-bold]:mapping=tex-
+text;!
+Missing character: There is no ر (U+0631) in font [lmroman10-bold]:mapping=tex-
+text;!
+Missing character: There is no م (U+0645) in font [lmroman10-bold]:mapping=tex-
+text;!
+Missing character: There is no س (U+0633) in font [lmroman10-bold]:mapping=tex-
+text;!
+Missing character: There is no ئ (U+0626) in font [lmroman10-bold]:mapping=tex-
+text;!
+Missing character: There is no ل (U+0644) in font [lmroman10-bold]:mapping=tex-
+text;!
+Missing character: There is no ه (U+0647) in font [lmroman10-bold]:mapping=tex-
+text;!
+Missing character: There is no خ (U+062E) in font [lmroman10-bold]:mapping=tex-
+text;!
+Missing character: There is no ط (U+0637) in font [lmroman10-bold]:mapping=tex-
+text;!
+Missing character: There is no ی (U+06CC) in font [lmroman10-bold]:mapping=tex-
+text;!
+Missing character: There is no : ("3A) in font nullfont!
+Missing character: There is no ب ("628) in font nullfont!
+Missing character: There is no ر ("631) in font nullfont!
+Missing character: There is no ا ("627) in font nullfont!
+Missing character: There is no ی ("6CC) in font nullfont!
+Missing character: There is no ح ("62D) in font nullfont!
+Missing character: There is no ل ("644) in font nullfont!
+Missing character: There is no ا ("627) in font nullfont!
+Missing character: There is no ی ("6CC) in font nullfont!
+Missing character: There is no ن ("646) in font nullfont!
+Missing character: There is no س ("633) in font nullfont!
+Missing character: There is no و ("648) in font nullfont!
+Missing character: There is no ا ("627) in font nullfont!
+Missing character: There is no ل ("644) in font nullfont!
+Missing character: There is no ا ("627) in font nullfont!
+Missing character: There is no ز ("632) in font nullfont!
+Missing character: There is no ا ("627) in font nullfont!
+Missing character: There is no ی ("6CC) in font nullfont!
+Missing character: There is no ن ("646) in font nullfont!
+Missing character: There is no ر ("631) in font nullfont!
+Missing character: There is no و ("648) in font nullfont!
+Missing character: There is no ش ("634) in font nullfont!
+Missing character: There is no ا ("627) in font nullfont!
+Missing character: There is no س ("633) in font nullfont!
+Missing character: There is no ت ("62A) in font nullfont!
+Missing character: There is no ف ("641) in font nullfont!
+Missing character: There is no ا ("627) in font nullfont!
+Missing character: There is no د ("62F) in font nullfont!
+Missing character: There is no ه ("647) in font nullfont!
+Missing character: There is no ش ("634) in font nullfont!
+Missing character: There is no د ("62F) in font nullfont!
+Missing character: There is no ه ("647) in font nullfont!
+Missing character: There is no ا ("627) in font nullfont!
+Missing character: There is no س ("633) in font nullfont!
+Missing character: There is no ت ("62A) in font nullfont!
+Missing character: There is no . ("2E) in font nullfont!
+Missing character: There is no د ("62F) in font nullfont!
+Missing character: There is no ر ("631) in font nullfont!
+Missing character: There is no ق ("642) in font nullfont!
+Missing character: There is no س ("633) in font nullfont!
+Missing character: There is no م ("645) in font nullfont!
+Missing character: There is no ت ("62A) in font nullfont!
+Missing character: There is no ق ("642) in font nullfont!
+Missing character: There is no ب ("628) in font nullfont!
+Missing character: There is no ل ("644) in font nullfont!
+Missing character: There is no د ("62F) in font nullfont!
+Missing character: There is no ی ("6CC) in font nullfont!
+Missing character: There is no د ("62F) in font nullfont!
+Missing character: There is no ی ("6CC) in font nullfont!
+Missing character: There is no م ("645) in font nullfont!
+Missing character: There is no ک ("6A9) in font nullfont!
+Missing character: There is no ه ("647) in font nullfont!
+Missing character: There is no ی ("6CC) in font nullfont!
+Missing character: There is no ک ("6A9) in font nullfont!
+Missing character: There is no ن ("646) in font nullfont!
+Missing character: There is no و ("648) in font nullfont!
+Missing character: There is no ر ("631) in font nullfont!
+Missing character: There is no و ("648) in font nullfont!
+Missing character: There is no ن ("646) in font nullfont!
+Missing character: There is no پ ("67E) in font nullfont!
+Missing character: There is no ر ("631) in font nullfont!
+Missing character: There is no س ("633) in font nullfont!
+Missing character: There is no پ ("67E) in font nullfont!
+Missing character: There is no ت ("62A) in font nullfont!
+Missing character: There is no ر ("631) in font nullfont!
+Missing character: There is no و ("648) in font nullfont!
+Missing character: There is no ن ("646) in font nullfont!
+Missing character: There is no ی ("6CC) in font nullfont!
+Missing character: There is no م ("645) in font nullfont!
+Missing character: There is no ی ("6CC) in font nullfont!
+Missing character: There is no ‌ ("200C) in font nullfont!
+Missing character: There is no ت ("62A) in font nullfont!
+Missing character: There is no و ("648) in font nullfont!
+Missing character: There is no ا ("627) in font nullfont!
+Missing character: There is no ن ("646) in font nullfont!
+Missing character: There is no د ("62F) in font nullfont!
+Missing character: There is no ی ("6CC) in font nullfont!
+Missing character: There is no ک ("6A9) in font nullfont!
+Missing character: There is no خ ("62E) in font nullfont!
+Missing character: There is no د ("62F) in font nullfont!
+Missing character: There is no ج ("62C) in font nullfont!
+Missing character: There is no د ("62F) in font nullfont!
+Missing character: There is no ا ("627) in font nullfont!
+Missing character: There is no ک ("6A9) in font nullfont!
+Missing character: There is no ن ("646) in font nullfont!
+Missing character: There is no ن ("646) in font nullfont!
+Missing character: There is no د ("62F) in font nullfont!
+Missing character: There is no ه ("647) in font nullfont!
+Missing character: There is no د ("62F) in font nullfont!
+Missing character: There is no ر ("631) in font nullfont!
+Missing character: There is no ص ("635) in font nullfont!
+Missing character: There is no ف ("641) in font nullfont!
+Missing character: There is no ح ("62D) in font nullfont!
+Missing character: There is no ه ("647) in font nullfont!
+Missing character: There is no ر ("631) in font nullfont!
+Missing character: There is no س ("633) in font nullfont!
+Missing character: There is no م ("645) in font nullfont!
+Missing character: There is no ک ("6A9) in font nullfont!
+Missing character: There is no ن ("646) in font nullfont!
+Missing character: There is no ی ("6CC) in font nullfont!
+Missing character: There is no د ("62F) in font nullfont!
+Missing character: There is no . ("2E) in font nullfont!
+Missing character: There is no د ("62F) in font nullfont!
+Missing character: There is no ر ("631) in font nullfont!
+Missing character: There is no ا ("627) in font nullfont!
+Missing character: There is no ی ("6CC) in font nullfont!
+Missing character: There is no ن ("646) in font nullfont!
+Missing character: There is no م ("645) in font nullfont!
+Missing character: There is no ث ("62B) in font nullfont!
+Missing character: There is no ا ("627) in font nullfont!
+Missing character: There is no ل ("644) in font nullfont!
+Missing character: There is no ، ("60C) in font nullfont!
+Missing character: There is no ب ("628) in font nullfont!
+Missing character: There is no ر ("631) in font nullfont!
+Missing character: There is no ا ("627) in font nullfont!
+Missing character: There is no ی ("6CC) in font nullfont!
+Missing character: There is no ج ("62C) in font nullfont!
+Missing character: There is no د ("62F) in font nullfont!
+Missing character: There is no ا ("627) in font nullfont!
+Missing character: There is no ک ("6A9) in font nullfont!
+Missing character: There is no ر ("631) in font nullfont!
+Missing character: There is no د ("62F) in font nullfont!
+Missing character: There is no ن ("646) in font nullfont!
+Missing character: There is no ا ("627) in font nullfont!
+Missing character: There is no ی ("6CC) in font nullfont!
+Missing character: There is no ن ("646) in font nullfont!
+Missing character: There is no د ("62F) in font nullfont!
+Missing character: There is no و ("648) in font nullfont!
+Missing character: There is no ک ("6A9) in font nullfont!
+Missing character: There is no ل ("644) in font nullfont!
+Missing character: There is no ا ("627) in font nullfont!
+Missing character: There is no س ("633) in font nullfont!
+Missing character: There is no ب ("628) in font nullfont!
+Missing character: There is no ه ("647) in font nullfont!
+Missing character: There is no ۳ ("6F3) in font nullfont!
+Missing character: There is no خ ("62E) in font nullfont!
+Missing character: There is no ط ("637) in font nullfont!
+Missing character: There is no ن ("646) in font nullfont!
+Missing character: There is no ی ("6CC) in font nullfont!
+Missing character: There is no ا ("627) in font nullfont!
+Missing character: There is no ز ("632) in font nullfont!
+Missing character: There is no د ("62F) in font nullfont!
+Missing character: There is no ا ("627) in font nullfont!
+Missing character: There is no ر ("631) in font nullfont!
+Missing character: There is no ی ("6CC) in font nullfont!
+Missing character: There is no م ("645) in font nullfont!
+Missing character: There is no . ("2E) in font nullfont!
+Missing character: There is no پ ("67E) in font nullfont!
+Missing character: There is no س ("633) in font nullfont!
+Missing character: There is no د ("62F) in font nullfont!
+Missing character: There is no ا ("627) in font nullfont!
+Missing character: There is no د ("62F) in font nullfont!
+Missing character: There is no ه ("647) in font nullfont!
+Missing character: There is no ‌ ("200C) in font nullfont!
+Missing character: There is no ه ("647) in font nullfont!
+Missing character: There is no ا ("627) in font nullfont!
+Missing character: There is no ی ("6CC) in font nullfont!
+Missing character: There is no و ("648) in font nullfont!
+Missing character: There is no ر ("631) in font nullfont!
+Missing character: There is no و ("648) in font nullfont!
+Missing character: There is no د ("62F) in font nullfont!
+Missing character: There is no ی ("6CC) in font nullfont!
+Missing character: There is no م ("645) in font nullfont!
+Missing character: There is no س ("633) in font nullfont!
+Missing character: There is no ئ ("626) in font nullfont!
+Missing character: There is no ل ("644) in font nullfont!
+Missing character: There is no ه ("647) in font nullfont!
+Missing character: There is no ر ("631) in font nullfont!
+Missing character: There is no ا ("627) in font nullfont!
+Missing character: There is no ب ("628) in font nullfont!
+Missing character: There is no ه ("647) in font nullfont!
+Missing character: There is no ۳ ("6F3) in font nullfont!
+Missing character: There is no ب ("628) in font nullfont!
+Missing character: There is no خ ("62E) in font nullfont!
+Missing character: There is no ش ("634) in font nullfont!
+Missing character: There is no ج ("62C) in font nullfont!
+Missing character: There is no د ("62F) in font nullfont!
+Missing character: There is no ا ("627) in font nullfont!
+Missing character: There is no ‌ ("200C) in font nullfont!
+Missing character: There is no پ ("67E) in font nullfont!
+Missing character: There is no ذ ("630) in font nullfont!
+Missing character: There is no ی ("6CC) in font nullfont!
+Missing character: There is no ر ("631) in font nullfont!
+Missing character: There is no خ ("62E) in font nullfont!
+Missing character: There is no ط ("637) in font nullfont!
+Missing character: There is no ی ("6CC) in font nullfont!
+Missing character: There is no ت ("62A) in font nullfont!
+Missing character: There is no ق ("642) in font nullfont!
+Missing character: There is no س ("633) in font nullfont!
+Missing character: There is no ی ("6CC) in font nullfont!
+Missing character: There is no م ("645) in font nullfont!
+Missing character: There is no م ("645) in font nullfont!
+Missing character: There is no ی ("6CC) in font nullfont!
+Missing character: There is no ‌ ("200C) in font nullfont!
+Missing character: There is no ک ("6A9) in font nullfont!
+Missing character: There is no ن ("646) in font nullfont!
+Missing character: There is no ی ("6CC) in font nullfont!
+Missing character: There is no م ("645) in font nullfont!
+Missing character: There is no . ("2E) in font nullfont!
+Missing character: There is no « ("AB) in font nullfont!
+Missing character: There is no ش ("634) in font nullfont!
+Missing character: There is no ک ("6A9) in font nullfont!
+Missing character: There is no ل ("644) in font nullfont!
+! Undefined control sequence.
+<write> ... شکسته شده به سه بخش' on page \thepage 
+                                                  \space undefined\on@line .^^J
+l.126 .... «شکل \ref{داده های شکسته شده به سه بخش}
+                                                  » اکنون می‌توان همانند قسم...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Reference `داده های شکسته شده به سه بخش' on page  undefined on i
+nput line 126.
+
+Missing character: There is no » ("BB) in font nullfont!
+Missing character: There is no ا ("627) in font nullfont!
+Missing character: There is no ک ("6A9) in font nullfont!
+Missing character: There is no ن ("646) in font nullfont!
+Missing character: There is no و ("648) in font nullfont!
+Missing character: There is no ن ("646) in font nullfont!
+Missing character: There is no م ("645) in font nullfont!
+Missing character: There is no ی ("6CC) in font nullfont!
+Missing character: There is no ‌ ("200C) in font nullfont!
+Missing character: There is no ت ("62A) in font nullfont!
+Missing character: There is no و ("648) in font nullfont!
+Missing character: There is no ا ("627) in font nullfont!
+Missing character: There is no ن ("646) in font nullfont!
+Missing character: There is no ه ("647) in font nullfont!
+Missing character: There is no م ("645) in font nullfont!
+Missing character: There is no ا ("627) in font nullfont!
+Missing character: There is no ن ("646) in font nullfont!
+Missing character: There is no ن ("646) in font nullfont!
+Missing character: There is no د ("62F) in font nullfont!
+Missing character: There is no ق ("642) in font nullfont!
+Missing character: There is no س ("633) in font nullfont!
+Missing character: There is no م ("645) in font nullfont!
+Missing character: There is no ت ("62A) in font nullfont!
+Missing character: There is no ق ("642) in font nullfont!
+Missing character: There is no ب ("628) in font nullfont!
+Missing character: There is no ل ("644) in font nullfont!
+Missing character: There is no ، ("60C) in font nullfont!
+Missing character: There is no و ("648) in font nullfont!
+Missing character: There is no ز ("632) in font nullfont!
+Missing character: There is no ن ("646) in font nullfont!
+Missing character: There is no ه ("647) in font nullfont!
+Missing character: There is no ا ("627) in font nullfont!
+Missing character: There is no ر ("631) in font nullfont!
+Missing character: There is no ا ("627) in font nullfont!
+Missing character: There is no ب ("628) in font nullfont!
+Missing character: There is no ر ("631) in font nullfont!
+Missing character: There is no ا ("627) in font nullfont!
+Missing character: There is no ی ("6CC) in font nullfont!
+Missing character: There is no ه ("647) in font nullfont!
+Missing character: There is no ر ("631) in font nullfont!
+Missing character: There is no س ("633) in font nullfont!
+Missing character: There is no ه ("647) in font nullfont!
+Missing character: There is no ز ("632) in font nullfont!
+Missing character: There is no ی ("6CC) in font nullfont!
+Missing character: There is no ر ("631) in font nullfont!
+Missing character: There is no ‌ ("200C) in font nullfont!
+Missing character: There is no م ("645) in font nullfont!
+Missing character: There is no س ("633) in font nullfont!
+Missing character: There is no ئ ("626) in font nullfont!
+Missing character: There is no ل ("644) in font nullfont!
+Missing character: There is no ه ("647) in font nullfont!
+Missing character: There is no ب ("628) in font nullfont!
+Missing character: There is no د ("62F) in font nullfont!
+Missing character: There is no س ("633) in font nullfont!
+Missing character: There is no ت ("62A) in font nullfont!
+Missing character: There is no آ ("622) in font nullfont!
+Missing character: There is no و ("648) in font nullfont!
+Missing character: There is no ر ("631) in font nullfont!
+Missing character: There is no د ("62F) in font nullfont!
+Missing character: There is no . ("2E) in font nullfont!
+Missing character: There is no د ("62F) in font nullfont!
+Missing character: There is no ر ("631) in font nullfont!
+Missing character: There is no ا ("627) in font nullfont!
+Missing character: There is no ی ("6CC) in font nullfont!
+Missing character: There is no ن ("646) in font nullfont!
+Missing character: There is no ق ("642) in font nullfont!
+Missing character: There is no س ("633) in font nullfont!
+Missing character: There is no م ("645) in font nullfont!
+Missing character: There is no ت ("62A) in font nullfont!
+Missing character: There is no س ("633) in font nullfont!
+Missing character: There is no ا ("627) in font nullfont!
+Missing character: There is no خ ("62E) in font nullfont!
+Missing character: There is no ت ("62A) in font nullfont!
+Missing character: There is no ا ("627) in font nullfont!
+Missing character: There is no ر ("631) in font nullfont!
+Missing character: There is no و ("648) in font nullfont!
+Missing character: There is no م ("645) in font nullfont!
+Missing character: There is no ع ("639) in font nullfont!
+Missing character: There is no م ("645) in font nullfont!
+Missing character: There is no ا ("627) in font nullfont!
+Missing character: There is no ر ("631) in font nullfont!
+Missing character: There is no ی ("6CC) in font nullfont!
+Missing character: There is no ش ("634) in font nullfont!
+Missing character: There is no ب ("628) in font nullfont!
+Missing character: There is no ک ("6A9) in font nullfont!
+Missing character: There is no ه ("647) in font nullfont!
+Missing character: There is no ه ("647) in font nullfont!
+Missing character: There is no م ("645) in font nullfont!
+Missing character: There is no ا ("627) in font nullfont!
+Missing character: There is no ن ("646) in font nullfont!
+Missing character: There is no س ("633) in font nullfont!
+Missing character: There is no ا ("627) in font nullfont!
+Missing character: There is no خ ("62E) in font nullfont!
+Missing character: There is no ت ("62A) in font nullfont!
+Missing character: There is no ا ("627) in font nullfont!
+Missing character: There is no ر ("631) in font nullfont!
+Missing character: There is no ق ("642) in font nullfont!
+Missing character: There is no س ("633) in font nullfont!
+Missing character: There is no م ("645) in font nullfont!
+Missing character: There is no ت ("62A) in font nullfont!
+! Undefined control sequence.
+l.126 ...ساختار و معماری شبکه همان ساختار قسمت \lr
+                                                  {a-1} است. «شکل \ref{معمار...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no a ("61) in font nullfont!
+Missing character: There is no - ("2D) in font nullfont!
+Missing character: There is no 1 ("31) in font nullfont!
+Missing character: There is no ا ("627) in font nullfont!
+Missing character: There is no س ("633) in font nullfont!
+Missing character: There is no ت ("62A) in font nullfont!
+Missing character: There is no . ("2E) in font nullfont!
+Missing character: There is no « ("AB) in font nullfont!
+Missing character: There is no ش ("634) in font nullfont!
+Missing character: There is no ک ("6A9) in font nullfont!
+Missing character: There is no ل ("644) in font nullfont!
+! Undefined control sequence.
+<write> ...بکه پرسپترون تک لایه' on page \thepage 
+                                                  \space undefined\on@line .^^J
+l.126 .... «شکل \ref{معماری شبکه پرسپترون تک لایه}
+                                                  »
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Reference `معماری شبکه پرسپترون تک لایه' on page  undefined on i
+nput line 126.
+
+Missing character: There is no » ("BB) in font nullfont!
+
+Overfull \hbox (14.0pt too wide) in paragraph at lines 125--127
+\TU/lmr/bx/n/10 شکستن
+ []
+
+
+Overfull \hbox (14.0pt too wide) in paragraph at lines 125--127
+\TU/lmr/bx/n/10 مسئله
+ []
+
+
+Overfull \hbox (5.6pt too wide) in paragraph at lines 125--127
+\TU/lmr/bx/n/10 به
+ []
+
+
+Overfull \hbox (2.8pt too wide) in paragraph at lines 125--127
+\TU/lmr/bx/n/10 ۳
+ []
+
+
+Overfull \hbox (22.4pt too wide) in paragraph at lines 125--127
+\TU/lmr/bx/n/10 زیرمسئله
+ []
+
+
+Overfull \hbox (8.4pt too wide) in paragraph at lines 125--127
+\TU/lmr/bx/n/10 خطی 
+ []
+
+
+Overfull \hbox (10.86pt too wide) in paragraph at lines 125--127
+[]
+ []
+
+
+Overfull \hbox (10.86pt too wide) in paragraph at lines 125--127
+[] 
  []
 
 
@@ -4158,25 +4825,1293 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.163 \end{qsolve}
-                  
+l.130 ^^I\end{qsolve}
+                     
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-)
-! Emergency stop.
-<*> Q1.tex
-          
-*** (job aborted, no legal \end found)
 
- 
+! LaTeX Error: Environment qsolve undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.134 ^^I\begin{qsolve}
+                       
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 135--135
+[] 
+ []
+
+! Undefined control sequence.
+l.136 ^^I^^I^^I\includegraphics
+                               *[width=0.5\linewidth]{pics/img3.pdf}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no * ("2A) in font nullfont!
+Missing character: There is no [ ("5B) in font nullfont!
+Missing character: There is no w ("77) in font nullfont!
+Missing character: There is no i ("69) in font nullfont!
+Missing character: There is no d ("64) in font nullfont!
+Missing character: There is no t ("74) in font nullfont!
+Missing character: There is no h ("68) in font nullfont!
+Missing character: There is no = ("3D) in font nullfont!
+Missing character: There is no 0 ("30) in font nullfont!
+Missing character: There is no . ("2E) in font nullfont!
+Missing character: There is no 5 ("35) in font nullfont!
+! Missing number, treated as zero.
+<to be read again> 
+                   ]
+l.136 ...^^I\includegraphics*[width=0.5\linewidth]
+                                                  {pics/img3.pdf}
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   ]
+l.136 ...^^I\includegraphics*[width=0.5\linewidth]
+                                                  {pics/img3.pdf}
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+Missing character: There is no ] ("5D) in font nullfont!
+Missing character: There is no p ("70) in font nullfont!
+Missing character: There is no i ("69) in font nullfont!
+Missing character: There is no c ("63) in font nullfont!
+Missing character: There is no s ("73) in font nullfont!
+Missing character: There is no / ("2F) in font nullfont!
+Missing character: There is no i ("69) in font nullfont!
+Missing character: There is no m ("6D) in font nullfont!
+Missing character: There is no g ("67) in font nullfont!
+Missing character: There is no 3 ("33) in font nullfont!
+Missing character: There is no . ("2E) in font nullfont!
+Missing character: There is no p ("70) in font nullfont!
+Missing character: There is no d ("64) in font nullfont!
+Missing character: There is no f ("66) in font nullfont!
+! Undefined control sequence.
+l.137 ^^I^^I^^I\captionof
+                         {figure}{معماری شبکه ۳ لایه پیشنهادی}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no f ("66) in font nullfont!
+Missing character: There is no i ("69) in font nullfont!
+Missing character: There is no g ("67) in font nullfont!
+Missing character: There is no u ("75) in font nullfont!
+Missing character: There is no r ("72) in font nullfont!
+Missing character: There is no e ("65) in font nullfont!
+Missing character: There is no م ("645) in font nullfont!
+Missing character: There is no ع ("639) in font nullfont!
+Missing character: There is no م ("645) in font nullfont!
+Missing character: There is no ا ("627) in font nullfont!
+Missing character: There is no ر ("631) in font nullfont!
+Missing character: There is no ی ("6CC) in font nullfont!
+Missing character: There is no ش ("634) in font nullfont!
+Missing character: There is no ب ("628) in font nullfont!
+Missing character: There is no ک ("6A9) in font nullfont!
+Missing character: There is no ه ("647) in font nullfont!
+Missing character: There is no ۳ ("6F3) in font nullfont!
+Missing character: There is no ل ("644) in font nullfont!
+Missing character: There is no ا ("627) in font nullfont!
+Missing character: There is no ی ("6CC) in font nullfont!
+Missing character: There is no ه ("647) in font nullfont!
+Missing character: There is no پ ("67E) in font nullfont!
+Missing character: There is no ی ("6CC) in font nullfont!
+Missing character: There is no ش ("634) in font nullfont!
+Missing character: There is no ن ("646) in font nullfont!
+Missing character: There is no ه ("647) in font nullfont!
+Missing character: There is no ا ("627) in font nullfont!
+Missing character: There is no د ("62F) in font nullfont!
+Missing character: There is no ی ("6CC) in font nullfont!
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 141--141
+[] 
+ []
+
+! Undefined control sequence.
+l.142 ^^I^^I^^I\includegraphics
+                               *[width=1\linewidth]{pics/img4.pdf}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no * ("2A) in font nullfont!
+Missing character: There is no [ ("5B) in font nullfont!
+Missing character: There is no w ("77) in font nullfont!
+Missing character: There is no i ("69) in font nullfont!
+Missing character: There is no d ("64) in font nullfont!
+Missing character: There is no t ("74) in font nullfont!
+Missing character: There is no h ("68) in font nullfont!
+Missing character: There is no = ("3D) in font nullfont!
+Missing character: There is no 1 ("31) in font nullfont!
+! Missing number, treated as zero.
+<to be read again> 
+                   ]
+l.142 ...^I^^I\includegraphics*[width=1\linewidth]
+                                                  {pics/img4.pdf}
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   ]
+l.142 ...^I^^I\includegraphics*[width=1\linewidth]
+                                                  {pics/img4.pdf}
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+Missing character: There is no ] ("5D) in font nullfont!
+Missing character: There is no p ("70) in font nullfont!
+Missing character: There is no i ("69) in font nullfont!
+Missing character: There is no c ("63) in font nullfont!
+Missing character: There is no s ("73) in font nullfont!
+Missing character: There is no / ("2F) in font nullfont!
+Missing character: There is no i ("69) in font nullfont!
+Missing character: There is no m ("6D) in font nullfont!
+Missing character: There is no g ("67) in font nullfont!
+Missing character: There is no 4 ("34) in font nullfont!
+Missing character: There is no . ("2E) in font nullfont!
+Missing character: There is no p ("70) in font nullfont!
+Missing character: There is no d ("64) in font nullfont!
+Missing character: There is no f ("66) in font nullfont!
+! Undefined control sequence.
+l.143 ^^I^^I^^I\captionof
+                         {figure}{داده های شکسته شده به سه بخش}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no f ("66) in font nullfont!
+Missing character: There is no i ("69) in font nullfont!
+Missing character: There is no g ("67) in font nullfont!
+Missing character: There is no u ("75) in font nullfont!
+Missing character: There is no r ("72) in font nullfont!
+Missing character: There is no e ("65) in font nullfont!
+Missing character: There is no د ("62F) in font nullfont!
+Missing character: There is no ا ("627) in font nullfont!
+Missing character: There is no د ("62F) in font nullfont!
+Missing character: There is no ه ("647) in font nullfont!
+Missing character: There is no ه ("647) in font nullfont!
+Missing character: There is no ا ("627) in font nullfont!
+Missing character: There is no ی ("6CC) in font nullfont!
+Missing character: There is no ش ("634) in font nullfont!
+Missing character: There is no ک ("6A9) in font nullfont!
+Missing character: There is no س ("633) in font nullfont!
+Missing character: There is no ت ("62A) in font nullfont!
+Missing character: There is no ه ("647) in font nullfont!
+Missing character: There is no ش ("634) in font nullfont!
+Missing character: There is no د ("62F) in font nullfont!
+Missing character: There is no ه ("647) in font nullfont!
+Missing character: There is no ب ("628) in font nullfont!
+Missing character: There is no ه ("647) in font nullfont!
+Missing character: There is no س ("633) in font nullfont!
+Missing character: There is no ه ("647) in font nullfont!
+Missing character: There is no ب ("628) in font nullfont!
+Missing character: There is no خ ("62E) in font nullfont!
+Missing character: There is no ش ("634) in font nullfont!
+Missing character: There is no ز ("632) in font nullfont!
+Missing character: There is no ی ("6CC) in font nullfont!
+Missing character: There is no ر ("631) in font nullfont!
+Missing character: There is no م ("645) in font nullfont!
+Missing character: There is no س ("633) in font nullfont!
+Missing character: There is no ئ ("626) in font nullfont!
+Missing character: There is no ل ("644) in font nullfont!
+Missing character: There is no ه ("647) in font nullfont!
+Missing character: There is no ش ("634) in font nullfont!
+Missing character: There is no م ("645) in font nullfont!
+Missing character: There is no ا ("627) in font nullfont!
+Missing character: There is no ر ("631) in font nullfont!
+Missing character: There is no ه ("647) in font nullfont!
+Missing character: There is no ۱ ("6F1) in font nullfont!
+Missing character: There is no د ("62F) in font nullfont!
+Missing character: There is no ر ("631) in font nullfont!
+Missing character: There is no ق ("642) in font nullfont!
+Missing character: There is no س ("633) in font nullfont!
+Missing character: There is no م ("645) in font nullfont!
+Missing character: There is no ت ("62A) in font nullfont!
+Missing character: There is no ق ("642) in font nullfont!
+Missing character: There is no ب ("628) in font nullfont!
+Missing character: There is no ل ("644) in font nullfont!
+Missing character: There is no ح ("62D) in font nullfont!
+Missing character: There is no ل ("644) in font nullfont!
+Missing character: There is no ش ("634) in font nullfont!
+Missing character: There is no د ("62F) in font nullfont!
+Missing character: There is no ه ("647) in font nullfont!
+Missing character: There is no ا ("627) in font nullfont!
+Missing character: There is no س ("633) in font nullfont!
+Missing character: There is no ت ("62A) in font nullfont!
+Missing character: There is no و ("648) in font nullfont!
+Missing character: There is no و ("648) in font nullfont!
+Missing character: There is no ز ("632) in font nullfont!
+Missing character: There is no ن ("646) in font nullfont!
+Missing character: There is no ه ("647) in font nullfont!
+Missing character: There is no ا ("627) in font nullfont!
+Missing character: There is no ی ("6CC) in font nullfont!
+Missing character: There is no آ ("622) in font nullfont!
+Missing character: There is no ن ("646) in font nullfont!
+Missing character: There is no ب ("628) in font nullfont!
+Missing character: There is no ه ("647) in font nullfont!
+Missing character: There is no ص ("635) in font nullfont!
+Missing character: There is no و ("648) in font nullfont!
+Missing character: There is no ر ("631) in font nullfont!
+Missing character: There is no ت ("62A) in font nullfont!
+Missing character: There is no ز ("632) in font nullfont!
+Missing character: There is no ی ("6CC) in font nullfont!
+Missing character: There is no ر ("631) in font nullfont!
+Missing character: There is no ب ("628) in font nullfont!
+Missing character: There is no د ("62F) in font nullfont!
+Missing character: There is no س ("633) in font nullfont!
+Missing character: There is no ت ("62A) in font nullfont!
+Missing character: There is no آ ("622) in font nullfont!
+Missing character: There is no و ("648) in font nullfont!
+Missing character: There is no ر ("631) in font nullfont!
+Missing character: There is no د ("62F) in font nullfont!
+Missing character: There is no ه ("647) in font nullfont!
+Missing character: There is no ش ("634) in font nullfont!
+Missing character: There is no د ("62F) in font nullfont!
+Missing character: There is no : ("3A) in font nullfont!
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 148--149
+[]
+ []
+
+
+Overfull \hbox (131.60239pt too wide) in alignment at lines 149--151
+ [][][] []
+ []
+
+Missing character: There is no ب ("628) in font nullfont!
+Missing character: There is no ر ("631) in font nullfont!
+Missing character: There is no ا ("627) in font nullfont!
+Missing character: There is no ی ("6CC) in font nullfont!
+Missing character: There is no د ("62F) in font nullfont!
+Missing character: There is no و ("648) in font nullfont!
+Missing character: There is no ز ("632) in font nullfont!
+Missing character: There is no ی ("6CC) in font nullfont!
+Missing character: There is no ر ("631) in font nullfont!
+Missing character: There is no م ("645) in font nullfont!
+Missing character: There is no س ("633) in font nullfont!
+Missing character: There is no ئ ("626) in font nullfont!
+Missing character: There is no ل ("644) in font nullfont!
+Missing character: There is no ه ("647) in font nullfont!
+Missing character: There is no د ("62F) in font nullfont!
+Missing character: There is no ی ("6CC) in font nullfont!
+Missing character: There is no گ ("6AF) in font nullfont!
+Missing character: There is no ر ("631) in font nullfont!
+Missing character: There is no ه ("647) in font nullfont!
+Missing character: There is no م ("645) in font nullfont!
+Missing character: There is no ، ("60C) in font nullfont!
+Missing character: There is no ه ("647) in font nullfont!
+Missing character: There is no م ("645) in font nullfont!
+Missing character: There is no ا ("627) in font nullfont!
+Missing character: There is no ن ("646) in font nullfont!
+Missing character: There is no ن ("646) in font nullfont!
+Missing character: There is no د ("62F) in font nullfont!
+Missing character: There is no ق ("642) in font nullfont!
+Missing character: There is no س ("633) in font nullfont!
+Missing character: There is no م ("645) in font nullfont!
+Missing character: There is no ت ("62A) in font nullfont!
+Missing character: There is no ق ("642) in font nullfont!
+Missing character: There is no ب ("628) in font nullfont!
+Missing character: There is no ل ("644) in font nullfont!
+Missing character: There is no و ("648) in font nullfont!
+Missing character: There is no ز ("632) in font nullfont!
+Missing character: There is no ن ("646) in font nullfont!
+Missing character: There is no ‌ ("200C) in font nullfont!
+Missing character: There is no ه ("647) in font nullfont!
+Missing character: There is no ا ("627) in font nullfont!
+Missing character: There is no ر ("631) in font nullfont!
+Missing character: There is no ا ("627) in font nullfont!
+Missing character: There is no ب ("628) in font nullfont!
+Missing character: There is no د ("62F) in font nullfont!
+Missing character: There is no س ("633) in font nullfont!
+Missing character: There is no ت ("62A) in font nullfont!
+Missing character: There is no م ("645) in font nullfont!
+Missing character: There is no ی ("6CC) in font nullfont!
+Missing character: There is no ‌ ("200C) in font nullfont!
+Missing character: There is no ا ("627) in font nullfont!
+Missing character: There is no و ("648) in font nullfont!
+Missing character: There is no ر ("631) in font nullfont!
+Missing character: There is no ی ("6CC) in font nullfont!
+Missing character: There is no م ("645) in font nullfont!
+Missing character: There is no . ("2E) in font nullfont!
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 153--154
+[]
+ []
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 155--155
+[] 
+ []
+
+
+! LaTeX Error: Environment bmatrix undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.156 ^^I^^I^^IP_1=\begin{bmatrix}
+                                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Extra }, or forgotten \endgroup.
+<template> }
+            $\@eqnsel \endtemplate 
+l.158 ^^I^^I^^I^^I0
+                   
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing \endgroup inserted.
+<inserted text> 
+                \endgroup 
+l.158 ^^I^^I^^I^^I0
+                   
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.158 ^^I^^I^^I^^I0
+                   
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+! LaTeX Error: \begin{eqnarray*} on input line 155 ended by \end{bmatrix}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.159 ^^I^^I^^I\end{bmatrix}
+                            
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.159 ^^I^^I^^I\end{bmatrix}
+                            
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.159 ^^I^^I^^I\end{bmatrix}
+                            
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.159 ^^I^^I^^I\end{bmatrix}
+                            
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing \cr inserted.
+<inserted text> 
+                \cr 
+l.159 ^^I^^I^^I\end{bmatrix}
+                            
+I'm guessing that you meant to end an alignment here.
+
+! Missing { inserted.
+<inserted text> 
+                {
+l.159 ^^I^^I^^I\end{bmatrix}
+                            
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.159 ^^I^^I^^I\end{bmatrix}
+                            
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (37.0173pt too wide) in alignment at lines 155--159
+ [][][] []
+ []
+
+! Missing $$ inserted.
+<to be read again> 
+                   \endgroup 
+l.159 ^^I^^I^^I\end{bmatrix}
+                            
+Displays can use special alignments (like \eqalignno)
+only if nothing but the alignment itself is between $$'s.
+
+Missing character: There is no P ("50) in font nullfont!
+! Missing $ inserted.
+<inserted text> 
+                $
+l.160 ^^I^^I^^IP_
+                 2&=&\begin{bmatrix}
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Misplaced alignment tab character &.
+l.160 ^^I^^I^^IP_2&
+                   =&\begin{bmatrix}
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.160 ^^I^^I^^IP_2&=&
+                     \begin{bmatrix}
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+
+! LaTeX Error: Environment bmatrix undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.160 ^^I^^I^^IP_2&=&\begin{bmatrix}
+                                    
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: \begin{document} ended by \end{bmatrix}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.163 ^^I^^I^^I\end{bmatrix}
+                            
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Undefined control sequence.
+l.164 ...{-1.5-2.5}{-1.7-0}=\frac{-4}{-1.7}=\boxed
+                                                  {2.35}\\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Misplaced alignment tab character &.
+l.165 ^^I^^I^^Iy-0&
+                   =&2.35(x-2.5)\rightarrow \boxed{y=2.35x-5.88}\\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.165 ^^I^^I^^Iy-0&=&
+                     2.35(x-2.5)\rightarrow \boxed{y=2.35x-5.88}\\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Undefined control sequence.
+l.165 ^^I^^I^^Iy-0&=&2.35(x-2.5)\rightarrow \boxed
+                                                  {y=2.35x-5.88}\\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Misplaced alignment tab character &.
+l.166 ^^I^^I^^I\rightarrow x_1&
+                               =&\frac{-w_2}{w_1}x_2-\frac{w_0}{w_1} \righta...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.166 ^^I^^I^^I\rightarrow x_1&=&
+                                 \frac{-w_2}{w_1}x_2-\frac{w_0}{w_1} \righta...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.167 ^^I^^I^^I^^I\frac
+                       {-w_2}{w_1}=2.35 \rightarrow w_2=-2.35w_1\\
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing \cr inserted.
+<inserted text> 
+                \cr 
+l.167 ^^I^^I^^I^^I\frac
+                       {-w_2}{w_1}=2.35 \rightarrow w_2=-2.35w_1\\
+I'm guessing that you meant to end an alignment here.
+
+! Misplaced \cr.
+<inserted text> \cr 
+                    
+l.167 ^^I^^I^^I^^I\frac
+                       {-w_2}{w_1}=2.35 \rightarrow w_2=-2.35w_1\\
+I can't figure out why you would want to use a tab mark
+or \cr or \span just now. If something like a right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Missing \cr inserted.
+<inserted text> 
+                \cr 
+l.167 ^^I^^I^^I^^I\frac
+                       {-w_2}{w_1}=2.35 \rightarrow w_2=-2.35w_1\\
+I'm guessing that you meant to end an alignment here.
+
+! Misplaced \cr.
+<inserted text> \cr 
+                    
+l.167 ^^I^^I^^I^^I\frac
+                       {-w_2}{w_1}=2.35 \rightarrow w_2=-2.35w_1\\
+I can't figure out why you would want to use a tab mark
+or \cr or \span just now. If something like a right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Missing \cr inserted.
+<inserted text> 
+                \cr 
+l.167 ^^I^^I^^I^^I\frac
+                       {-w_2}{w_1}=2.35 \rightarrow w_2=-2.35w_1\\
+I'm guessing that you meant to end an alignment here.
+
+! Misplaced \cr.
+<inserted text> \cr 
+                    
+l.167 ^^I^^I^^I^^I\frac
+                       {-w_2}{w_1}=2.35 \rightarrow w_2=-2.35w_1\\
+I can't figure out why you would want to use a tab mark
+or \cr or \span just now. If something like a right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Missing \cr inserted.
+<inserted text> 
+                \cr 
+l.167 ^^I^^I^^I^^I\frac
+                       {-w_2}{w_1}=2.35 \rightarrow w_2=-2.35w_1\\
+I'm guessing that you meant to end an alignment here.
+
+! Misplaced \cr.
+<inserted text> \cr 
+                    
+l.167 ^^I^^I^^I^^I\frac
+                       {-w_2}{w_1}=2.35 \rightarrow w_2=-2.35w_1\\
+I can't figure out why you would want to use a tab mark
+or \cr or \span just now. If something like a right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Missing \cr inserted.
+<inserted text> 
+                \cr 
+l.167 ^^I^^I^^I^^I\frac
+                       {-w_2}{w_1}=2.35 \rightarrow w_2=-2.35w_1\\
+I'm guessing that you meant to end an alignment here.
+
+! Misplaced \cr.
+<inserted text> \cr 
+                    
+l.167 ^^I^^I^^I^^I\frac
+                       {-w_2}{w_1}=2.35 \rightarrow w_2=-2.35w_1\\
+I can't figure out why you would want to use a tab mark
+or \cr or \span just now. If something like a right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Missing \cr inserted.
+<inserted text> 
+                \cr 
+l.167 ^^I^^I^^I^^I\frac
+                       {-w_2}{w_1}=2.35 \rightarrow w_2=-2.35w_1\\
+I'm guessing that you meant to end an alignment here.
+
+! Misplaced \cr.
+<inserted text> \cr 
+                    
+l.167 ^^I^^I^^I^^I\frac
+                       {-w_2}{w_1}=2.35 \rightarrow w_2=-2.35w_1\\
+I can't figure out why you would want to use a tab mark
+or \cr or \span just now. If something like a right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Missing \cr inserted.
+<inserted text> 
+                \cr 
+l.167 ^^I^^I^^I^^I\frac
+                       {-w_2}{w_1}=2.35 \rightarrow w_2=-2.35w_1\\
+I'm guessing that you meant to end an alignment here.
+
+! Misplaced \cr.
+<inserted text> \cr 
+                    
+l.167 ^^I^^I^^I^^I\frac
+                       {-w_2}{w_1}=2.35 \rightarrow w_2=-2.35w_1\\
+I can't figure out why you would want to use a tab mark
+or \cr or \span just now. If something like a right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Missing \cr inserted.
+<inserted text> 
+                \cr 
+l.167 ^^I^^I^^I^^I\frac
+                       {-w_2}{w_1}=2.35 \rightarrow w_2=-2.35w_1\\
+I'm guessing that you meant to end an alignment here.
+
+! Misplaced \cr.
+<inserted text> \cr 
+                    
+l.167 ^^I^^I^^I^^I\frac
+                       {-w_2}{w_1}=2.35 \rightarrow w_2=-2.35w_1\\
+I can't figure out why you would want to use a tab mark
+or \cr or \span just now. If something like a right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Missing \cr inserted.
+<inserted text> 
+                \cr 
+l.167 ^^I^^I^^I^^I\frac
+                       {-w_2}{w_1}=2.35 \rightarrow w_2=-2.35w_1\\
+I'm guessing that you meant to end an alignment here.
+
+! Misplaced \cr.
+<inserted text> \cr 
+                    
+l.167 ^^I^^I^^I^^I\frac
+                       {-w_2}{w_1}=2.35 \rightarrow w_2=-2.35w_1\\
+I can't figure out why you would want to use a tab mark
+or \cr or \span just now. If something like a right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Missing \cr inserted.
+<inserted text> 
+                \cr 
+l.167 ^^I^^I^^I^^I\frac
+                       {-w_2}{w_1}=2.35 \rightarrow w_2=-2.35w_1\\
+I'm guessing that you meant to end an alignment here.
+
+! Misplaced \cr.
+<inserted text> \cr 
+                    
+l.167 ^^I^^I^^I^^I\frac
+                       {-w_2}{w_1}=2.35 \rightarrow w_2=-2.35w_1\\
+I can't figure out why you would want to use a tab mark
+or \cr or \span just now. If something like a right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Missing \cr inserted.
+<inserted text> 
+                \cr 
+l.167 ^^I^^I^^I^^I\frac
+                       {-w_2}{w_1}=2.35 \rightarrow w_2=-2.35w_1\\
+I'm guessing that you meant to end an alignment here.
+
+! Misplaced \cr.
+<inserted text> \cr 
+                    
+l.167 ^^I^^I^^I^^I\frac
+                       {-w_2}{w_1}=2.35 \rightarrow w_2=-2.35w_1\\
+I can't figure out why you would want to use a tab mark
+or \cr or \span just now. If something like a right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Missing \cr inserted.
+<inserted text> 
+                \cr 
+l.167 ^^I^^I^^I^^I\frac
+                       {-w_2}{w_1}=2.35 \rightarrow w_2=-2.35w_1\\
+I'm guessing that you meant to end an alignment here.
+
+! Misplaced \cr.
+<inserted text> \cr 
+                    
+l.167 ^^I^^I^^I^^I\frac
+                       {-w_2}{w_1}=2.35 \rightarrow w_2=-2.35w_1\\
+I can't figure out why you would want to use a tab mark
+or \cr or \span just now. If something like a right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Missing \cr inserted.
+<inserted text> 
+                \cr 
+l.167 ^^I^^I^^I^^I\frac
+                       {-w_2}{w_1}=2.35 \rightarrow w_2=-2.35w_1\\
+I'm guessing that you meant to end an alignment here.
+
+! Misplaced \cr.
+<inserted text> \cr 
+                    
+l.167 ^^I^^I^^I^^I\frac
+                       {-w_2}{w_1}=2.35 \rightarrow w_2=-2.35w_1\\
+I can't figure out why you would want to use a tab mark
+or \cr or \span just now. If something like a right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Missing \cr inserted.
+<inserted text> 
+                \cr 
+l.167 ^^I^^I^^I^^I\frac
+                       {-w_2}{w_1}=2.35 \rightarrow w_2=-2.35w_1\\
+I'm guessing that you meant to end an alignment here.
+
+! Misplaced \cr.
+<inserted text> \cr 
+                    
+l.167 ^^I^^I^^I^^I\frac
+                       {-w_2}{w_1}=2.35 \rightarrow w_2=-2.35w_1\\
+I can't figure out why you would want to use a tab mark
+or \cr or \span just now. If something like a right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Missing \cr inserted.
+<inserted text> 
+                \cr 
+l.167 ^^I^^I^^I^^I\frac
+                       {-w_2}{w_1}=2.35 \rightarrow w_2=-2.35w_1\\
+I'm guessing that you meant to end an alignment here.
+
+! Misplaced \cr.
+<inserted text> \cr 
+                    
+l.167 ^^I^^I^^I^^I\frac
+                       {-w_2}{w_1}=2.35 \rightarrow w_2=-2.35w_1\\
+I can't figure out why you would want to use a tab mark
+or \cr or \span just now. If something like a right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Missing \cr inserted.
+<inserted text> 
+                \cr 
+l.167 ^^I^^I^^I^^I\frac
+                       {-w_2}{w_1}=2.35 \rightarrow w_2=-2.35w_1\\
+I'm guessing that you meant to end an alignment here.
+
+! Misplaced \cr.
+<inserted text> \cr 
+                    
+l.167 ^^I^^I^^I^^I\frac
+                       {-w_2}{w_1}=2.35 \rightarrow w_2=-2.35w_1\\
+I can't figure out why you would want to use a tab mark
+or \cr or \span just now. If something like a right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Missing \cr inserted.
+<inserted text> 
+                \cr 
+l.167 ^^I^^I^^I^^I\frac
+                       {-w_2}{w_1}=2.35 \rightarrow w_2=-2.35w_1\\
+I'm guessing that you meant to end an alignment here.
+
+! Misplaced \cr.
+<inserted text> \cr 
+                    
+l.167 ^^I^^I^^I^^I\frac
+                       {-w_2}{w_1}=2.35 \rightarrow w_2=-2.35w_1\\
+I can't figure out why you would want to use a tab mark
+or \cr or \span just now. If something like a right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Missing \cr inserted.
+<inserted text> 
+                \cr 
+l.167 ^^I^^I^^I^^I\frac
+                       {-w_2}{w_1}=2.35 \rightarrow w_2=-2.35w_1\\
+I'm guessing that you meant to end an alignment here.
+
+! Misplaced \cr.
+<inserted text> \cr 
+                    
+l.167 ^^I^^I^^I^^I\frac
+                       {-w_2}{w_1}=2.35 \rightarrow w_2=-2.35w_1\\
+I can't figure out why you would want to use a tab mark
+or \cr or \span just now. If something like a right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Missing \cr inserted.
+<inserted text> 
+                \cr 
+l.167 ^^I^^I^^I^^I\frac
+                       {-w_2}{w_1}=2.35 \rightarrow w_2=-2.35w_1\\
+I'm guessing that you meant to end an alignment here.
+
+! Misplaced \cr.
+<inserted text> \cr 
+                    
+l.167 ^^I^^I^^I^^I\frac
+                       {-w_2}{w_1}=2.35 \rightarrow w_2=-2.35w_1\\
+I can't figure out why you would want to use a tab mark
+or \cr or \span just now. If something like a right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Missing \cr inserted.
+<inserted text> 
+                \cr 
+l.167 ^^I^^I^^I^^I\frac
+                       {-w_2}{w_1}=2.35 \rightarrow w_2=-2.35w_1\\
+I'm guessing that you meant to end an alignment here.
+
+! Misplaced \cr.
+<inserted text> \cr 
+                    
+l.167 ^^I^^I^^I^^I\frac
+                       {-w_2}{w_1}=2.35 \rightarrow w_2=-2.35w_1\\
+I can't figure out why you would want to use a tab mark
+or \cr or \span just now. If something like a right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Missing \cr inserted.
+<inserted text> 
+                \cr 
+l.167 ^^I^^I^^I^^I\frac
+                       {-w_2}{w_1}=2.35 \rightarrow w_2=-2.35w_1\\
+I'm guessing that you meant to end an alignment here.
+
+! Misplaced \cr.
+<inserted text> \cr 
+                    
+l.167 ^^I^^I^^I^^I\frac
+                       {-w_2}{w_1}=2.35 \rightarrow w_2=-2.35w_1\\
+I can't figure out why you would want to use a tab mark
+or \cr or \span just now. If something like a right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Missing \cr inserted.
+<inserted text> 
+                \cr 
+l.167 ^^I^^I^^I^^I\frac
+                       {-w_2}{w_1}=2.35 \rightarrow w_2=-2.35w_1\\
+I'm guessing that you meant to end an alignment here.
+
+! Misplaced \cr.
+<inserted text> \cr 
+                    
+l.167 ^^I^^I^^I^^I\frac
+                       {-w_2}{w_1}=2.35 \rightarrow w_2=-2.35w_1\\
+I can't figure out why you would want to use a tab mark
+or \cr or \span just now. If something like a right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Missing \cr inserted.
+<inserted text> 
+                \cr 
+l.167 ^^I^^I^^I^^I\frac
+                       {-w_2}{w_1}=2.35 \rightarrow w_2=-2.35w_1\\
+I'm guessing that you meant to end an alignment here.
+
+! Misplaced \cr.
+<inserted text> \cr 
+                    
+l.167 ^^I^^I^^I^^I\frac
+                       {-w_2}{w_1}=2.35 \rightarrow w_2=-2.35w_1\\
+I can't figure out why you would want to use a tab mark
+or \cr or \span just now. If something like a right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Missing \cr inserted.
+<inserted text> 
+                \cr 
+l.167 ^^I^^I^^I^^I\frac
+                       {-w_2}{w_1}=2.35 \rightarrow w_2=-2.35w_1\\
+I'm guessing that you meant to end an alignment here.
+
+! Misplaced \cr.
+<inserted text> \cr 
+                    
+l.167 ^^I^^I^^I^^I\frac
+                       {-w_2}{w_1}=2.35 \rightarrow w_2=-2.35w_1\\
+I can't figure out why you would want to use a tab mark
+or \cr or \span just now. If something like a right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Missing \cr inserted.
+<inserted text> 
+                \cr 
+l.167 ^^I^^I^^I^^I\frac
+                       {-w_2}{w_1}=2.35 \rightarrow w_2=-2.35w_1\\
+I'm guessing that you meant to end an alignment here.
+
+! Misplaced \cr.
+<inserted text> \cr 
+                    
+l.167 ^^I^^I^^I^^I\frac
+                       {-w_2}{w_1}=2.35 \rightarrow w_2=-2.35w_1\\
+I can't figure out why you would want to use a tab mark
+or \cr or \span just now. If something like a right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Missing \cr inserted.
+<inserted text> 
+                \cr 
+l.167 ^^I^^I^^I^^I\frac
+                       {-w_2}{w_1}=2.35 \rightarrow w_2=-2.35w_1\\
+I'm guessing that you meant to end an alignment here.
+
+! Misplaced \cr.
+<inserted text> \cr 
+                    
+l.167 ^^I^^I^^I^^I\frac
+                       {-w_2}{w_1}=2.35 \rightarrow w_2=-2.35w_1\\
+I can't figure out why you would want to use a tab mark
+or \cr or \span just now. If something like a right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Missing \cr inserted.
+<inserted text> 
+                \cr 
+l.167 ^^I^^I^^I^^I\frac
+                       {-w_2}{w_1}=2.35 \rightarrow w_2=-2.35w_1\\
+I'm guessing that you meant to end an alignment here.
+
+! Misplaced \cr.
+<inserted text> \cr 
+                    
+l.167 ^^I^^I^^I^^I\frac
+                       {-w_2}{w_1}=2.35 \rightarrow w_2=-2.35w_1\\
+I can't figure out why you would want to use a tab mark
+or \cr or \span just now. If something like a right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Missing \cr inserted.
+<inserted text> 
+                \cr 
+l.167 ^^I^^I^^I^^I\frac
+                       {-w_2}{w_1}=2.35 \rightarrow w_2=-2.35w_1\\
+I'm guessing that you meant to end an alignment here.
+
+! Misplaced \cr.
+<inserted text> \cr 
+                    
+l.167 ^^I^^I^^I^^I\frac
+                       {-w_2}{w_1}=2.35 \rightarrow w_2=-2.35w_1\\
+I can't figure out why you would want to use a tab mark
+or \cr or \span just now. If something like a right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Missing \cr inserted.
+<inserted text> 
+                \cr 
+l.167 ^^I^^I^^I^^I\frac
+                       {-w_2}{w_1}=2.35 \rightarrow w_2=-2.35w_1\\
+I'm guessing that you meant to end an alignment here.
+
+! Misplaced \cr.
+<inserted text> \cr 
+                    
+l.167 ^^I^^I^^I^^I\frac
+                       {-w_2}{w_1}=2.35 \rightarrow w_2=-2.35w_1\\
+I can't figure out why you would want to use a tab mark
+or \cr or \span just now. If something like a right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Missing \cr inserted.
+<inserted text> 
+                \cr 
+l.167 ^^I^^I^^I^^I\frac
+                       {-w_2}{w_1}=2.35 \rightarrow w_2=-2.35w_1\\
+I'm guessing that you meant to end an alignment here.
+
+! Misplaced \cr.
+<inserted text> \cr 
+                    
+l.167 ^^I^^I^^I^^I\frac
+                       {-w_2}{w_1}=2.35 \rightarrow w_2=-2.35w_1\\
+I can't figure out why you would want to use a tab mark
+or \cr or \span just now. If something like a right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Missing \cr inserted.
+<inserted text> 
+                \cr 
+l.167 ^^I^^I^^I^^I\frac
+                       {-w_2}{w_1}=2.35 \rightarrow w_2=-2.35w_1\\
+I'm guessing that you meant to end an alignment here.
+
+! Misplaced \cr.
+<inserted text> \cr 
+                    
+l.167 ^^I^^I^^I^^I\frac
+                       {-w_2}{w_1}=2.35 \rightarrow w_2=-2.35w_1\\
+I can't figure out why you would want to use a tab mark
+or \cr or \span just now. If something like a right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Missing \cr inserted.
+<inserted text> 
+                \cr 
+l.167 ^^I^^I^^I^^I\frac
+                       {-w_2}{w_1}=2.35 \rightarrow w_2=-2.35w_1\\
+I'm guessing that you meant to end an alignment here.
+
+! Misplaced \cr.
+<inserted text> \cr 
+                    
+l.167 ^^I^^I^^I^^I\frac
+                       {-w_2}{w_1}=2.35 \rightarrow w_2=-2.35w_1\\
+I can't figure out why you would want to use a tab mark
+or \cr or \span just now. If something like a right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Missing \cr inserted.
+<inserted text> 
+                \cr 
+l.167 ^^I^^I^^I^^I\frac
+                       {-w_2}{w_1}=2.35 \rightarrow w_2=-2.35w_1\\
+I'm guessing that you meant to end an alignment here.
+
+! Misplaced \cr.
+<inserted text> \cr 
+                    
+l.167 ^^I^^I^^I^^I\frac
+                       {-w_2}{w_1}=2.35 \rightarrow w_2=-2.35w_1\\
+I can't figure out why you would want to use a tab mark
+or \cr or \span just now. If something like a right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Missing \cr inserted.
+<inserted text> 
+                \cr 
+l.167 ^^I^^I^^I^^I\frac
+                       {-w_2}{w_1}=2.35 \rightarrow w_2=-2.35w_1\\
+I'm guessing that you meant to end an alignment here.
+
+! Misplaced \cr.
+<inserted text> \cr 
+                    
+l.167 ^^I^^I^^I^^I\frac
+                       {-w_2}{w_1}=2.35 \rightarrow w_2=-2.35w_1\\
+I can't figure out why you would want to use a tab mark
+or \cr or \span just now. If something like a right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Missing \cr inserted.
+<inserted text> 
+                \cr 
+l.167 ^^I^^I^^I^^I\frac
+                       {-w_2}{w_1}=2.35 \rightarrow w_2=-2.35w_1\\
+I'm guessing that you meant to end an alignment here.
+
+! Misplaced \cr.
+<inserted text> \cr 
+                    
+l.167 ^^I^^I^^I^^I\frac
+                       {-w_2}{w_1}=2.35 \rightarrow w_2=-2.35w_1\\
+I can't figure out why you would want to use a tab mark
+or \cr or \span just now. If something like a right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Missing \cr inserted.
+<inserted text> 
+                \cr 
+l.167 ^^I^^I^^I^^I\frac
+                       {-w_2}{w_1}=2.35 \rightarrow w_2=-2.35w_1\\
+I'm guessing that you meant to end an alignment here.
+
+! Misplaced \cr.
+<inserted text> \cr 
+                    
+l.167 ^^I^^I^^I^^I\frac
+                       {-w_2}{w_1}=2.35 \rightarrow w_2=-2.35w_1\\
+I can't figure out why you would want to use a tab mark
+or \cr or \span just now. If something like a right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Missing \cr inserted.
+<inserted text> 
+                \cr 
+l.167 ^^I^^I^^I^^I\frac
+                       {-w_2}{w_1}=2.35 \rightarrow w_2=-2.35w_1\\
+I'm guessing that you meant to end an alignment here.
+
+! Misplaced \cr.
+<inserted text> \cr 
+                    
+l.167 ^^I^^I^^I^^I\frac
+                       {-w_2}{w_1}=2.35 \rightarrow w_2=-2.35w_1\\
+I can't figure out why you would want to use a tab mark
+or \cr or \span just now. If something like a right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Missing \cr inserted.
+<inserted text> 
+                \cr 
+l.167 ^^I^^I^^I^^I\frac
+                       {-w_2}{w_1}=2.35 \rightarrow w_2=-2.35w_1\\
+I'm guessing that you meant to end an alignment here.
+
+! Misplaced \cr.
+<inserted text> \cr 
+                    
+l.167 ^^I^^I^^I^^I\frac
+                       {-w_2}{w_1}=2.35 \rightarrow w_2=-2.35w_1\\
+(That makes 100 errors; please try again.) 
 Here is how much of TeX's memory you used:
- 42 strings out of 476387
- 899 string characters out of 5798473
- 1851390 words of memory out of 5000000
- 20681 multiletter control sequences out of 15000+600000
+ 45 strings out of 476387
+ 965 string characters out of 5798473
+ 1852390 words of memory out of 5000000
+ 20684 multiletter control sequences out of 15000+600000
  513403 words of font info for 36 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 19i,11n,23p,484b,190s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 19i,11n,23p,572b,190s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
 No pages of output.
