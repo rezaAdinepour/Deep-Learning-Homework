@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023/Debian) (preloaded format=xelatex 2024.3.15)  21 MAR 2024 12:13
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023/Debian) (preloaded format=xelatex 2024.3.15)  21 MAR 2024 12:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1493,85 +1493,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 29--29
 
 File: logo/ce-fa2.png Graphic file (type bmp)
 <logo/ce-fa2.png>
-(./questions/Q1.tex [1]
-File: pics/anti-aliasing.png Graphic file (type bmp)
-<pics/anti-aliasing.png>
-)
-LaTeX Font Info:    Font shape `TU/XBYas(0)/m/sl' in size <12> not available
-(Font)              Font shape `TU/XBYas(0)/m/it' tried instead on input line 3
-3.
- [2] (./questions/Q2.tex
-File: pics/q2_1.png Graphic file (type bmp)
-<pics/q2_1.png>
-File: pics/q2_2.png Graphic file (type bmp)
-<pics/q2_2.png>
-) [3
+(./questions/Q1.tex
+File: pics/img1.png Graphic file (type bmp)
+<pics/img1.png>
+) [1]
 
-] (./questions/Q3.tex
-File: pics/q3_1.png Graphic file (type bmp)
-<pics/q3_1.png>
-File: pics/q3_2.png Graphic file (type bmp)
-<pics/q3_2.png>
-File: pics/cosine_mod.png Graphic file (type bmp)
-<pics/cosine_mod.png>
-File: pics/q3_ans.png Graphic file (type bmp)
-<pics/q3_ans.png>
-
-[4
-
-]) [5] (./questions/Q4.tex
-File: pics/q4_2_1.png Graphic file (type bmp)
-<pics/q4_2_1.png>
-
-Overfull \hbox (9.20618pt too wide) in alignment at lines 49--66
- [][][] []
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 66--71
-[][]
- []
-
-File: pics/q4_2_2.png Graphic file (type bmp)
-<pics/q4_2_2.png>
-
-Overfull \hbox (1.04836pt too wide) in alignment at lines 84--96
- [][][] []
- []
-
-File: pics/q4_2_3.png Graphic file (type bmp)
-<pics/q4_2_3.png>
-
-Overfull \hbox (2.0899pt too wide) in alignment at lines 108--116
- [][][] []
- []
-
-File: pics/q4_2_4.png Graphic file (type bmp)
-<pics/q4_2_4.png>
-[6
-
-]) [7] [8] (./questions/Q5.tex
-File: pics/q5_1.png Graphic file (type bmp)
-<pics/q5_1.png>
-File: pics/q5_1_ans.png Graphic file (type bmp)
-<pics/q5_1_ans.png>
-File: pics/q1_1_ans_2_1.png Graphic file (type bmp)
-<pics/q1_1_ans_2_1.png>
-File: pics/q1_1_ans_2_2.png Graphic file (type bmp)
-<pics/q1_1_ans_2_2.png>
-File: pics/q5_2.png Graphic file (type bmp)
-<pics/q5_2.png>
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-File: pics/q5_2_ans_1.png Graphic file (type bmp)
-<pics/q5_2_ans_1.png>
-File: pics/q5_2_ans_2.png Graphic file (type bmp)
-<pics/q5_2_ans_2.png>
-) [9
-
-] [10] 
 enddocument/afterlastpage: lastpage setting LastPage.
 (./main.aux)
  ***********
@@ -1579,15 +1505,15 @@ LaTeX2e <2023-06-01>
 L3 programming layer <2023-06-05>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 19E2AB30C4DA5BB33E859B7A1EBD7349;924.
+(rerunfilecheck)             Checksum: F26C8ECE9717CCF19776B6C976D10F6E;161.
  ) 
 Here is how much of TeX's memory you used:
- 43469 strings out of 476387
- 1058476 string characters out of 5798473
- 1874390 words of memory out of 5000000
- 63128 multiletter control sequences out of 15000+600000
- 522294 words of font info for 111 fonts, out of 8000000 for 9000
+ 43193 strings out of 476387
+ 1052434 string characters out of 5798473
+ 1852390 words of memory out of 5000000
+ 62887 multiletter control sequences out of 15000+600000
+ 522254 words of font info for 106 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 101i,20n,112p,1310b,1122s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 101i,11n,112p,1310b,479s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (11 pages).
+Output written on main.pdf (2 pages).
