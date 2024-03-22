@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023/Debian) (preloaded format=xelatex 2024.3.15)  22 MAR 2024 09:15
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023/Debian) (preloaded format=xelatex 2024.3.15)  22 MAR 2024 09:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1600,11 +1600,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 201--202
 File: pics/img15.png Graphic file (type bmp)
 <pics/img15.png>
  [12]
-Underfull \hbox (badness 10000) in paragraph at lines 281--285
-[]\TU/lmtt/m/n/12 Validation Loss: 0.1775, Validation Accuracy: 0.7940, Validat
+Underfull \hbox (badness 10000) in paragraph at lines 279--283
+[]\TU/lmtt/m/n/12 Validation Loss: 0.5167, Validation Accuracy: 0.4607, Validat
 ion F1[]
  []
 
+File: pics/img16.png Graphic file (type bmp)
+<pics/img16.png>
 [13]) [14] 
 enddocument/afterlastpage: lastpage setting LastPage.
 (./main.aux)
@@ -1616,10 +1618,10 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 6B1FD2D794930AFA92B4D15826D3F71D;322.
  ) 
 Here is how much of TeX's memory you used:
- 43450 strings out of 476387
- 1058001 string characters out of 5798473
+ 43458 strings out of 476387
+ 1058142 string characters out of 5798473
  1867390 words of memory out of 5000000
- 63113 multiletter control sequences out of 15000+600000
+ 63120 multiletter control sequences out of 15000+600000
  522342 words of font info for 117 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  101i,16n,112p,1310b,663s stack positions out of 10000i,1000n,20000p,200000b,200000s

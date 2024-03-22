@@ -275,14 +275,20 @@
 	
 	
 	\begin{qsolve}
-		
-		
 		\begin{latin}
-			\texttt{Epoch 500/500, Loss: 0.1155, Accuracy: 0.8644, F1 Score: 0.7113}\\
+			\texttt{Epoch 500/500, Loss: 0.4888, Accuracy: 0.4949, F1 Score: 0.3850}\\
 			\texttt{---------------------------------------------------------------}\\
-			\texttt{Validation Loss: 0.1775, Validation Accuracy: 0.7940, Validation F1 Score: 0.7848}\\
+			\texttt{Validation Loss: 0.5167, Validation Accuracy: 0.4607, Validation F1 Score: 0.3520}\\
 			\texttt{---------------------------------------------------------------}
 		\end{latin}
+		
+از نتایج مشخص است که شبکه نتوانسته به درستی آموزش ببیند و مقدار Loss و Accuracy بدست آمده تقریبا همانند قسمت اول (آموزش با داده‌های خام) است. نمودار‌های Loss و Accuracy نیز این حرف را توجیه می‌کنند٫ چرا که بسیار نوسانی بوده و مقادیر آنها از یک حد کمتر یا بیشتر نشده است و این امر نشان از عدم آموزش صحیح شبکه دارد. خروجی نمودار های به صورت زیر گزارش می‌شود:
+
+	\begin{center}
+		\includegraphics*[width=1\linewidth]{pics/img16.png}
+		\captionof{figure}{نمودار‌های خطا و دقت}
+		\label{نمودار‌های خطا و دقت ۴}
+	\end{center}
 		
 		
 		
