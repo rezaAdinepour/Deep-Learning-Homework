@@ -226,9 +226,41 @@
 		\end{latin}
 		
 		خروجی (ماتریس ویژگی‌های جدید) به صورت زیر خواهد بود:
-		
-
 	\end{qsolve}
+	
+	
+	
+	
+	
+	\begin{qsolve}
+		$$
+		X_{new}=\begin{bmatrix} 
+			1 & 0 & 1 & 0 & 0 & 1\\
+			1 & 2 & 3 & 4 & 6 & 9\\ 
+			1 & 4 & 5 & 16 & 20 & 25\\ 
+		\end{bmatrix}
+		$$
+		
+		در ويزگی جدید، علاوه بر دو مقدار قبل، در درایه اول هر سطر، بایاس با مقدار ۱ اضاف می‌شود، همچنین در درایه های ۳ تا ۶ در هر سطر، به ترتیب ویژگی های $a^2,ab,b^2$ حساب شده است.
+		
+		تعریف رسمی این کلاس در داکیومنت \texttt{sklearn} به صورت زیر است:
+		
+		\begin{latin}
+			Generate a new feature matrix consisting of all polynomial combinations
+			of the feaxtures with degree less than or equal to the specified degree.
+			For example, if an input sample is two dimensional and of the form
+			[a, b], the degree-2 polynomial features are $[1, a, b, a^2, ab, b^2]$.
+		\end{latin}
+		
+		
+		
+	\end{qsolve}
+	
+	
+	
+	
+	
+	
 	
 	
 	
