@@ -1,82 +1,127 @@
 import torch
-import numpy as np
+from torch import nn
+from torch import optim
 import matplotlib.pyplot as plt
-from SLP import single_layer_perceptron
-import math
 
+# # Assume x and y are your data
+# x = torch.randn(100, 1)  # 100 samples, 1 feature
+# y = 2*x + 3  # simple linear relationship with noise
 
+# # Define the model
+# model = nn.Linear(1, 1)
 
+# # Define the loss function
+# criterion = nn.MSELoss()
 
-def taylor_approximation(x, n=10):
-    # Taylor series for sin(x) around 0
-    sin_x = sum(((-1)**i * x**(2*i+1)) / torch.math.factorial(2*i+1) for i in range(n))
+# # Define the optimizer
+# optimizer = optim.SGD(model.parameters(), lr=0.01)
 
-    # Taylor series for x^17 around 0
-    x_17 = x**17  # Since we're expanding around 0, this is just x^17
+# # Train the model
+# for epoch in range(1000):
+#     # Forward pass
+#     output = model(x)
+#     loss = criterion(output, y)
 
-    # Taylor series for x^2 around 0
-    x_2 = x**2  # Since we're expanding around 0, this is just x^2
+#     # Backward pass and optimization
+#     optimizer.zero_grad()
+#     loss.backward()
+#     optimizer.step()
 
-    # Combine the series
-    f_taylor = sin_x + 3*x_17 - 5*x_2
+#     if (epoch+1) % 100 == 0:
+#         print(f'Epoch {epoch+1}/{1000}, Loss: {loss.item()}')
 
-    return f_taylor
+# # Get the final model predictions
+# final_outputs = model(x).detach().numpy()
 
-
-
-
-# check GPU availability
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-print(device)
-
-
-# create x point
-x = torch.linspace(-10, 10, 1000, device=device)
-print(x.size())
-
-# calculate f(x)
-f = torch.sin(x) + 3 * torch.pow(x, 17) - 5 * torch.pow(x, 2)
-f_approx = taylor_approximation(x)
-
-# concatinare x and f
-data = torch.concatenate((x.reshape(-1, 1), f.reshape(-1, 1)), dim=1)
-print(data.size())
-
-
-# plot f(x)
-plt.figure(figsize=(9, 7))
-plt.plot(x.cpu().numpy(), f.cpu().numpy(), linestyle='-', color='blue', linewidth=2, label="orginal")
-plt.xlabel('x', fontsize=14)
-plt.ylabel('f(x)', fontsize=14)
-plt.title('Plot of the function f(x)', fontsize=16)
-plt.grid(linestyle='--', linewidth=0.6)
-
-plt.plot(x.cpu().numpy(), f_approx.cpu().numpy(), linestyle='-', color='red', linewidth=2, label="approximate")
-plt.xlabel('x', fontsize=14)
-plt.ylabel('f(x)', fontsize=14)
-plt.title('Plot of the function f(x)', fontsize=16)
-plt.grid(linestyle='--', linewidth=0.6)
-
-
-
-
-
-# taylor approxiamtion of e^x
-# f_approx = 0
-# N = 20
-# for n in range(N):
-#     f_approx = f_approx + (torch.pow(x, n)) / (torch.math.factorial(n))
-
-#     plt.cla()
-#     plt.plot(x.cpu().numpy(), f_approx.cpu().numpy(), linestyle='-', color='red', linewidth=2, label="approximate")
-#     plt.xlabel('x', fontsize=14)
-#     plt.ylabel('f(x)', fontsize=14)
-#     plt.title('Plot of the $e^x$', fontsize=16)
-#     plt.grid(linestyle='--', linewidth=0.6)
-#     print('n = {:2d}'.format(n))
-#     plt.pause(1)
-
+# # Plot the data and the fitted line
+# plt.scatter(x, y, label='Data')
+# plt.plot(x, final_outputs, label='Fitted line', color='red')
+# plt.legend()
 # plt.show()
 
 
 
+
+
+
+
+
+import torch
+import torch.nn as nn
+import torch.optim as optim
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Define the function to approximate
+def target_function(x):
+    return np.sin(x) + 3 * x**17 - 5 * x**2
+
+# Generate training data
+np.random.seed(0)
+num_samples = 1000
+x_train = np.linspace(-1, 1, num_samples)
+y_train = target_function(x_train)
+
+# Convert training data to PyTorch tensors
+x_train_tensor = torch.tensor(x_train, dtype=torch.float32).unsqueeze(1)
+y_train_tensor = torch.tensor(y_train, dtype=torch.float32).unsqueeze(1)
+
+# Define the MLP model
+class MLP(nn.Module):
+    def __init__(self, input_size, hidden_size, output_size):
+        super(MLP, self).__init__()
+        self.fc1 = nn.Linear(input_size, hidden_size)
+        self.fc2 = nn.Linear(hidden_size, hidden_size)
+        self.fc3 = nn.Linear(hidden_size, output_size)
+        self.relu = nn.ReLU()
+
+    def forward(self, x):
+        x = self.relu(self.fc1(x))
+        x = self.relu(self.fc2(x))
+        x = self.fc3(x)
+        return x
+
+# Set the dimensions of the model
+input_size = 1
+hidden_size = 100
+output_size = 1
+
+# Create an instance of the MLP model
+model = MLP(input_size, hidden_size, output_size)
+
+# Define the loss function and optimizer
+criterion = nn.MSELoss()
+optimizer = optim.Adam(model.parameters(), lr=0.01)
+
+# Set the number of epochs
+num_epochs = 100
+
+# Train the model
+for epoch in range(num_epochs):
+    # Forward pass
+    outputs = model(x_train_tensor)
+    loss = criterion(outputs, y_train_tensor)
+
+    # Backward and optimize
+    optimizer.zero_grad()
+    loss.backward()
+    optimizer.step()
+
+# Generate test data
+x_test = np.linspace(-1, 1, num_samples)
+x_test_tensor = torch.tensor(x_test, dtype=torch.float32).unsqueeze(1)
+
+# Compute predictions using the trained model
+with torch.no_grad():
+    y_pred_tensor = model(x_test_tensor)
+
+# Convert predictions to numpy array
+y_pred = y_pred_tensor.squeeze(1).numpy()
+
+# Plot the results
+plt.plot(x_test, target_function(x_test), label='Target Function')
+plt.plot(x_test, y_pred, label='MLP Approximation')
+plt.xlabel('x')
+plt.ylabel('f(x)')
+plt.legend()
+plt.show()
