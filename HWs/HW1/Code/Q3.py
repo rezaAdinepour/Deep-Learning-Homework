@@ -30,20 +30,25 @@ print(data.size())
 
 f1 = torch.exp(x)
 plt.figure(figsize=(9, 7))
-plt.plot(x.cpu().numpy(), f1.cpu().numpy(), linestyle='-', color='blue', linewidth=2, label='$e^x$')
-plt.xlabel('x', fontsize=14)
-plt.ylabel('f(x)', fontsize=14)
-plt.title('Plot of the $e^x$', fontsize=16)
-plt.grid(linestyle='--', linewidth=0.6)
 
 
 
-f_approx = 1 + x + (0.5 * torch.pow(x, 2)) + ((1/6) * torch.pow(x, 3)) + ((1/24) * torch.pow(x, 4))
-plt.plot(x.cpu().numpy(), f_approx.cpu().numpy(), linestyle='-', color='red', linewidth=2, label="approximate")
-plt.xlabel('x', fontsize=14)
-plt.ylabel('f(x)', fontsize=14)
-plt.title('Plot of the $e^x$', fontsize=16)
-plt.grid(linestyle='--', linewidth=0.6)
+# taylor approxiamtion of e^x
+f_approx = 0
+N = 20
+for n in range(N):
+    f_approx = f_approx + (torch.pow(x, n)) / (torch.math.factorial(n))
 
+    plt.cla()
+    plt.plot(x.cpu().numpy(), f_approx.cpu().numpy(), linestyle='-', color='red', linewidth=2, label="approximate")
+    plt.xlabel('x', fontsize=14)
+    plt.ylabel('f(x)', fontsize=14)
+    plt.title('Plot of the $e^x$', fontsize=16)
+    plt.grid(linestyle='--', linewidth=0.6)
+    print('n = {:2d}'.format(n))
+    plt.pause(1)
 
 plt.show()
+
+
+
