@@ -7,7 +7,7 @@ import math
 
 
 
-def taylor_approximation(x, n):
+def taylor_approximation(x, n=10):
     # Taylor series for sin(x) around 0
     sin_x = sum(((-1)**i * x**(2*i+1)) / torch.math.factorial(2*i+1) for i in range(n))
 
@@ -36,8 +36,7 @@ print(x.size())
 
 # calculate f(x)
 f = torch.sin(x) + 3 * torch.pow(x, 17) - 5 * torch.pow(x, 2)
-f_approx = taylor_approximation(x, 1)
-f_approx_sin = x - ((1/6) * torch.pow(x, 3)) + ((1/120) * torch.pow(x, 5)) - ((1/5040) * torch.pow(x, 7)) + ((1/362880) * torch.pow(x, 9))
+f_approx = taylor_approximation(x)
 
 # concatinare x and f
 data = torch.concatenate((x.reshape(-1, 1), f.reshape(-1, 1)), dim=1)
@@ -49,15 +48,15 @@ plt.figure(figsize=(9, 7))
 plt.plot(x.cpu().numpy(), f.cpu().numpy(), linestyle='-', color='blue', linewidth=2, label="orginal")
 plt.xlabel('x', fontsize=14)
 plt.ylabel('f(x)', fontsize=14)
-# plt.title('Plot of the function f(x)', fontsize=16)
+plt.title('Plot of the function f(x)', fontsize=16)
 plt.grid(linestyle='--', linewidth=0.6)
 
 plt.plot(x.cpu().numpy(), f_approx.cpu().numpy(), linestyle='-', color='red', linewidth=2, label="approximate")
 plt.xlabel('x', fontsize=14)
 plt.ylabel('f(x)', fontsize=14)
-# plt.title('Plot of the function f(x)', fontsize=16)
+plt.title('Plot of the function f(x)', fontsize=16)
 plt.grid(linestyle='--', linewidth=0.6)
-plt.legend()
+
 
 
 
@@ -77,7 +76,7 @@ plt.legend()
 #     print('n = {:2d}'.format(n))
 #     plt.pause(1)
 
-plt.show()
+# plt.show()
 
 
 
