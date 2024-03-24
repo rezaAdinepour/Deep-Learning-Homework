@@ -12,7 +12,7 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 
 # read dataset and remove first 8 row and set new header with this name: x, y, label
-df = pd.read_csv("data.txt", skiprows=8, header=None, names=['x', 'y', "label"])
+df = pd.read_csv("gist/data.txt", skiprows=8, header=None, names=['x', 'y', "label"])
 print("shape of data frame is:", df.shape)
 print(df)
 
@@ -77,5 +77,5 @@ w = np.random.random(num_of_inputs + 1) - 0.5 # initial weights with random valu
 perceptron = Single_Layer_Perceptron(num_of_inputs, epochs, learning_rate)
 
 # Train phase
-new_weight, F1_score, avg_loss, avg_acc = perceptron.train1(X_val_new.cpu().numpy(), y_val.cpu().numpy(), epochs)
+new_weight, F1_score, avg_loss, avg_acc = perceptron.train2(X_val.cpu().numpy(), y_val.cpu().numpy(), epochs)
 print(f"Average loss: {avg_loss:.4f}, Average accuracy: {avg_acc:.4f}, F1 score: {F1_score:.4f}")
