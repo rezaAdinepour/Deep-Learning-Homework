@@ -1,4 +1,4 @@
-# CE5502: Neural Computing and Deep Learning - Spring 2024
+# CE5502: Deep Learning - Spring 2024
 
 ### Instructor: [Dr. Reza Safabakhsh](https://scholar.google.com/citations?user=zFsdqo8AAAAJ&hl=en)
 ### E-mail: [safa@aut.ac.ir](mailto:safa@aut.ac.ir)
@@ -19,4 +19,4 @@ You can click  [here](https://t.me/+3NGHZ4OkLoI5YjEx) to join the group
 
 ## Assignments Quick Link
 
-* [**:pencil2: HW-01**](https://github.com/rezaAdinepour/Machine-Learning-Homework/tree/main/ML-HW1)
+* [**:pencil2: HW-01**](https://github.com/rezaAdinepour/Deep-Learning-Homework/tree/main/HWs/HW1)
