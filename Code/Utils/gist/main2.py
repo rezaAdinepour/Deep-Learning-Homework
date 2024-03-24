@@ -12,7 +12,7 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 
 # read dataset and remove first 8 row and set new header with this name: x, y, label
-df = pd.read_csv("gist/data.txt", skiprows=8, header=None, names=['x', 'y', "label"])
+df = pd.read_csv("data.txt", skiprows=8, header=None, names=['x', 'y', "label"])
 print("shape of data frame is:", df.shape)
 print(df)
 

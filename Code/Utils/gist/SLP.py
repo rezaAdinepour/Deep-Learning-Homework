@@ -5,7 +5,6 @@ import seaborn as sns
 
 
 
-
 class Single_Layer_Perceptron():
     def __init__(self, input_neurons=2, epoch=100, learning_rate=0.01):
         self.w = np.random.rand(input_neurons + 1) - 0.5
@@ -39,16 +38,6 @@ class Single_Layer_Perceptron():
                 # Calculate loss = MSE = 1/N * (w'x - y)**2
                 loss = ((prediction - label) ** 2).mean() / 100
                 train_loss += loss
-
-            # plt.cla()
-            # plt.scatter(X[:, 0], X[:, 1], c=y, cmap='jet', marker='.')
-            # line_x = np.arange(-10, 10, 0.1)
-            # line_y = (-self.w[0] - self.w[1] * line_x) / self.w[2]
-            # plt.plot(line_x, line_y, color="black", linewidth=3)
-            # plt.xlim(-10., 10)
-            # plt.ylim(-10, 10)
-            # plt.text(-10, 10.2, 'epoch = {:2d}'.format(EPOCH, i), fontdict={'size': 14, 'color':  'black'})
-            # plt.pause(0.01)
 
             plt.cla()
             plt.scatter(X[:, 0], X[:, 1], c=y, cmap='jet', marker='.')
