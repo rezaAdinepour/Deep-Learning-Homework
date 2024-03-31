@@ -71,7 +71,7 @@ for epoch in range(epochs):
     # Save accuracy value
     accuracy_values.append(accuracy)
     
-    if (epoch+1) % 10 == 0:
+    if (epoch+1) % 5 == 0:
         print ('Epoch [{}/{}], Loss: {:.4f}, Accuracy: {:.2f}'.format(epoch+1, epochs, loss.item(), accuracy))
 
 

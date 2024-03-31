@@ -26,7 +26,7 @@ class MLP(nn.Module):
         x = F.sigmoid(self.hidden1(x))
         x = F.sigmoid(self.hidden2(x))
         x = self.output(x)
-        return x
+        return F.softmax(x, dim=1)
     
 
 
