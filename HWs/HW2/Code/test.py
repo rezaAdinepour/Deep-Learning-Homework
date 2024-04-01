@@ -39,7 +39,7 @@ print(model)
 epochs = 50
 
 # Convert labels to one-hot encoding
-y_onehot = F.one_hot(y.long(), num_classes=2)
+# y_onehot = F.one_hot(y.long(), num_classes=2)
 
 
 
