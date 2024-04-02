@@ -6,13 +6,15 @@ from sklearn import datasets
 from sklearn.metrics import confusion_matrix
 import seaborn as sns
 
-
+from sklearn.datasets import make_circles, make_classification, make_moons
 
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 
 x, y = datasets.make_blobs(n_samples=200, centers=[(-1, -1), (1, 1)], cluster_std=0.5)
+# x, y = make_moons(n_samples=100, shuffle=True, noise=None, random_state=None)
+# x, y = make_circles(noise=0.1, factor=0.5, random_state=1)
 x = torch.tensor(x, dtype=torch.float32, device=device)
 y = torch.tensor(y, dtype=torch.float32, device=device)
 
