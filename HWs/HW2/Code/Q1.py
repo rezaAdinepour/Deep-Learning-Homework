@@ -4,35 +4,19 @@ import numpy as np
 from utils import*
 from sklearn import datasets
 from sklearn.metrics import confusion_matrix
-from sklearn.model_selection import train_test_split
 import seaborn as sns
+
 from sklearn.datasets import make_circles, make_classification, make_moons
-
-
-
-
-
-
 
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 
-x, y = datasets.make_blobs(n_samples=500, centers=[(-1, -1), (1, 1)], cluster_std=0.5)
-
-
-x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=42)
-
-
-
+x, y = datasets.make_blobs(n_samples=200, centers=[(-1, -1), (1, 1)], cluster_std=0.5)
 # x, y = make_moons(n_samples=100, shuffle=True, noise=None, random_state=None)
 # x, y = make_circles(noise=0.1, factor=0.5, random_state=1)
-x_train = torch.tensor(x_train, dtype=torch.float32, device=device)
-x_test = torch.tensor(x_test, dtype=torch.float32, device=device)
-y_train = torch.tensor(y_train, dtype=torch.float32, device=device)
-y_test = torch.tensor(y_test, dtype=torch.float32, device=device)
-
-
+x = torch.tensor(x, dtype=torch.float32, device=device)
+y = torch.tensor(y, dtype=torch.float32, device=device)
 
 
 # plt.figure(figsize=(9, 7))
@@ -46,17 +30,15 @@ model = MLP(input_size=2, hidden_size=1, output_size=2).to(device)
 
 
 # Define the optimizer
-optimizer = torch.optim.SGD(model.parameters(), lr=0.01)
+optimizer = torch.optim.Adam(model.parameters(), lr=0.01)
 
 # Define the loss function
 criterion = nn.CrossEntropyLoss()
-
-bs = 20
-
 print(model)
 
+
 # Specify the number of epochs
-epochs = 500
+epochs = 50
 
 # Convert labels to one-hot encoding
 # y_onehot = F.one_hot(y.long(), num_classes=2)
@@ -91,7 +73,7 @@ for epoch in range(epochs):
     # Save accuracy value
     accuracy_values.append(accuracy)
     
-    if (epoch+1) % 10 == 0:
+    if (epoch+1) % 5 == 0:
         print ('Epoch [{}/{}], Loss: {:.4f}, Accuracy: {:.2f}'.format(epoch+1, epochs, loss.item(), accuracy))
 
 
@@ -103,18 +85,20 @@ plt.figure(figsize=(15, 9))
 
 # Plot loss values
 plt.subplot(2, 2, 1)
-plt.plot(loss_values, label="Train loss", color="red")
+plt.plot(loss_values, '-o', label="Train loss", color="red", alpha=0.7)
 plt.title('Loss over epochs')
 plt.xlabel('Epochs')
 plt.ylabel('Loss')
+plt.grid(True)
 plt.legend()
 
 # Plot accuracy values
 plt.subplot(2, 2, 2)
-plt.plot(accuracy_values, label='Train accuracy', color='green')
+plt.plot(accuracy_values, '-o', label='Train accuracy', color='green', alpha=0.7)
 plt.title('Accuracy over epochs')
 plt.xlabel('Epochs')
 plt.ylabel('Accuracy')
+plt.grid(True)
 plt.legend()
 
 # Compute confusion matrix

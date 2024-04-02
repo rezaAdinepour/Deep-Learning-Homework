@@ -16,17 +16,19 @@ import torch.nn.functional as F
 
 
 class MLP(nn.Module):
-    def __init__(self):
+    def __init__(self, input_size, hidden_size, output_size):
         super(MLP, self).__init__()
-        self.hidden1 = nn.Linear(2, 10)
-        self.hidden2 = nn.Linear(10, 10)
-        self.output = nn.Linear(10, 2)
+        self.layer1 = nn.Linear(input_size, hidden_size, bias=True, device="cuda:0")
+        #self.hidden2 = nn.Linear(10, 10)
+        self.layer2 = nn.Linear(hidden_size, output_size, bias=True, device="cuda:0")
 
     def forward(self, x):
-        x = F.sigmoid(self.hidden1(x))
-        x = F.sigmoid(self.hidden2(x))
-        x = self.output(x)
-        return F.softmax(x, dim=1)
+        #x = F.sigmoid(self.hidden1(x))
+        #x = F.sigmoid(self.hidden2(x))
+        # x = self.output(x)
+        y_hidden = self.layer1(x)        
+        y = self.layer2(F.relu(y_hidden))
+        return F.softmax(y, dim=1)
     
 
 
