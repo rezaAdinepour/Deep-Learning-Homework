@@ -7,149 +7,171 @@ from sklearn.metrics import confusion_matrix
 from sklearn.model_selection import train_test_split
 import seaborn as sns
 from sklearn.datasets import make_circles, make_classification, make_moons
-
-
-
-
-
+from torch.optim import SGD
+from torch.nn import BCELoss
 
 
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 
-x, y = datasets.make_blobs(n_samples=500, centers=[(-1, -1), (1, 1)], cluster_std=0.5)
+x, y = datasets.make_blobs(n_samples=200, centers=[(-1, -1), (1, 1)], cluster_std=0.5)
 
 
+
+
+# Split the data into training and testing sets
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=42)
 
+# Convert the numpy arrays to PyTorch tensors
+x_train = torch.tensor(x_train, dtype=torch.float).to(device)
+y_train = torch.tensor(y_train, dtype=torch.long).to(device)
 
-
-# x, y = make_moons(n_samples=100, shuffle=True, noise=None, random_state=None)
-# x, y = make_circles(noise=0.1, factor=0.5, random_state=1)
-x_train = torch.tensor(x_train, dtype=torch.float32, device=device)
-x_test = torch.tensor(x_test, dtype=torch.float32, device=device)
-y_train = torch.tensor(y_train, dtype=torch.float32, device=device)
-y_test = torch.tensor(y_test, dtype=torch.float32, device=device)
-
-
-
-
-# plt.figure(figsize=(9, 7))
-# plt.scatter(x[:, 0].cpu().numpy(), x[:, 1].cpu().numpy(), c=y.cpu().numpy(), edgecolors='k', marker='o', s=50)
-#plt.show()
+x_test = torch.tensor(x_test, dtype=torch.float).to(device)
+y_test = torch.tensor(y_test, dtype=torch.long).to(device)
 
 
 
 
-model = MLP(input_size=2, hidden_size=1, output_size=2).to(device)
+
+# Initialize the MLP
+model = MLP(input_size=2, hidden_size=10, output_size=2, device=device)
+
+# Define the loss function and the optimizer
+criterion = BCELoss()
+optimizer = SGD(model.parameters(), lr=0.01)
+
+y_train_onehot = F.one_hot(y_train)
+y_test_onehot = F.one_hot(y_test)
 
 
-# Define the optimizer
-optimizer = torch.optim.SGD(model.parameters(), lr=0.01)
+# Lists to store loss and accuracy values
+train_loss = []
+train_acc = []
+test_loss = []
+test_acc = []
 
-# Define the loss function
-criterion = nn.CrossEntropyLoss()
-
-bs = 20
-
-print(model)
-
-# Specify the number of epochs
-epochs = 500
-
-# Convert labels to one-hot encoding
-# y_onehot = F.one_hot(y.long(), num_classes=2)
-
-
-
-# Initialize lists to save the loss and accuracy values
-loss_values = []
-accuracy_values = []
-
-for epoch in range(epochs):
-    # Forward pass
-    outputs = model(x)
-    
-    # Compute loss
-    loss = criterion(outputs, y.long())
-    
-    # Backward pass and optimize
+# Training phase
+for epoch in range(100):  # number of epochs
+    model.train()
     optimizer.zero_grad()
+    outputs = model(x_train)
+    loss = criterion(outputs, y_train_onehot.float())  # use one-hot encoded targets
     loss.backward()
     optimizer.step()
-    
-    # Save loss value
-    loss_values.append(loss.item())
-    
-    # Compute accuracy
-    _, predicted = torch.max(outputs.data, 1)
-    total = y.size(0)
-    correct = (predicted == y.long()).sum().item()
-    accuracy = correct / total
 
-    # Save accuracy value
-    accuracy_values.append(accuracy)
-    
-    if (epoch+1) % 10 == 0:
-        print ('Epoch [{}/{}], Loss: {:.4f}, Accuracy: {:.2f}'.format(epoch+1, epochs, loss.item(), accuracy))
+    # Calculate training accuracy
+    _, predicted = torch.max(outputs, 1)
+    correct = (predicted == y_train).sum().item()
+    accuracy = correct / y_train.size(0)
+
+    # Store loss and accuracy
+    train_loss.append(loss.item())
+    train_acc.append(accuracy)
+
+    # Evaluation phase
+    model.eval()
+    with torch.no_grad():
+        outputs = model(x_test)
+        loss = criterion(outputs, y_test_onehot.float())  # use one-hot encoded targets
+
+        # Calculate test accuracy
+        _, predicted = torch.max(outputs, 1)
+        correct = (predicted == y_test).sum().item()
+        accuracy = correct / y_test.size(0)
+
+        # Store loss and accuracy
+        test_loss.append(loss.item())
+        test_acc.append(accuracy)
+
+    # Print loss and accuracy every 10 epochs
+    if epoch % 10 == 0:
+        print(f'Epoch {epoch}, Train Loss: {train_loss[-1]}, Train Accuracy: {train_acc[-1] * 100}%, Test Loss: {test_loss[-1]}, Test Accuracy: {test_acc[-1] * 100}%')
+
+
+# Calculate predictions for training data
+model.eval()
+with torch.no_grad():
+    outputs = model(x_train)
+    _, train_predicted = torch.max(outputs, 1)
 
 
 
-
-
-# Set a consistent figure size
-plt.figure(figsize=(15, 9))
-
-# Plot loss values
-plt.subplot(2, 2, 1)
-plt.plot(loss_values, label="Train loss", color="red")
-plt.title('Loss over epochs')
-plt.xlabel('Epochs')
-plt.ylabel('Loss')
+# Plot training and testing loss
+plt.figure(figsize=(12, 4))
+plt.subplot(1, 2, 1)
+plt.plot(train_loss, label='Train Loss')
+plt.plot(test_loss, label='Test Loss')
 plt.legend()
+plt.title('Loss')
 
-# Plot accuracy values
-plt.subplot(2, 2, 2)
-plt.plot(accuracy_values, label='Train accuracy', color='green')
-plt.title('Accuracy over epochs')
-plt.xlabel('Epochs')
-plt.ylabel('Accuracy')
+# Plot training and testing accuracy
+plt.subplot(1, 2, 2)
+plt.plot(train_acc, label='Train Accuracy')
+plt.plot(test_acc, label='Test Accuracy')
 plt.legend()
+plt.title('Accuracy')
 
-# Compute confusion matrix
-_, predicted = torch.max(model(x).data, 1)
-cm = confusion_matrix(y.cpu().numpy(), predicted.cpu().numpy())
+plt.show()
 
-# Plot confusion matrix
-plt.subplot(2, 2, 3)
-sns.heatmap(cm, annot=True, fmt='d', cmap='Blues')
-plt.title('Confusion Matrix')
-plt.xlabel('Predicted class')
-plt.ylabel('True class')
+# Calculate confusion matrices
+train_cm = confusion_matrix(y_train.cpu(), train_predicted.cpu())
+test_cm = confusion_matrix(y_test.cpu(), predicted.cpu())
 
-# Generate a grid of points
+# Plot training confusion matrix
+plt.figure(figsize=(12, 4))
+plt.subplot(1, 2, 1)
+sns.heatmap(train_cm, annot=True)
+plt.title('Train Confusion Matrix')
+
+# Plot testing confusion matrix
+plt.subplot(1, 2, 2)
+sns.heatmap(test_cm, annot=True)
+plt.title('Test Confusion Matrix')
+
+# Plot decision boundary
 x_min, x_max = x[:, 0].min() - 1, x[:, 0].max() + 1
 y_min, y_max = x[:, 1].min() - 1, x[:, 1].max() + 1
-xx, yy = np.meshgrid(np.arange(x_min.item(), x_max.item(), 0.1),
-                     np.arange(y_min.item(), y_max.item(), 0.1))
+xx, yy = np.meshgrid(np.arange(x_min, x_max, 0.1),
+                     np.arange(y_min, y_max, 0.1))
 
-# Predict the class for each point
-grid = torch.Tensor(np.c_[xx.ravel(), yy.ravel()]).to(device)
-preds = model(grid)
-_, predicted = torch.max(preds.data, 1)
+model.eval()
+with torch.no_grad():
+    Z = model(torch.tensor(np.c_[xx.ravel(), yy.ravel()], dtype=torch.float).cuda())
+    _, Z = torch.max(Z, 1)
+    Z = Z.reshape(xx.shape)
 
-# Reshape the predicted classes to have the same shape as xx
-Z = predicted.cpu().numpy().reshape(xx.shape)
-
-# Plot the decision regions
-plt.subplot(2, 2, 4)
-plt.contourf(xx, yy, Z, alpha=0.8, cmap='RdBu')
-plt.scatter(x[:, 0].cpu().numpy(), x[:, 1].cpu().numpy(), c=y.cpu().numpy(), cmap='RdBu', edgecolors='k', marker='o', s=50)
-plt.title('Decision regions')
-plt.xlabel('Feature 1')
-plt.ylabel('Feature 2')
-
-# Adjust the layout for better readability
-plt.tight_layout()
+plt.figure(figsize=(12, 4))
+plt.contourf(xx, yy, Z.cpu(), alpha=0.8)
+plt.scatter(x[:, 0], x[:, 1], c=y, edgecolors='k', marker='o')
 plt.show()
+
+
+# # Save the trained model
+# torch.save(model.state_dict(), 'model.pth')
+
+# # Load the trained model
+# model = MLP(input_size=2, hidden_size=10, output_size=2, device=device)
+# model.load_state_dict(torch.load('model.pth'))
+
+# # Predict the labels for the test set
+# with torch.no_grad():
+#     outputs = model(x_test)
+#     _, predicted = torch.max(outputs, 1)
+#     correct = (predicted == y_test).sum().item()
+#     accuracy = correct / y_test.size(0)
+
+#     print(f'Test Loss: {loss.item()}, Test Accuracy: {accuracy * 100}%')
+    
+# Evaluation phase
+# model.eval()
+# with torch.no_grad():
+#     outputs = model(x_test)
+#     loss = criterion(outputs, y_test_onehot.float())  # use one-hot encoded targets
+
+#     # Calculate test accuracy
+#     _, predicted = torch.max(outputs, 1)
+#     correct = (predicted == y_test).sum().item()
+#     accuracy = correct / y_test.size(0)
+
+#     print(f'Test Loss: {loss.item()}, Test Accuracy: {accuracy * 100}%')
