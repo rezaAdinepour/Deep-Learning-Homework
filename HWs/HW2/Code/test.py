@@ -83,7 +83,7 @@ plt.figure(figsize=(15, 9))
 
 # Plot loss values
 plt.subplot(2, 2, 1)
-plt.plot(loss_values, label='Loss', color='red')
+plt.plot(loss_values, '-o', label="Train loss", color="red", alpha=0.7)
 plt.title('Loss over epochs')
 plt.xlabel('Epochs')
 plt.ylabel('Loss')
@@ -92,7 +92,7 @@ plt.legend()
 
 # Plot accuracy values
 plt.subplot(2, 2, 2)
-plt.plot(accuracy_values, label='Accuracy', color='green')
+plt.plot(accuracy_values, '-o', label='Train accuracy', color='green', alpha=0.7)
 plt.title('Accuracy over epochs')
 plt.xlabel('Epochs')
 plt.ylabel('Accuracy')
