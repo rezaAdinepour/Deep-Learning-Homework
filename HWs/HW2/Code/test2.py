@@ -30,10 +30,22 @@ y_train = torch.tensor(y_train, dtype=torch.long).to(device)
 x_test = torch.tensor(x_test, dtype=torch.float).to(device)
 y_test = torch.tensor(y_test, dtype=torch.long).to(device)
 
+print("X training set size: ", x_train.size())
+print("X testing set size: ", x_test.size())
 
+# plt.figure(figsize=(15, 7))
+# plt.subplot(1, 2, 1)
+# plt.scatter(x_train[:, 0].cpu().numpy(), x_train[:, 1].cpu().numpy(), c=y_train.cpu().numpy(), edgecolors='k', marker='o', s=50)
+# plt.title("Training set data")
+# plt.xlabel('x')
+# plt.ylabel('y')
 
-# plt.figure(figsize=(9, 7))
-# plt.scatter(x[:, 0].cpu().numpy(), x[:, 1].cpu().numpy(), c=y.cpu().numpy(), edgecolors='k', marker='o', s=50)
+# plt.subplot(1, 2, 2)
+# plt.scatter(x_test[:, 0].cpu().numpy(), x_test[:, 1].cpu().numpy(), c=y_test.cpu().numpy(), edgecolors='k', marker='o', s=50)
+# plt.title("Training set data")
+# plt.xlabel('x')
+# plt.ylabel('y')
+
 # plt.show()
 
 
@@ -113,7 +125,7 @@ for epoch in range(epochs):
 
     # Print loss and accuracy every 10 epochs
     if epoch % 10 == 0:
-        print ('Epoch [{}/{}], Train Loss: {:.4f}, Train Accuracy: {:.2f}, Test Loss: {:.4f}, Test Accuracy: {:.2f} '.format(epoch+1, epochs, train_loss[-1], train_acc[-1], test_loss[-1], test_acc[-1]))
+        print ('Epoch [{}/{}] | Train Loss: {:.4f} | Train Accuracy: {:.2f} | Test Loss: {:.4f} | Test Accuracy: {:.2f} '.format(epoch+1, epochs, train_loss[-1], train_acc[-1], test_loss[-1], test_acc[-1]))
 
 
 # Calculate predictions for training data
