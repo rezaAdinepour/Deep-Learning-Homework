@@ -52,23 +52,23 @@ print("X testing set size: ", x_test.size())
 
 model = MLP(input_size=2, hidden_size=2, output_size=2, device=device)
 
-# Define the loss function and the optimizer
-criterion = torch.nn.BCELoss()
-optimizer = torch.optim.Adam(model.parameters(), lr=0.01)
+criterion = torch.nn.BCELoss() # set binary cross entropy for loss function
+optimizer = torch.optim.Adam(model.parameters(), lr=0.01) # set adam optimizer
+
+epochs = 200 # number of epochs
+
+print("Network parameter:\n ", model)
 
 y_train_onehot = F.one_hot(y_train)
 y_test_onehot = F.one_hot(y_test)
-print(model)
 
-# Specify the number of epochs
-epochs = 500
+print("y_train_onehot: ", y_train_onehot.size())
+print("y_test_onehot: ", y_test_onehot.size())
 
+# print("original labels: ", y_test)
+# print("onehot encoding labels: ")
+# print(y_test_onehot)
 
-
-
-# # Initialize lists to save the loss and accuracy values
-# loss_values = []
-# accuracy_values = []
 
 
 # Lists to store loss and accuracy values
@@ -80,56 +80,44 @@ test_acc = []
 
 for epoch in range(epochs):
     model.train()
-    # Forward pass
+    # forward pass
     outputs = model(x_train)
     
-    # Compute loss
+    # calculate loss
     loss = criterion(outputs, y_train_onehot.float())
     
-    # Backward pass and optimize
+    # backward pass and optimize loss
     optimizer.zero_grad()
     loss.backward()
     optimizer.step()
+
+    train_loss.append(loss.item()) # store train loss
     
-    # Calculate training accuracy
-    _, predicted = torch.max(outputs, 1)
-    correct = (predicted == y_train).sum().item()
-    accuracy = correct / y_train.size(0)
-    
-    # Compute accuracy
-    _, predicted = torch.max(outputs.data, 1)
-    total = y_train.size(0)
-    correct = (predicted == y_train.long()).sum().item()
-    accuracy = correct / total
+    # calculate training accuracy
+    _, train_predicted = torch.max(outputs, 1)
+    train_correct = (train_predicted == y_train).sum().item()
+    train_accuracy = train_correct / y_train.size(0)
 
-    # Store loss and accuracy
-    train_loss.append(loss.item())
-    train_acc.append(accuracy)
+    train_acc.append(train_accuracy) # store train accuracy
 
-
-    # Evaluation phase
+    # evaluation phase
     model.eval()
     with torch.no_grad():
         outputs = model(x_test)
         loss = criterion(outputs, y_test_onehot.float())  # use one-hot encoded targets
 
-        # Calculate test accuracy
-        _, predicted = torch.max(outputs, 1)
-        correct = (predicted == y_test).sum().item()
-        accuracy = correct / y_test.size(0)
+        test_loss.append(loss.item()) # store test loss 
 
-        # Store loss and accuracy
-        test_loss.append(loss.item())
-        test_acc.append(accuracy)
+        # calculate test accuracy
+        _, test_predicted = torch.max(outputs, 1)
+        test_correct = (test_predicted == y_test).sum().item()
+        test_accuracy = test_correct / y_test.size(0)
+
+        test_acc.append(test_accuracy) # store accuracy loss
         
-
-    # Print loss and accuracy every 10 epochs
-    if epoch % 10 == 0:
+    if( (epoch % 15) == 0 ):
         print ('Epoch [{}/{}] | Train Loss: {:.4f} | Train Accuracy: {:.2f} | Test Loss: {:.4f} | Test Accuracy: {:.2f} '.format(epoch+1, epochs, train_loss[-1], train_acc[-1], test_loss[-1], test_acc[-1]))
 
-
-# Calculate predictions for training data
-_, train_predicted = torch.max(model(x_train).data, 1)
 
 # Set a consistent figure size
 plt.figure(figsize=(10, 10))
@@ -156,7 +144,7 @@ plt.legend()
 
 # Calculate confusion matrices
 train_cm = confusion_matrix(y_train.cpu().numpy(), train_predicted.cpu().numpy())
-test_cm = confusion_matrix(y_test.cpu().numpy(), predicted.cpu().numpy())
+test_cm = confusion_matrix(y_test.cpu().numpy(), test_predicted.cpu().numpy())
 
 # Plot training confusion matrix
 plt.subplot(2, 2, 3)
@@ -173,7 +161,7 @@ plt.xlabel('Predicted class')
 plt.ylabel('True class')
 
 
-# Generate a grid of points
+# create a grid of points for coloring
 x_min, x_max = x[:, 0].min() - 1, x[:, 0].max() + 1
 y_min, y_max = x[:, 1].min() - 1, x[:, 1].max() + 1
 xx, yy = np.meshgrid(np.arange(x_min.item(), x_max.item(), 0.1),
@@ -185,14 +173,22 @@ with torch.no_grad():
     _, Z = torch.max(Z, 1)
     Z = Z.reshape(xx.shape)
 
-# Plot the decision regions
-plt.figure(figsize=(9, 7))
+# plot decision regions
+plt.figure(figsize=(15, 7))
+plt.subplot(1, 2, 1)
 plt.contourf(xx, yy, Z.cpu().numpy(), alpha=0.8, cmap='RdBu')
 plt.scatter(x_train[:, 0].cpu().numpy(), x_train[:, 1].cpu().numpy(), c=y_train.cpu().numpy(), cmap='RdBu', edgecolors='k', marker='o', s=50)
-plt.title('Decision regions')
-plt.xlabel('Feature 1')
-plt.ylabel('Feature 2')
+plt.title('Decision regions for training data')
+plt.xlabel('x')
+plt.ylabel('y')
 
-# Adjust the layout for better readability
+
+plt.subplot(1, 2, 2)
+plt.contourf(xx, yy, Z.cpu().numpy(), alpha=0.8, cmap='RdBu')
+plt.scatter(x_test[:, 0].cpu().numpy(), x_test[:, 1].cpu().numpy(), c=y_test.cpu().numpy(), cmap='RdBu', edgecolors='k', marker='o', s=50)
+plt.title('Decision regions for testin data')
+plt.xlabel('x')
+plt.ylabel('y')
+
 plt.tight_layout()
 plt.show()
