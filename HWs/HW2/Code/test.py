@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 import cv2
 import os
 
+# function for load images from personal dir
 def read_img(dir, format):
     images = []
     for img in os.listdir(dir):
@@ -13,12 +14,12 @@ def read_img(dir, format):
     return len(images), images
 
 
-
+# load images
 dir = "Dataset-Q5/"
 _, images = read_img(dir, "jpg")
 print("total images: ", len(images))
 
-
+# plot full resolution images
 plt.figure(figsize=(8, 6))
 for i, img in enumerate(images):
     plt.subplot(2, 5, i + 1)
@@ -33,6 +34,7 @@ half_res_img = []
 for img in images:
     half_res_img.append(cv2.resize(img, (img.shape[0] // 2, img.shape[1] // 2)))
 
+# plot half resolution of images
 plt.figure(figsize=(8, 6))
 for i, img in enumerate(half_res_img):
     plt.subplot(2, 5, i + 1)
@@ -41,3 +43,7 @@ for i, img in enumerate(half_res_img):
     plt.title(f"Image {i + 1}")
     plt.tight_layout()
 plt.show()
+
+
+
+
