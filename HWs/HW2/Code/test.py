@@ -93,7 +93,7 @@ for img, half_res_img in zip(images, half_res_img):
     img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
     half_res_img = cv2.cvtColor(half_res_img, cv2.COLOR_BGR2RGB)
     
-    # Pad the lower resolution image with zeros
+    # insert zero pixels into the image
     half_res_img = cv2.copyMakeBorder(half_res_img, 1, 1, 1, 1, cv2.BORDER_CONSTANT, value=[0, 0, 0])
     
     # Initialize the image dataset
@@ -102,11 +102,12 @@ for img, half_res_img in zip(images, half_res_img):
     # Loop over each pixel in the original image
     for i in range(img.shape[0]):
         for j in range(img.shape[1]):
-            # Map the pixel to the lower resolution image
+            # map the pixel to the lower resolution image
+            # lower resolution iamge is the half of the original image
             i_half = i // 2
             j_half = j // 2
             
-            # Find the eight neighbors
+            # find the eight neighbors
             neighbors = []
             for di in [-1, 0, 1]:
                 for dj in [-1, 0, 1]:
