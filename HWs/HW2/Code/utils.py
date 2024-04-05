@@ -1,8 +1,12 @@
 import torch.nn as nn
 import torch.nn.functional as F
 import torch
+import os
+import cv2
 
 
+
+# multi layer perceptron class
 class MLP(nn.Module):
     def __init__(self, input_size, hidden_size, output_size=2, device='cpu'):
         super(MLP, self).__init__()
@@ -16,3 +20,13 @@ class MLP(nn.Module):
         x = F.relu(self.layer1(x))
         x = self.layer2(x)
         return F.softmax(x, dim=1)
+    
+
+
+# function for load images from personal dir
+def read_img(dir, format):
+    images = []
+    for img in os.listdir(dir):
+        if img.endswith("." + format):
+            images.append(cv2.imread(os.path.join(dir, img)))
+    return len(images), images

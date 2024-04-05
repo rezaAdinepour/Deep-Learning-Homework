@@ -1,19 +1,11 @@
 import torch
-import torchvision
-import torchvision.transforms as transforms
-import matplotlib.pyplot as plt
 import cv2
-import os
+import matplotlib.pyplot as plt
 import random
+from utils import*
 
 
-# function for load images from personal dir
-def read_img(dir, format):
-    images = []
-    for img in os.listdir(dir):
-        if img.endswith("." + format):
-            images.append(cv2.imread(os.path.join(dir, img)))
-    return len(images), images
+
 
 
 # load images
