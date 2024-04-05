@@ -82,9 +82,10 @@ for i, img in enumerate(half_res_img):
 # print(f"Size of dataset tensor: {dataset.size()}")
 
 
-
 # Initialize the dataset
 dataset = []
+
+
 
 # Loop over each image and its lower resolution version
 for img, half_res_img in zip(images, half_res_img):
