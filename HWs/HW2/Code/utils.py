@@ -23,6 +23,22 @@ class MLP(nn.Module):
     
 
 
+class multi_layer_perceptron(nn.Module):
+    def __init__(self):
+        super(multi_layer_perceptron, self).__init__()
+        self.layers = nn.Sequential(
+            nn.Linear(27, 64),
+            nn.ReLU(),
+            nn.Linear(64, 128),
+            nn.ReLU(),
+            nn.Linear(128, 3)
+        )
+
+    def forward(self, x):
+        return self.layers(x)
+    
+
+
 # function for load images from personal dir
 def read_img(dir, format):
     images = []
