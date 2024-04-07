@@ -12,6 +12,21 @@ from skimage.util import img_as_float
 
 
 
+class multi_layer_perceptron(nn.Module):
+    def __init__(self):
+        super(multi_layer_perceptron, self).__init__()
+        self.layers = nn.Sequential(
+            nn.Linear(27, 64),
+            nn.ReLU(),
+            nn.Linear(64, 128),
+            nn.ReLU(),
+            nn.Linear(128, 3)
+        )
+
+    def forward(self, x):
+        return self.layers(x)
+
+
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
@@ -187,7 +202,7 @@ test_accuracy_values = []
 val_loss_values = []
 val_accuracy_values = []
 
-EPOCH = 5
+EPOCH = 2
 
 # Function to calculate loss and accuracy
 def calculate_loss_accuracy(dataset):
@@ -293,7 +308,8 @@ plt.show()
 
 
 
-
+from skimage.metrics import structural_similarity as ssim
+from skimage.metrics import peak_signal_noise_ratio as psnr
 
 # Function to generate high-resolution images
 def generate_images(model, dataset):
@@ -309,15 +325,25 @@ def generate_images(model, dataset):
 # Generate high-resolution images
 high_res_images = generate_images(model, test_dataset)
 
-
+# Calculate SSIM and PSNR
 # Calculate SSIM and PSNR
 ssim_values = []
 psnr_values = []
 for i, img in enumerate(high_res_images):
-    img_true = img_as_float(test_labels[i].cpu().numpy())
-    img_test = img_as_float(img)
-    ssim_values.append(ssim(img_true, img_test, win_size=3, multichannel=True, data_range=1.0))
-    psnr_values.append(psnr(img_true, img_test, data_range=1.0))
+    img_true = test_labels[i].cpu().numpy()
+    img_test = img
+    ssim_values.append(ssim(img_true, img_test, multichannel=True, win_size=3, data_range=1.0))  # Assuming images are normalized to [0, 1]
+    psnr_values.append(psnr(img_true, img_test, data_range=1.0))  # Assuming images are normalized to [0, 1]
 
 print(f"Average SSIM: {np.mean(ssim_values)}")
 print(f"Average PSNR: {np.mean(psnr_values)}")
+
+# Display the generated images
+plt.figure(figsize=(8, 6))
+for i, img in enumerate(high_res_images):
+    plt.subplot(2, 5, i + 1)
+    plt.imshow(cv2.cvtColor(img, cv2.COLOR_BGR2RGB))
+    plt.axis("off")
+    plt.title(f"Image {i + 1}")
+plt.tight_layout()
+plt.show()

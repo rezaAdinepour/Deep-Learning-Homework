@@ -23,19 +23,19 @@ class MLP(nn.Module):
     
 
 
-class multi_layer_perceptron(nn.Module):
-    def __init__(self):
-        super(multi_layer_perceptron, self).__init__()
-        self.layers = nn.Sequential(
-            nn.Linear(27, 64),
-            nn.ReLU(),
-            nn.Linear(64, 128),
-            nn.ReLU(),
-            nn.Linear(128, 3)
-        )
+# class multi_layer_perceptron(nn.Module):
+#     def __init__(self):
+#         super(multi_layer_perceptron, self).__init__()
+#         self.layers = nn.Sequential(
+#             nn.Linear(27, 64),
+#             nn.ReLU(),
+#             nn.Linear(64, 128),
+#             nn.ReLU(),
+#             nn.Linear(128, 3)
+#         )
 
-    def forward(self, x):
-        return self.layers(x)
+#     def forward(self, x):
+#         return self.layers(x)
     
 
 
@@ -46,3 +46,4 @@ def read_img(dir, format):
         if img.endswith("." + format):
             images.append(cv2.imread(os.path.join(dir, img)))
     return len(images), images
+    
