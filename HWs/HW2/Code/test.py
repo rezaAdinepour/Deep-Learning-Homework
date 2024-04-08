@@ -304,46 +304,75 @@ plt.show()
 
 
 
+# Initialize a list to store the reconstructed images
+reconstructed_images = []
+
+# Loop over each lower resolution image
+for half_res_img in half_res_img:
+    # Convert the image to RGB
+    half_res_img = cv2.cvtColor(half_res_img, cv2.COLOR_BGR2RGB)
+    
+    # Pad the image with zeros
+    half_res_img = cv2.copyMakeBorder(half_res_img, 1, 1, 1, 1, cv2.BORDER_CONSTANT, value=[0, 0, 0])
+    
+    # Initialize a list to store the pixels of the reconstructed image
+    reconstructed_img = []
+    
+    # Loop over each pixel in the lower resolution image
+    for i in range(1, half_res_img.shape[0] - 1):
+        for j in range(1, half_res_img.shape[1] - 1):
+            # Find the eight neighbors
+            neighbors = []
+            for di in [-1, 0, 1]:
+                for dj in [-1, 0, 1]:
+                    # Append each color channel separately
+                    neighbors.extend(half_res_img[i + di, j + dj].tolist())
+            
+            # Convert the neighbors to a PyTorch tensor and move it to the device
+            neighbors = torch.tensor(neighbors, dtype=torch.float).to(device)
+            
+            # Run the model on the neighbors
+            output = model(neighbors)
+            
+            # Add the output to the reconstructed image
+            reconstructed_img.append(output.tolist())
+    
+    # Reshape the reconstructed image to the original image size
+    reconstructed_img = np.array(reconstructed_img, dtype=np.uint8).reshape((half_res_img.shape[0] - 2, half_res_img.shape[1] - 2, 3))
+    
+    # Add the reconstructed image to the list
+    reconstructed_images.append(reconstructed_img)
 
 
 
 
-from skimage.metrics import structural_similarity as ssim
-from skimage.metrics import peak_signal_noise_ratio as psnr
-
-# Function to generate high-resolution images
-def generate_images(model, dataset):
-    model.eval()
-    with torch.no_grad():
-        images = []
-        for data in dataset:
-            inputs = data[0].to(device)
-            outputs = model(inputs)
-            images.append(outputs.cpu().numpy())
-        return images
-
-# Generate high-resolution images
-high_res_images = generate_images(model, test_dataset)
-
-# Calculate SSIM and PSNR
 # Calculate SSIM and PSNR
 ssim_values = []
 psnr_values = []
-for i, img in enumerate(high_res_images):
-    img_true = test_labels[i].cpu().numpy()
-    img_test = img
+for i, img in enumerate(reconstructed_images):
+    if i >= len(images):
+        print(f"Skipping index {i} because it's not in the original images list")
+        continue
+    img_true = img_as_float(images[i])  # Convert the original image to float
+    img_test = img_as_float(img)  # Convert the reconstructed image to float
+
+    # Resize img_test to match img_true if necessary
+    if img_true.shape != img_test.shape:
+        img_test = cv2.resize(img_test, (img_true.shape[1], img_true.shape[0]))
+
     ssim_values.append(ssim(img_true, img_test, multichannel=True, win_size=3, data_range=1.0))  # Assuming images are normalized to [0, 1]
     psnr_values.append(psnr(img_true, img_test, data_range=1.0))  # Assuming images are normalized to [0, 1]
 
 print(f"Average SSIM: {np.mean(ssim_values)}")
 print(f"Average PSNR: {np.mean(psnr_values)}")
 
-# Display the generated images
+
+# Plot the reconstructed images
 plt.figure(figsize=(8, 6))
-for i, img in enumerate(high_res_images):
+for i, img in enumerate(reconstructed_images[:10]):  # Limit to first 10 images
     plt.subplot(2, 5, i + 1)
     plt.imshow(cv2.cvtColor(img, cv2.COLOR_BGR2RGB))
     plt.axis("off")
-    plt.title(f"Image {i + 1}")
-plt.tight_layout()
+    plt.title(f"Reconstructed Image {i + 1}")
+    plt.tight_layout()
 plt.show()
