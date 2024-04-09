@@ -28,12 +28,10 @@
 	
 	با ساختار یک گره در ورودی که $x \in [0,1]$ و یک گره در خروجی که $f(x)$ را می‌سازد می‌توان یک شبکه \lr{MLP} که متشکل از ۳ لایه (ورودی + مخفی + خروجی) و ۴ نرون وروی است به صورت زیر پیشنهاد داد:
 	
-	$$
-		R_{in} \rightarrow R_{j, 1}: \alpha_{j, 1}=h^{-1}, \xi_{j,1}=-h^{-1}x_{j-1}\\
-		R_{in} \rightarrow R_{j, 2}: \alpha_{j, 2}=h^{-1}, \xi_{j,2}=-h^{-1}x_{j}\\
-		R_{in} \rightarrow R_{j, 3}: \alpha_{j, 3}=h^{-1}, \xi_{j,3}=-h^{-1}x_{j+1}\\
-		R_{in} \rightarrow R_{j, 4}: \alpha_{j, 4}=h^{-1}, \xi_{j,4}=-h^{-1}x_{j}\\
-	$$
+	$$ R_{in} \rightarrow R_{j, 1}: \alpha_{j, 1}=h^{-1}, \xi_{j,1}=-h^{-1}x_{j-1} $$ \\
+	$$ R_{in} \rightarrow R_{j, 2}: \alpha_{j, 2}=h^{-1}, \xi_{j,2}=-h^{-1}x_{j} $$ \\
+	$$ R_{in} \rightarrow R_{j, 3}: \alpha_{j, 3}=h^{-1}, \xi_{j,3}=-h^{-1}x_{j+1} $$ \\
+	$$ R_{in} \rightarrow R_{j, 4}: \alpha_{j, 4}=h^{-1}, \xi_{j,4}=-h^{-1}x_{j} $$ \\
 	
 \end{qsolve}
 
