@@ -59,7 +59,7 @@ for i, img in enumerate(half_res_img):
     plt.axis("off")
     plt.title(f"Image {i + 1}")
     plt.tight_layout()
-# plt.show()
+plt.show()
 
 
 
@@ -162,7 +162,7 @@ test_accuracy_values = []
 val_loss_values = []
 val_accuracy_values = []
 
-EPOCH = 2
+EPOCH = 1
 
 # Function to calculate loss and accuracy
 def calculate_loss_accuracy(dataset):
