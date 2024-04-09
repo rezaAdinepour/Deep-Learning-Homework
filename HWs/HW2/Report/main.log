@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023/Debian) (preloaded format=xelatex 2024.3.15)  9 APR 2024 23:31
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023/Debian) (preloaded format=xelatex 2024.3.15)  9 APR 2024 23:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1514,37 +1514,36 @@ Underfull \hbox (badness 10000) in paragraph at lines 13--14
 
 File: pics/img1.png Graphic file (type bmp)
 <pics/img1.png>
-[1]
 File: pics/img2.pdf Graphic file (type pdf)
 <use pics/img2.pdf>
 File: pics/img3.png Graphic file (type bmp)
 <pics/img3.png>
-LaTeX Font Info:    Font shape `TU/XBYas(0)/m/sl' in size <12> not available
-(Font)              Font shape `TU/XBYas(0)/m/it' tried instead on input line 4
-8.
- [2]
+[1]
 File: pics/img4.png Graphic file (type bmp)
 <pics/img4.png>
 File: pics/img5.png Graphic file (type bmp)
 <pics/img5.png>
- [3]) [4] (./questions/Q2.tex
+LaTeX Font Info:    Font shape `TU/XBYas(0)/m/sl' in size <12> not available
+(Font)              Font shape `TU/XBYas(0)/m/it' tried instead on input line 6
+7.
+ [2]) [3] (./questions/Q2.tex
 File: pics/img6.png Graphic file (type bmp)
 <pics/img6.png>
 File: pics/img7.png Graphic file (type bmp)
 <pics/img7.png>
 File: pics/img8.png Graphic file (type bmp)
 <pics/img8.png>
- [5
+ [4
 
 ]
 File: pics/img9.png Graphic file (type bmp)
 <pics/img9.png>
- [6]
+ [5]
 Overfull \hbox (0.38614pt too wide) in paragraph at lines 68--68
 [][]|  [] [] []
  []
 
-) [7] (./questions/Q3.tex
+) [6] (./questions/Q3.tex
 File: pics/img10.png Graphic file (type bmp)
 <pics/img10.png>
 
@@ -1571,39 +1570,39 @@ File: pics/img11.png Graphic file (type bmp)
 <pics/img11.png>
 File: pics/img12.png Graphic file (type bmp)
 <pics/img12.png>
-[8
+[7
 
 ]
 File: pics/img13.png Graphic file (type bmp)
 <pics/img13.png>
- [9]
+ [8]
 Overfull \hbox (0.38614pt too wide) in paragraph at lines 90--90
 [][]|  [] [] []
  []
 
-) [10] (./questions/Q4.tex
+) [9] (./questions/Q4.tex
 Overfull \hbox (0.38614pt too wide) in paragraph at lines 49--49
 [][]|  [] [] []
  []
 
-) [11
+) [10
 
 ] (./questions/Q5.tex
 File: pics/img14.png Graphic file (type bmp)
 <pics/img14.png>
 File: pics/img15.png Graphic file (type bmp)
 <pics/img15.png>
- [12
+ [11
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 81--87
 [][]
  []
 
-[13]
+[12]
 File: pics/img16.png Graphic file (type bmp)
 <pics/img16.png>
- [14]) [15] 
+ [13]) [14] 
 enddocument/afterlastpage: lastpage setting LastPage.
 (./main.aux)
  ***********
@@ -1626,4 +1625,4 @@ Here is how much of TeX's memory you used:
  1348 hyphenation exceptions out of 8191
  101i,12n,112p,1310b,592s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (16 pages).
+Output written on main.pdf (15 pages).
