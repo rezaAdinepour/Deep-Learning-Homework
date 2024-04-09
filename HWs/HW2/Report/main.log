@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023/Debian) (preloaded format=xelatex 2024.3.15)  9 APR 2024 23:18
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023/Debian) (preloaded format=xelatex 2024.3.15)  9 APR 2024 23:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1600,13 +1600,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 81--87
 [][]
  []
 
+[13]
 File: pics/img16.png Graphic file (type bmp)
 <pics/img16.png>
-) [13]
-Overfull \vbox (10.98224pt too high) has occurred while \output is active []
-
-
-[14] 
+ [14]) [15] 
 enddocument/afterlastpage: lastpage setting LastPage.
 (./main.aux)
  ***********
@@ -1621,12 +1618,12 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 4613C48A60E1E1B18ECEEBC6E69583F3;976.
  ) 
 Here is how much of TeX's memory you used:
- 43454 strings out of 476387
- 1057932 string characters out of 5798473
+ 43455 strings out of 476387
+ 1057948 string characters out of 5798473
  1861390 words of memory out of 5000000
- 63114 multiletter control sequences out of 15000+600000
+ 63115 multiletter control sequences out of 15000+600000
  522294 words of font info for 111 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  101i,12n,112p,1310b,592s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (15 pages).
+Output written on main.pdf (16 pages).
