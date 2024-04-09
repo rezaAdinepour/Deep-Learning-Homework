@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023/Debian) (preloaded format=xelatex 2024.3.15)  9 APR 2024 20:56
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023/Debian) (preloaded format=xelatex 2024.3.15)  9 APR 2024 21:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1387,6 +1387,12 @@ LaTeX Warning: Label `ref1' multiply defined.
 
 LaTeX Warning: Label `ref2' multiply defined.
 
+
+LaTeX Warning: Label `ref1' multiply defined.
+
+
+LaTeX Warning: Label `ref2' multiply defined.
+
 )
 \openout1 = `main.aux'.
 
@@ -1575,7 +1581,7 @@ Overfull \hbox (0.38614pt too wide) in paragraph at lines 90--90
  []
 
 ) [9] (./questions/Q4.tex
-Overfull \hbox (0.38614pt too wide) in paragraph at lines 41--41
+Overfull \hbox (0.38614pt too wide) in paragraph at lines 49--49
 [][]|  [] [] []
  []
 
@@ -1595,14 +1601,8 @@ L3 programming layer <2023-06-05>
 
 LaTeX Warning: There were multiply-defined labels.
 
-
-Package rerunfilecheck Warning: File `main.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: 029F657832405497D8C7AFD90D7ACC26;927
-(rerunfilecheck)             After:  4613C48A60E1E1B18ECEEBC6E69583F3;976.
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: 4613C48A60E1E1B18ECEEBC6E69583F3;976.
  ) 
 Here is how much of TeX's memory you used:
  43422 strings out of 476387
