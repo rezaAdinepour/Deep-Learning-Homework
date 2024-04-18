@@ -28,7 +28,7 @@ import pandas as pd
 from textblob import Word
 from wordcloud import WordCloud
 from nltk.corpus import stopwords
-
+from minisom import MiniSom
 from gensim.scripts.glove2word2vec import glove2word2vec
 from gensim.models import KeyedVectors
 
@@ -36,7 +36,7 @@ from gensim.models import KeyedVectors
 from sklearn.manifold import TSNE
 
 glove_input_file = "../../../Dataset/glove.6B.100d.txt"
-word2vec_output_file = "../../../glove.word2vec.txt"
+word2vec_output_file = "../../../Dataset/glove.word2vec.txt"
 glove2word2vec(glove_input_file, word2vec_output_file)
 
 glove_model = KeyedVectors.load_word2vec_format(word2vec_output_file, binary=False)
@@ -262,4 +262,32 @@ plt.figure(figsize=(10, 10))
 plt.scatter(vectors_2d[:, 0], vectors_2d[:, 1], edgecolors='k', c='r')
 for word, (x, y) in zip(words, vectors_2d):
     plt.text(x, y, word)
+plt.show()
+
+
+
+
+
+# Load the preprocessed data
+df = pd.read_csv('word2vec_out.csv')
+
+# Extract the vectors and convert them into a suitable format
+vectors = np.stack(df['vectors'].to_numpy())
+
+# Initialize a MiniSom instance
+# The parameters (x, y, input_len) should be chosen based on your specific needs
+# Here, we're using a 10x10 grid and input_len equal to the length of the vectors
+som = MiniSom(x=10, y=10, input_len=32323, sigma=1.0, learning_rate=0.5)
+
+# Train the SOM
+som.train_random(vectors, 100)
+# ufunc 'subtract' did not contain a loop with signature matching types (dtype('<U14431'), dtype('float64')) -> None
+
+# Visualize the SOM
+plt.figure(figsize=(10, 10))
+for (x, y, vec) in som.iter_neurons():
+    plt.plot([x + vec[0]/2, x - vec[0]/2],
+             [y + vec[1]/2, y - vec[1]/2],
+             'k', linewidth=0.5)
+plt.title('Self-Organizing Map of word vectors')
 plt.show()
