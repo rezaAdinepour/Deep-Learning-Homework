@@ -258,36 +258,42 @@ tsne = TSNE(n_components=2, random_state=0)
 vectors_2d = tsne.fit_transform(vectors)
 
 # Plot the 2D vectors
+# plt.figure(figsize=(10, 10))
+# plt.scatter(vectors_2d[:, 0], vectors_2d[:, 1], edgecolors='k', c='r')
+# for word, (x, y) in zip(words, vectors_2d):
+#     plt.text(x, y, word)
+# plt.show()
+
+
+# Importing necessary libraries
+# Define the dimensions of the SOM grid
+grid_rows = 10
+grid_cols = 10
+
+# Define the input dimension (same as the dimension of the word vectors)
+input_dim = vectors.shape[1]
+
+# Initialize the SOM network
+som = MiniSom(grid_rows, grid_cols, input_dim, sigma=0.5, learning_rate=0.5)
+
+# Initialize the weights of the SOM network with random values
+som.random_weights_init(vectors)
+
+# Train the SOM network
+som.train_random(vectors, 100)  # You can adjust the number of iterations as needed
+
+# Get the coordinates of the BMUs (Best Matching Units) for each input vector
+bmu_coords = np.array([som.winner(x) for x in vectors])
+
+# Plot the 2D vectors with SOM cluster assignments
 plt.figure(figsize=(10, 10))
-plt.scatter(vectors_2d[:, 0], vectors_2d[:, 1], edgecolors='k', c='r')
+plt.scatter(vectors_2d[:, 0], vectors_2d[:, 1], c=bmu_coords.flatten(), edgecolors='k')
 for word, (x, y) in zip(words, vectors_2d):
-    plt.text(x, y, word)
+    plt.text(x, y, word, alpha=0.5)
+plt.title('SOM Clustering')
+plt.xlabel('t-SNE Dimension 1')
+plt.ylabel('t-SNE Dimension 2')
+plt.colorbar(label='SOM Cluster')
+plt.grid()
 plt.show()
 
-
-
-
-
-# Load the preprocessed data
-df = pd.read_csv('word2vec_out.csv')
-
-# Extract the vectors and convert them into a suitable format
-vectors = np.stack(df['vectors'].to_numpy())
-
-# Initialize a MiniSom instance
-# The parameters (x, y, input_len) should be chosen based on your specific needs
-# Here, we're using a 10x10 grid and input_len equal to the length of the vectors
-som = MiniSom(x=10, y=10, input_len=32323, sigma=1.0, learning_rate=0.5)
-
-# Train the SOM
-som.train_random(vectors, 100)
-# ufunc 'subtract' did not contain a loop with signature matching types (dtype('<U14431'), dtype('float64')) -> None
-
-# Visualize the SOM
-plt.figure(figsize=(10, 10))
-for (x, y, vec) in som.iter_neurons():
-    plt.plot([x + vec[0]/2, x - vec[0]/2],
-             [y + vec[1]/2, y - vec[1]/2],
-             'k', linewidth=0.5)
-plt.title('Self-Organizing Map of word vectors')
-plt.show()
