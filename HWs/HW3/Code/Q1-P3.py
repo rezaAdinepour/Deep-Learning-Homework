@@ -35,11 +35,11 @@ from gensim.models import KeyedVectors
 
 from sklearn.manifold import TSNE
 
-glove_input_file = "../../../Dataset/glove.6B.100d.txt"
-word2vec_output_file = "../../../Dataset/glove.word2vec.txt"
-glove2word2vec(glove_input_file, word2vec_output_file)
+# glove_input_file = "../../../Dataset/glove.6B.100d.txt"
+# word2vec_output_file = "../../../Dataset/glove.word2vec.txt"
+# glove2word2vec(glove_input_file, word2vec_output_file)
 
-glove_model = KeyedVectors.load_word2vec_format(word2vec_output_file, binary=False)
+# glove_model = KeyedVectors.load_word2vec_format(word2vec_output_file, binary=False)
 
 
 def convert_to_vector(text):
