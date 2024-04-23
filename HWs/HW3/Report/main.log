@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023/Debian) (preloaded format=xelatex 2024.3.15)  22 APR 2024 19:14
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023/Debian) (preloaded format=xelatex 2024.3.15)  23 APR 2024 11:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1535,7 +1535,11 @@ Missing character: There is no ‫ (U+202B) in font XB Yas/OT:script=latn;langua
 e=dflt;script=arab;mapping=persian-tex-text;!
 Missing character: There is no ‪ (U+202A) in font XB Yas/OT:script=latn;languag
 e=dflt;script=arab;mapping=persian-tex-text;!
-) [9] 
+File: pics/img9.png Graphic file (type bmp)
+<pics/img9.png>
+File: pics/img10.png Graphic file (type bmp)
+<pics/img10.png>
+[9] [10]) [11] 
 enddocument/afterlastpage: lastpage setting LastPage.
 (./main.aux)
  ***********
@@ -1546,12 +1550,12 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 4E1EF13E04BD89C1FDDB2961E1DFBEC0;250.
  ) 
 Here is how much of TeX's memory you used:
- 43339 strings out of 476387
- 1055569 string characters out of 5798473
+ 43362 strings out of 476387
+ 1056004 string characters out of 5798473
  1867390 words of memory out of 5000000
- 63020 multiletter control sequences out of 15000+600000
+ 63041 multiletter control sequences out of 15000+600000
  522286 words of font info for 110 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  101i,12n,112p,1310b,716s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (10 pages).
+Output written on main.pdf (12 pages).
