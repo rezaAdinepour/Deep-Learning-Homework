@@ -497,6 +497,11 @@ $$ \sigma (t)= \frac{\sigma}{1+\frac{t}{T}}, \qquad T=\frac{\text{\lr{number of 
  			\item{\lr{\texttt{decay\_function=asymptotic\_decay}}}
  			
  			این پارامتر، مقدار $\sigma$ و \texttt{learning\_rate} را در هر دوره کاهش می‌دهد. مقدار پیش فرض آن بر روی تابع \texttt{asymptotic\_decay} تنظیم شده است. این تابع به‌صورت زیر نوشته شده است:
+ 			
+ 			\begin{latin}
+ 				\texttt{def asymptotic\_decay(learning\_rate, t, max\_iter):}\\
+ 				\quad \texttt{return learning_rate / (1+t/(max_iter/2))}
+ 			\end{latin}
 	 		
 	 		
 	 		
