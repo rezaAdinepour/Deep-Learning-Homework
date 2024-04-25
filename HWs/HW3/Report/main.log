@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023/Debian) (preloaded format=xelatex 2024.3.15)  25 APR 2024 18:43
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023/Debian) (preloaded format=xelatex 2024.3.15)  25 APR 2024 18:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1586,6 +1586,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 630--644
 
 File: pics/img23.png Graphic file (type bmp)
 <pics/img23.png>
+File: pics/img24.png Graphic file (type bmp)
+<pics/img24.png>
 [16]) [17] 
 enddocument/afterlastpage: lastpage setting LastPage.
 (./main.aux)
@@ -1597,10 +1599,10 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 4E1EF13E04BD89C1FDDB2961E1DFBEC0;250.
  ) 
 Here is how much of TeX's memory you used:
- 43503 strings out of 476387
- 1058923 string characters out of 5798473
+ 43515 strings out of 476387
+ 1059155 string characters out of 5798473
  1867390 words of memory out of 5000000
- 63166 multiletter control sequences out of 15000+600000
+ 63177 multiletter control sequences out of 15000+600000
  522318 words of font info for 114 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  101i,12n,112p,1310b,716s stack positions out of 10000i,1000n,20000p,200000b,200000s
