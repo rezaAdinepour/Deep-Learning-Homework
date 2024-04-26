@@ -185,6 +185,9 @@ winner_coordinates = np.array([som.winner(x) for x in vectors_2d_question]).T
 cluster_index = np.ravel_multi_index(winner_coordinates, som_shape)
 
 
+
+
+
 plt.figure(figsize=(8, 6))
 for c in np.unique(cluster_index):
     plt.scatter(vectors_2d_question[cluster_index == c, 0],
