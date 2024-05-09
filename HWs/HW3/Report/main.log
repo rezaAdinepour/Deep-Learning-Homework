@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023/Debian) (preloaded format=xelatex 2024.4.26)  26 APR 2024 15:40
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023/Debian) (preloaded format=xelatex 2024.4.26)  26 APR 2024 20:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -996,27 +996,619 @@ File: ppxetex.def 2024/01/21 v0.5y Pdfpages driver for XeTeX (AM)
 \c@AM@survey=\count369
 \AM@templatesizebox=\box84
 )
+(/usr/share/texlive/texmf-dist/tex/xelatex/xepersian/xepersian.sty
+Package: xepersian 2023/08/30 v25.0 (Release Women, Life, and Freedom) Persian 
+typesetting in XeLaTeX
 
-! LaTeX Error: File `xepersian.sty' not found.
+(/usr/share/texlive/texmf-dist/tex/latex/fontspec/fontspec.sty
+(/usr/share/texlive/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
+Package: xparse 2023-10-10 L3 Experimental document command parser
+)
+Package: fontspec 2022/01/15 v2.8a Font selection for XeLaTeX and LuaLaTeX
 
-Type X to quit or <RETURN> to proceed,
-or enter new name. (Default extension: sty)
+(/usr/share/texlive/texmf-dist/tex/latex/fontspec/fontspec-xetex.sty
+Package: fontspec-xetex 2022/01/15 v2.8a Font selection for XeLaTeX and LuaLaTe
+X
+\l__fontspec_script_int=\count370
+\l__fontspec_language_int=\count371
+\l__fontspec_strnum_int=\count372
+\l__fontspec_tmp_int=\count373
+\l__fontspec_tmpa_int=\count374
+\l__fontspec_tmpb_int=\count375
+\l__fontspec_tmpc_int=\count376
+\l__fontspec_em_int=\count377
+\l__fontspec_emdef_int=\count378
+\l__fontspec_strong_int=\count379
+\l__fontspec_strongdef_int=\count380
+\l__fontspec_tmpa_dim=\dimen310
+\l__fontspec_tmpb_dim=\dimen311
+\l__fontspec_tmpc_dim=\dimen312
 
-Enter file name: 
-! Emergency stop.
-<read *> 
-         
-l.26 \settextfont
-                 {XB Yas}^^M
-*** (cannot \read from terminal in nonstop modes)
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
+)
+(/usr/share/texlive/texmf-dist/tex/latex/fontspec/fontspec.cfg)))
+(/usr/share/texlive/texmf-dist/tex/xelatex/xepersian/xepersian-persiancal.sty
+Package: xepersian-persiancal 2012/07/25 v0.2 provides Persian calendar
+\XePersian@i=\count381
+\XePersian@y=\count382
+\XePersian@m=\count383
+\XePersian@d=\count384
+\XePersian@latini=\count385
+\XePersian@persiani=\count386
+\XePersian@latinii=\count387
+\XePersian@persianii=\count388
+\XePersian@latiniii=\count389
+\XePersian@persianiii=\count390
+\XePersian@latiniv=\count391
+\XePersian@persianiv=\count392
+\XePersian@latinv=\count393
+\XePersian@persianv=\count394
+\XePersian@latinvi=\count395
+\XePersian@persianvi=\count396
+\XePersian@latinvii=\count397
+\XePersian@persianvii=\count398
+\XePersian@latinviii=\count399
+\XePersian@persianviii=\count400
+\XePersian@latinix=\count401
+\XePersian@persianix=\count402
+\XePersian@latinx=\count403
+\XePersian@persianx=\count404
+\XePersian@latinxi=\count405
+\XePersian@persianxi=\count406
+\XePersian@latinxii=\count407
+\XePersian@persianxii=\count408
+\XePersian@persianxiii=\count409
+\XePersian@temp=\count410
+\XePersian@temptwo=\count411
+\XePersian@tempthree=\count412
+\XePersian@yModHundred=\count413
+\XePersian@thirtytwo=\count414
+\XePersian@dn=\count415
+\XePersian@sn=\count416
+\XePersian@mminusone=\count417
+)
+(/usr/share/texlive/texmf-dist/tex/xelatex/xepersian/xepersian-mathdigitspec.st
+y
+Package: xepersian-mathdigitspec 2022/05/20 v1.2.0 Unicode Persian math digits 
+in XeLaTeX
+) (/usr/share/texlive/texmf-dist/tex/xelatex/bidi/bidi.sty
+Package: bidi 2023/08/02 v39.8 (Release Donald Ervin Knuth) Bidirectional types
+etting in plain TeX and LaTeX
 
- 
+****************************************************
+* 
+* bidi package (Bidirectional typesetting in
+* plain TeX and LaTeX, using XeTeX engine)
+* 
+* Description: A convenient interface for
+* typesetting bidirectional texts in plain TeX
+* and LaTeX. The package includes adaptations
+* for use with many other commonly-used packages.
+* 
+* Copyright (c) 2007--2023 Vafa Khalighi
+* Copyright (c) 2018--2020 bidi-tex GitHub organization
+* 
+* v39.8 (Release Donald Ervin Knuth), 2023/08/02
+* 
+* License: LaTeX Project Public License, version
+* 1.3c or higher (your choice)
+* 
+* Location on CTAN: /macros/xetex/latex/bidi
+* 
+* Issue tracker: https://github.com/kvafa/bidi/issues
+* 
+* Discussions: https://github.com/kvafa/bidi/discussions
+* 
+* Primary author of bidi package: Vafa Khalighi.
+* 
+****************************************************
+(/usr/share/texlive/texmf-dist/tex/xelatex/bidi/biditools.sty
+Package: biditools 2022/06/15 v2.3 Programming tools for bidi package
+\@bidi@envbody=\toks57
+\@bidi@emptytoks=\toks58
+\bidi@poscount=\count418
+\bidi@tempcountb=\count419
+\bidi@temptoksa=\toks59
+\bidi@temptoksb=\toks60
+\bidi@dummies=\count420
+\bidi@are@these@correct=\toks61
+\bidi@toks@lista=\toks62
+\bidi@toks@listb=\toks63
+\bidi@stack@length=\count421
+\bidi@empty@stack=\toks64
+\bidi@looprepeat@depth=\count422
+)
+(/usr/share/texlive/texmf-dist/tex/latex/zref/zref-abspage.sty
+Package: zref-abspage 2023-09-14 v2.35 Module abspage for zref (HO)
+
+(/usr/share/texlive/texmf-dist/tex/latex/zref/zref-base.sty
+Package: zref-base 2023-09-14 v2.35 Module base for zref (HO)
+Package zref Info: New property list: main on input line 767.
+Package zref Info: New property: default on input line 768.
+Package zref Info: New property: page on input line 769.
+)
+\c@abspage=\count423
+Package zref Info: New property: abspage on input line 67.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
+
+(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+\XKV@toks=\toks65
+\XKV@tempa@toks=\toks66
+)
+\XKV@depth=\count424
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+))
+\@bidi@copyins@=\insert252
+
+(/usr/share/texlive/texmf-dist/tex/xelatex/bidi/latex-xetex-bidi.def
+File: latex-xetex-bidi.def 2022/07/04 v1.4.9 bidi adaptations for `latex.ltx' f
+or XeTeX engine
+\bidi@n@everypar=\toks67
+\bidi@column@check@number=\count425
+
+(/usr/share/texlive/texmf-dist/tex/xelatex/bidi/footnote-xetex-bidi.def
+File: footnote-xetex-bidi.def 2023/01/18 v1.2 bidi footnote macros for XeTeX en
+gine
+\c@footdir@label=\count426
+\footdir@toks=\toks68
+)
+(/usr/share/texlive/texmf-dist/tex/xelatex/bidi/article-xetex-bidi.def
+File: article-xetex-bidi.def 2017/06/09 v0.6 bidi adaptations for standard arti
+cle class for XeTeX engine
+)
+(/usr/share/texlive/texmf-dist/tex/xelatex/bidi/amsmath-xetex-bidi.def
+File: amsmath-xetex-bidi.def 2020/05/16 v1.2 bidi adaptations for amsmath packa
+ge for XeTeX engine
+)
+(/usr/share/texlive/texmf-dist/tex/xelatex/bidi/amstext-xetex-bidi.def
+File: amstext-xetex-bidi.def 2016/09/12 v0.2 bidi adaptations for amstext packa
+ge for XeTeX engine
+)
+(/usr/share/texlive/texmf-dist/tex/xelatex/bidi/color-xetex-bidi.def
+File: color-xetex-bidi.def 2013/04/08 v0.2 bidi adaptations for color package f
+or XeTeX engine
+LaTeX Info: Redefining \color on input line 49.
+)
+(/usr/share/texlive/texmf-dist/tex/xelatex/bidi/xcolor-xetex-bidi.def
+File: xcolor-xetex-bidi.def 2022/06/13 v0.3 bidi adaptations for xcolor package
+ for XeTeX engine
+LaTeX Info: Redefining \color on input line 48.
+LaTeX Info: Redefining \bidicolor on input line 91.
+)
+(/usr/share/texlive/texmf-dist/tex/xelatex/bidi/wrapfig-xetex-bidi.def
+File: wrapfig-xetex-bidi.def 2014/04/23 v0.3 bidi adaptations for wrapfig packa
+ge for XeTeX engine
+)
+(/usr/share/texlive/texmf-dist/tex/xelatex/bidi/graphicx-xetex-bidi.def
+File: graphicx-xetex-bidi.def 2017/06/17 v0.5 bidi adaptations for graphicx pac
+kage for XeTeX engine
+)
+(/usr/share/texlive/texmf-dist/tex/xelatex/bidi/geometry-xetex-bidi.def
+File: geometry-xetex-bidi.def 2017/01/14 v0.2 bidi adaptations for geometry pac
+kage for XeTeX engine
+)
+(/usr/share/texlive/texmf-dist/tex/xelatex/bidi/hyperref-xetex-bidi.def
+File: hyperref-xetex-bidi.def 2018/11/11 v1.1 bidi adaptations for hyperref pac
+kage for XeTeX engine
+)
+(/usr/share/texlive/texmf-dist/tex/xelatex/bidi/fancyhdr-xetex-bidi.def
+File: fancyhdr-xetex-bidi.def 2018/02/15 v0.7 bidi adaptations for fancyhdr pac
+kage for XeTeX engine
+)
+(/usr/share/texlive/texmf-dist/tex/xelatex/bidi/eso-pic-xetex-bidi.def
+File: eso-pic-xetex-bidi.def 2022/02/18 v0.4 bidi adaptations for eso-pic packa
+ge for XeTeX engine
+)
+(/usr/share/texlive/texmf-dist/tex/xelatex/bidi/pdfpages-xetex-bidi.def
+File: pdfpages-xetex-bidi.def 2010/07/25 v0.1 bidi adaptations for pdfpages pac
+kage for XeTeX engine
+)
+(/usr/share/texlive/texmf-dist/tex/xelatex/bidi/listings-xetex-bidi.def
+File: listings-xetex-bidi.def 2018/09/15 v1.5 bidi adaptations for listings pac
+kage for XeTeX engine
+)
+(/usr/share/texlive/texmf-dist/tex/xelatex/bidi/pgfcorescopes.code-xetex-bidi.d
+ef
+File: pgfcorescopes.code-xetex-bidi.def 2015/11/14 v0.1 bidi adaptations for pg
+f package for XeTeX engine
+) (/usr/share/texlive/texmf-dist/tex/xelatex/bidi/soul-xetex-bidi.def
+File: soul-xetex-bidi.def 2015/10/16 v0.1 bidi adaptations for soul package for
+ XeTeX engine
+)
+(/usr/share/texlive/texmf-dist/tex/xelatex/bidi/pgfsys.code-xetex-bidi.def
+File: pgfsys.code-xetex-bidi.def 2022/06/01 v0.1 bidi adaptations for pgfsys.co
+de.tex file for XeTeX engine
+)
+(/usr/share/texlive/texmf-dist/tex/xelatex/bidi/tcolorbox-xetex-bidi.def
+File: tcolorbox-xetex-bidi.def 2018/11/11 v0.2 bidi adaptations for tcolorbox p
+ackage for XeTeX engine
+))
+(/usr/share/texlive/texmf-dist/tex/xelatex/bidi/loadingorder-xetex-bidi.def
+File: loadingorder-xetex-bidi.def 2017/12/29 v0.97 making sure that bidi is the
+ last package loaded
+)
+\bidi@digits=\count427
+\bidi@digits@charclass=\XeTeXcharclass1
+\bidi@sepmark@charclass=\XeTeXcharclass2
+)
+****************************************************
+* 
+* xepersian package (Persian for LaTeX, using XeTeX engine)
+* 
+* Description: The package supports Persian
+* typesetting, using fonts provided in the
+* distribution.
+* 
+* Copyright (c) 2008--2023 Vafa Khalighi
+* Copyright (c) 2018--2020 bidi-tex GitHub Organization
+* 
+* v25.0 (Release Women, Life, and Freedom), 2023/08/30
+* 
+* License: LaTeX Project Public License, version
+* 1.3c or higher (your choice)
+* 
+* Location on CTAN: /macros/xetex/latex/xepersian
+* 
+* Issue tracker: https://github.com/kvafa/xepersian/issues
+* 
+* Discussions: https://github.com/kvafa/xepersian/discussions
+* 
+* Primary author of xepersian package: Vafa Khalighi.
+* 
+****************************************************
+\xepersian@tcl=\count428
+\xepersian@ilg=\dimen313
+\xepersian@strutilg=\dimen314
+
+(/usr/share/texlive/texmf-dist/tex/xelatex/xepersian/loadingorder-xepersian.def
+File: loadingorder-xepersian.def 2018/09/29 v0.5 making sure that xepersian is 
+the last package loaded
+) (/usr/share/texlive/texmf-dist/tex/xelatex/xepersian/footnote-xepersian.def
+File: footnote-xepersian.def 2017/08/09 v0.6 footnote macros for xepersian pack
+age
+)
+(/usr/share/texlive/texmf-dist/tex/xelatex/xepersian/listings-xepersian.def
+File: listings-xepersian.def 2014/07/17 v0.3 bilingual captions for listings pa
+ckage
+)
+(/usr/share/texlive/texmf-dist/tex/xelatex/xepersian/hyperref-xepersian.def
+File: hyperref-xepersian.def 2022/10/30 v0.8 xepersian adaptations for hyperref
+ package
+)
+(/usr/share/texlive/texmf-dist/tex/xelatex/xepersian/soul-xepersian.def
+File: soul-xepersian.def 2018/12/12 v0.2 adaptations for soul package
+
+Package fontspec Info: Font family 'TimesNewRoman(0)' created for font 'Times
+(fontspec)             New Roman' with options
+(fontspec)             [BoldFont={},ItalicFont={},SmallCapsFont={}].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.: <->"Times New
+(fontspec)             Roman/OT:language=dflt;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
+
+)
+(/usr/share/texlive/texmf-dist/tex/xelatex/xepersian/url-xepersian.def
+File: url-xepersian.def 2022/02/18 v0.1 adaptations for url package
+)
+(/usr/share/texlive/texmf-dist/tex/xelatex/xepersian/article-xepersian.def
+File: article-xepersian.def 2010/07/25 v0.2 adaptations for standard article cl
+ass
+)
+
+Package fontspec Info: Font family 'lmroman10-regular(0)' created for font
+(fontspec)             'lmroman10-regular' with options
+(fontspec)             [Ligatures=TeX,Path,BoldFont={lmroman10-bold},BoldItalic
+Font={lmroman10-bolditalic},ItalicFont={lmroman10-italic},SmallCapsFont={lmroma
+ncaps10-regular},SlantedFont={lmromanslant10-regular},BoldSlantedFont={lmromans
+lant10-bold}].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->"[lmroman10-regular]/OT:script=latn;language=dflt;map
+ping=tex-text;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.:
+(fontspec)             <->"[lmromancaps10-regular]/OT:script=latn;language=dflt
+;mapping=tex-text;"
+(fontspec)             - 'bold' (b/n) with NFSS spec.:
+(fontspec)             <->"[lmroman10-bold]/OT:script=latn;language=dflt;mappin
+g=tex-text;"
+(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.:
+(fontspec)             <->"[lmromancaps10-regular]/OT:script=latn;language=dflt
+;mapping=tex-text;"
+(fontspec)             - 'italic' (m/it) with NFSS spec.:
+(fontspec)             <->"[lmroman10-italic]/OT:script=latn;language=dflt;mapp
+ing=tex-text;"
+(fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.:
+(fontspec)             <->"[lmromancaps10-regular]/OT:script=latn;language=dflt
+;mapping=tex-text;"
+(fontspec)             - 'slanted' (m/sl) with NFSS spec.:
+(fontspec)             <->"[lmromanslant10-regular]/OT:script=latn;language=dfl
+t;mapping=tex-text;"
+(fontspec)             - 'slanted small caps'  (m/scsl) with NFSS spec.:
+(fontspec)             <->"[lmromancaps10-regular]/OT:script=latn;language=dflt
+;mapping=tex-text;"
+(fontspec)             - 'bold italic' (b/it) with NFSS spec.:
+(fontspec)             <->"[lmroman10-bolditalic]/OT:script=latn;language=dflt;
+mapping=tex-text;"
+(fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.:
+(fontspec)             <->"[lmromancaps10-regular]/OT:script=latn;language=dflt
+;mapping=tex-text;"
+(fontspec)             - 'bold slanted' (b/sl) with NFSS spec.:
+(fontspec)             <->"[lmromanslant10-bold]/OT:script=latn;language=dflt;m
+apping=tex-text;"
+(fontspec)             - 'bold slanted small caps'  (b/scsl) with NFSS spec.:
+(fontspec)             <->"[lmromancaps10-regular]/OT:script=latn;language=dflt
+;mapping=tex-text;"
+
+)
+
+Package fontspec Info: Font family 'XBYas(0)' created for font 'XB Yas' with
+(fontspec)             options
+(fontspec)             [RawFeature={script=arab},Ligatures=PersianTeX].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.: <->"XB
+(fontspec)             Yas/OT:script=latn;language=dflt;script=arab;mapping=per
+sian-tex-text;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
+(fontspec)             - 'bold' (b/n) with NFSS spec.: <->"XB
+(fontspec)             Yas/B/OT:script=latn;language=dflt;script=arab;mapping=p
+ersian-tex-text;"
+(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
+(fontspec)             - 'italic' (m/it) with NFSS spec.: <->"XB
+(fontspec)             Yas/I/OT:script=latn;language=dflt;script=arab;mapping=p
+ersian-tex-text;"
+(fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.: 
+(fontspec)             - 'bold italic' (b/it) with NFSS spec.: <->"XB
+(fontspec)             Yas/BI/OT:script=latn;language=dflt;script=arab;mapping=
+persian-tex-text;"
+(fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.: 
+
+
+(./main.aux)
+\openout1 = `main.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 28.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 2
+8.
+ (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
+File: ts1cmr.fd 2023/04/13 v2.5m Standard LaTeX font definitions
+)
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: xetex
+*geometry* verbose mode - [ preamble ] result:
+* driver: xetex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(56.9055pt, 483.69687pt, 56.9055pt)
+* v-part:(T,H,B)=(56.9055pt, 702.78308pt, 85.35826pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=483.69687pt
+* \textheight=702.78308pt
+* \oddsidemargin=-15.36449pt
+* \evensidemargin=-15.36449pt
+* \topmargin=-56.36449pt
+* \headheight=16.0pt
+* \headsep=25.0pt
+* \topskip=12.0pt
+* \footskip=30.0pt
+* \marginparwidth=44.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+Package hyperref Info: Link coloring ON on input line 28.
+(./main.out) (./main.out)
+\@outlinefile=\write4
+\openout4 = `main.out'.
+
+\c@lstlisting=\count429
+
+Package pgfplots notification 'compat/show suggested version=true': document ha
+s been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
+
+(/usr/share/texlive/texmf-dist/tex/latex/pdflscape/pdflscape.sty
+Package: pdflscape 2022-10-27 v0.13 Display of landscape pages in PDF
+
+(/usr/share/texlive/texmf-dist/tex/latex/pdflscape/pdflscape-nometadata.sty
+Package: pdflscape-nometadata 2022-10-28 v0.13 Display of landscape pages in PD
+F (HO)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/lscape.sty
+Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
+)
+Package pdflscape Info: Auto-detected driver: dvipdfm (xetex) on input line 98.
+
+))
+File: logo/aut-fa2.png Graphic file (type bmp)
+<logo/aut-fa2.png>
+LaTeX Font Info:    Trying to load font information for U+msa on input line 29.
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 29.
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) [1
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 30--30
+[][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 30--30
+[][]
+ []
+
+File: logo/ce-fa2.png Graphic file (type bmp)
+<logo/ce-fa2.png>
+(./questions/Q1.tex
+File: pics/img1.png Graphic file (type bmp)
+<pics/img1.png>
+ [1]
+File: pics/img2.png Graphic file (type bmp)
+<pics/img2.png>
+LaTeX Font Info:    Font shape `TU/XBYas(0)/m/sl' in size <12> not available
+(Font)              Font shape `TU/XBYas(0)/m/it' tried instead on input line 9
+4.
+ [2]
+Overfull \vbox (17.95396pt too high) has occurred while \output is active []
+
+
+[3]
+File: pics/img3.png Graphic file (type bmp)
+<pics/img3.png>
+File: pics/img4.png Graphic file (type bmp)
+<pics/img4.png>
+File: pics/img5.png Graphic file (type bmp)
+<pics/img5.png>
+ [4]
+File: pics/img6.png Graphic file (type bmp)
+<pics/img6.png>
+File: pics/img7.png Graphic file (type bmp)
+<pics/img7.png>
+ [5]
+Overfull \vbox (4.34326pt too high) has occurred while \output is active []
+
+
+[6]
+File: pics/img8.png Graphic file (type bmp)
+<pics/img8.png>
+ [7]
+Overfull \hbox (12.38614pt too wide) in paragraph at lines 282--282
+[][]|  [] [] []
+ []
+
+[8]
+Missing character: There is no ‫ (U+202B) in font XB Yas/OT:script=latn;languag
+e=dflt;script=arab;mapping=persian-tex-text;!
+Missing character: There is no ‪ (U+202A) in font XB Yas/OT:script=latn;languag
+e=dflt;script=arab;mapping=persian-tex-text;!
+File: pics/img9.png Graphic file (type bmp)
+<pics/img9.png>
+File: pics/img10.png Graphic file (type bmp)
+<pics/img10.png>
+File: pics/img11.png Graphic file (type bmp)
+<pics/img11.png>
+File: pics/img12.png Graphic file (type bmp)
+<pics/img12.png>
+File: pics/img13.png Graphic file (type bmp)
+<pics/img13.png>
+[9]
+Overfull \vbox (7.92448pt too high) has occurred while \output is active []
+
+
+[10]
+File: pics/img14.png Graphic file (type bmp)
+<pics/img14.png>
+File: pics/img15.png Graphic file (type bmp)
+<pics/img15.png>
+File: pics/img16.png Graphic file (type bmp)
+<pics/img16.png>
+ [11]
+Underfull \hbox (badness 10000) in paragraph at lines 444--447
+[]\TU/lmtt/m/n/12 topology='rectangular', activation_distance='euclidean',[]
+ []
+
+[12]
+File: pics/img17.png Graphic file (type bmp)
+<pics/img17.png>
+File: pics/img18.png Graphic file (type bmp)
+<pics/img18.png>
+ [13]
+File: pics/img20.png Graphic file (type bmp)
+<pics/img20.png>
+File: pics/img22.png Graphic file (type bmp)
+<pics/img22.png>
+ [14]
+Overfull \vbox (21.36943pt too high) has occurred while \output is active []
+
+
+[15]
+File: pics/img19.png Graphic file (type bmp)
+<pics/img19.png>
+
+Underfull \hbox (badness 10000) in paragraph at lines 630--644
+[]\TU/lmtt/m/n/12 Name the former prime minister of Japan that was assassinated
+ in[]
+ []
+
+File: pics/img23.png Graphic file (type bmp)
+<pics/img23.png>
+File: pics/img24.png Graphic file (type bmp)
+<pics/img24.png>
+[16]
+File: pics/img25.png Graphic file (type bmp)
+<pics/img25.png>
+File: pics/img21.png Graphic file (type bmp)
+<pics/img21.png>
+ [17]
+File: pics/img26.png Graphic file (type bmp)
+<pics/img26.png>
+ [18]) [19] 
+enddocument/afterlastpage: lastpage setting LastPage.
+(./main.aux)
+ ***********
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-01-22>
+ ***********
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: 4E1EF13E04BD89C1FDDB2961E1DFBEC0;250.
+ ) 
 Here is how much of TeX's memory you used:
- 38164 strings out of 476846
- 910180 string characters out of 5803824
- 1917627 words of memory out of 5000000
- 59487 multiletter control sequences out of 15000+600000
- 558766 words of font info for 41 fonts, out of 8000000 for 9000
- 14 hyphenation exceptions out of 8191
- 101i,2n,112p,725b,479s stack positions out of 10000i,1000n,20000p,200000b,200000s
-No pages of output.
+ 43618 strings out of 474878
+ 1064061 string characters out of 5762516
+ 1938627 words of memory out of 5000000
+ 64789 multiletter control sequences out of 15000+600000
+ 567000 words of font info for 116 fonts, out of 8000000 for 9000
+ 1348 hyphenation exceptions out of 8191
+ 101i,12n,112p,1310b,716s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+Output written on main.pdf (20 pages).
