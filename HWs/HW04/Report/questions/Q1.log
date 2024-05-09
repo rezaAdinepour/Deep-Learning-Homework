@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023/Debian) (preloaded format=xelatex 2024.5.4)  9 MAY 2024 12:16
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023/Debian) (preloaded format=xelatex 2024.5.4)  9 MAY 2024 15:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -52,7 +52,7 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.3 ن
-     حوه اشتراک گذاری پارمتر‌ها  در لایه های کانولوشنی باعث ویژگی ‫‪\lr{equi...
+     حوه اشتراک گذاری پارمتر‌ها  در لایه های کانولوشنی باعث ویژگی ‫‪\lr{Equi...
 
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -112,14 +112,14 @@ Missing character: There is no ‫ ("202B) in font nullfont!
 Missing character: There is no ‪ ("202A) in font nullfont!
 ! Undefined control sequence.
 l.3 ...‌ها  در لایه های کانولوشنی باعث ویژگی ‫‪\lr
-                                                  {equivariance}‬‬ نسبت به ‫...
+                                                  {Equivariance}‬‬ نسبت به ‫...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-Missing character: There is no e ("65) in font nullfont!
+Missing character: There is no E ("45) in font nullfont!
 Missing character: There is no q ("71) in font nullfont!
 Missing character: There is no u ("75) in font nullfont!
 Missing character: There is no i ("69) in font nullfont!
@@ -142,15 +142,15 @@ Missing character: There is no ه ("647) in font nullfont!
 Missing character: There is no ‫ ("202B) in font nullfont!
 Missing character: There is no ‪ ("202A) in font nullfont!
 ! Undefined control sequence.
-l.3 ...ث ویژگی ‫‪\lr{equivariance}‬‬ نسبت به ‫‪\lr
-                                                  {translation}‬‬ می شود. ای...
+l.3 ...ث ویژگی ‫‪\lr{Equivariance}‬‬ نسبت به ‫‪\lr
+                                                  {Translation}‬‬ می شود. ای...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-Missing character: There is no t ("74) in font nullfont!
+Missing character: There is no T ("54) in font nullfont!
 Missing character: There is no r ("72) in font nullfont!
 Missing character: There is no a ("61) in font nullfont!
 Missing character: There is no n ("6E) in font nullfont!
