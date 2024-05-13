@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023/Debian) (preloaded format=xelatex 2024.5.4)  13 MAY 2024 20:43
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023/Debian) (preloaded format=xelatex 2024.5.4)  13 MAY 2024 21:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1507,7 +1507,10 @@ Overfull \hbox (0.38614pt too wide) in paragraph at lines 75--75
 LaTeX Font Info:    Font shape `TU/XBYas(0)/m/sl' in size <12> not available
 (Font)              Font shape `TU/XBYas(0)/m/it' tried instead on input line 3
 4.
- [2] (./questions/Q2.tex) [3
+ [2] (./questions/Q2.tex
+File: pics/img4.png Graphic file (type bmp)
+<pics/img4.png>
+) [3
 
 ] (./questions/Q3.tex
 File: pics/img1.png Graphic file (type bmp)
@@ -1544,10 +1547,10 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 880337D0A64AF62F1FDCECC0DA93D763;878.
  ) 
 Here is how much of TeX's memory you used:
- 43403 strings out of 474878
- 1059879 string characters out of 5762517
+ 43413 strings out of 474878
+ 1060054 string characters out of 5762517
  1933627 words of memory out of 5000000
- 64582 multiletter control sequences out of 15000+600000
+ 64591 multiletter control sequences out of 15000+600000
  568839 words of font info for 120 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  101i,12n,112p,1310b,612s stack positions out of 10000i,1000n,20000p,200000b,200000s
