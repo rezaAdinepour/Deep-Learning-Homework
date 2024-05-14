@@ -22,10 +22,54 @@
 	
 	
 	
-	لایه \lr{Deconvolution} دقیقا برعکس لایه‌های کانولوشنی عمل می‌کند. یعنی از یک \lr{Feature map} می‌توان به تصویر رسید.
+	لایه \lr{Deconvolution} دقیقا برعکس لایه‌های کانولوشنی عمل می‌کند. یعنی از یک \lr{Feature map} می‌توان به تصویر رسید. الگ.ریتم \lr{Deconv} با نگاشت نقشه‌های ویژگی‌ به فضای ورودی، این امکان را فراهم می‌کند 
 
+
+
+
+
+	
+	
+		\item \textbf{\lr{ :Up-Convolution}}
+لایه \lr{Up-convolution} نیز همانند \lr{Deconvolution} ابعاد ورودی را زیاد می‌کند و هدف آن تولید یک تصویر بزرگتر از ورودی آن است.
+
+	\begin{center}
+		\includegraphics*[width=0.6\linewidth]{pics/img5.png}
+		\captionof{figure}{لایه \lr{Up-convolution}}
+		\label{لایه آپ‌کانولوشن}
+	\end{center}
 	\end{enumerate}
 	
 	
-	
+	در بسیاری از مراجه این دو تکنیک را معادل‌با هم می‌گیرند چرا که در هر دو روش هدف افزایش ابعاد ورودی است و این کار دقیقا برعکس کانولوشن انجام می‌شود.
 \end{qsolve}
+
+
+
+
+\begin{qsolve}
+	لایه \lr{Deconvolution} و \lr{Up-convolution}با نمایش نقشه‌های ویژگی به فضای ورودی، به ما امکان می‌دهد ببینیم چه نوع الگوهای ورودی نورون‌های خاصی را فعال می‌کنند. در \lr{Up-convolution} 
+\end{qsolve}
+
+
+
+
+\begin{latin}
+	\begin{thebibliography}{9}
+		\bibitem{ref1}
+		Durall R, Keuper M, Keuper J. Watch your up-convolution: Cnn based generative deep neural networks are failing to reproduce spectral distributions. InProceedings of the IEEE/CVF conference on computer vision and pattern recognition 2020 (pp. 7890-7899).
+		
+	\end{thebibliography} 
+\end{latin}
+
+
+
+
+
+
+
+
+
+
+
+
