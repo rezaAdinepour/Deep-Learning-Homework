@@ -105,3 +105,80 @@
 
 
 
+\begin{qsolve}
+	خروجی لایه کانولوشن به صورت زیر تعریف می‌شود:
+	$$ c_i=ReLU(W_1^c x_{i-1} + W_2^c x_i + b^c) $$
+	
+	خروجی لایه \lr{AVGPOOL1} به‌صورت زیر تعریف می‌شود:
+	$$ a_j=\frac{x_{2j-1}+c_{2j}}{2} $$
+	
+	خروجی لایه \lr{Fully connected} نیز به‌صورت زیر تعریف می‌شود:
+	$$ f_i=ReLU(\sum_{j} W_{ij}^A a_j + b_i^M) $$
+	
+	و درنهایت خروجی لابه آخر \lr{Z} به‌صورت زیر می‌شود:
+	$$ z=\sigma(\sum_{i} W_i^F f_i + b^F) $$
+	
+	برای بدست آوردن مشتق‌ خطا نسبت به وزن‌ها به صورت زیر عمل می‌کنیم:
+	
+	ابتدا مشتق خطا نسبت به خروجی را بدست می‌آوریم:
+	$$ \frac{\partial Cost}{\partial z}=-\frac{Y}{z}+\frac{1-Y}{1-z} $$
+	
+	با استفاده از قانون مشتق زنجیره‌ای می‌توان نوشت:
+	$$ \frac{\partial Cost}{\partial W_i^F}=\frac{\partial Cost}{\partial z} \cdot \frac{\partial z}{\partial W_i^F} $$
+	
+	$$ \frac{\partial Cost}{\partial W_i^F}=(-\frac{Y}{z}+\frac{1-Y}{1-z})\cdot z(1-z) \cdot f_i $$
+	
+	$$ \frac{\partial Cost}{\partial W_i^F}=(z-Y)\cdot f_i $$
+	
+	برای مشتق خطا نسبت به $b^F$ می‌توان نوشت:
+	
+	$$ \frac{\partial Cost}{\partial b^F}=(z-Y) $$
+	
+	همچنین برای لایه \lr{FC1} می‌توان نوشت:
+	$$ \frac{\partial Cost}{\partial f_i}=\frac{\partial Cost}{\partial z} \cdot \frac{\partial z}{\partial f_i} $$
+	
+	$$ \frac{\partial Cost}{\partial f_i}=(z-Y)\cdot W_i^F $$
+	
+	بنابراین برای $W_{ij}^A$ و $b_i^M$ می‌توان نوشت:
+	
+\end{qsolve}
+
+
+
+\begin{qsolve}
+	$$ \frac{\partial Cost}{\partial W_{ij}^A}=\frac{\partial Cost}{\partial f_i} \cdot \frac{\partial f_i}{\partial W_{ij}^A}$$
+	
+	$$ \frac{\partial Cost}{\partial W_{ij}^A}=(z-Y)\cdot W_i^F\cdot 1 (f_i > 0)\cdot a_j $$
+	$$ \frac{\partial Cost}{\partial b_i^M}=(z-Y)\cdot W_i^F\cdot 1 (f_i > 0) $$
+	
+	
+	
+	برای لایه \lr{AVGPOOL1} می‌توان نوشت:
+	$$ \frac{\partial Cost}{\partial a_j} = \sum_{i} \frac{\partial Cost}{\partial f_i \cdot \frac{\partial f_i}{\partial a_j}}$$
+	$$ \frac{\partial Cost}{\partial a_j}=\sum_{i} (z-Y)\cdot W_i^F\cdot 1(f_i>0)\cdot W_{ij}^A$$
+	
+	
+	و در نهایت برای مشتق نسبت به $W_1^C$ می‌توان نوشت:
+	
+	$$ \frac{\partial Cost}{\partial W_1^C}=\sum_{i} \frac{\partial Cost}{\partial c_i}\cdot \frac{\partial c_i}{\partial W_1^C}$$
+	$$ \frac{\partial Cost}{\partial W_1^C}=\sum_{i} (\frac{\partial Cost}{\partial a_(\frac{i}{2})}\cdot \frac{\partial a(\frac{i}{2})}{\partial c_i})\cdot 1 (c_i>0) \cdot x_{i-1} $$
+	
+	در نهایت داریم:
+	
+	$$
+		\frac{\partial \text{Cost}}{\partial W_1^C} = \sum_i \left( \sum_{j: i \in \{2j-1, 2j\}} (z - Y) \cdot W_j^F \cdot \mathbf{1}(f_j > 0) \cdot W_{ji}^A \right) \cdot \mathbf{1}(c_i > 0) \cdot x_{i-1}
+	$$
+	
+	$$
+		\frac{\partial \text{Cost}}{\partial W_{ji}^A} = (z - Y) \cdot W_i^F \cdot \mathbf{1}(f_i > 0) \cdot a_j
+	$$
+	
+\end{qsolve}
+
+
+
+
+
+
+
+
