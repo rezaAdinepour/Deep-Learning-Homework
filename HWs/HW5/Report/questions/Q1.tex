@@ -1,0 +1,80 @@
+\section{سوال اول - نظری}
+
+نحوه اشتراک گذاری پارمتر‌ها  در لایه های کانولوشنی باعث ویژگی ‫‪\lr{Equivariance}‬‬ نسبت به ‫‪\lr{Translation}‬‬ می شود. این ویژگی را شرح دهید و کاربرد آن‌را توضیح دهید.
+
+%
+%
+%\begin{qsolve}
+%شبکه‌های \lr{CNN} دارای ویژگی \lr{Equivariance} هستند. یعنی با اعمال تبدیلاتی (مانند جابه‌جایی) در ورودی شبکه، تبدیل‌هایی متناظری را در خروجی ایجاد می‌کند. تاکو کوهن در \cite{ref1} به عنوان‌ اولین نفر این به این موضوع پرداخت.
+%
+%اگر تعریف کانولوشن به صورت زیر باشد:
+%
+%	\begin{eqnarray*}
+%		(f \star \Psi)(x)&=&\sum_{y\in \mathbf{Z^2}}\sum_{k=1}^{K}g_k(y)\Psi_k(y-x)
+%	\end{eqnarray*}
+%	
+%	در اینجا $\Psi$ و $f$ هردو دارای کانال $k$ هستند. که در این مقاله $k=1$ درنظر گرفته شده است.
+%	
+%ما در اینجا یک تصویر $f$ داریم که می‌خواهیم آن را با یک کرنل $\Psi$ کانوالو کنیم تا \lr{Feature map} های تصویر را به‌دست آوریم. سپس می‌خواهیم بدانیم که برای هر تبدیل  $t$ آیا دو مورد زیر یکسان است یا خیر:
+%
+%\begin{enumerate}
+%	\item تبدیل تصویر $f$ با $t$ و کانولوشن حاصل تبدیل با کرنل $\Psi$ 
+%	
+%	\item کانولوشن تصویر $f$ با $\Psi$ و سپس تبدیل حاصل با $t$
+%\end{enumerate}
+%
+%بنابر می‌بایست رابطه زیر را اثبات کنیم:
+%\begin{eqnarray*}
+%	(L_tf)\star \Psi&=&L_t(f\star \Psi)
+%\end{eqnarray*}
+%
+%برای اثبات یک تغیر متغیر به صورت $y\leftarrow x+y$ انجام می‌دهیم و رابطه کانولوشن را بازنویسی می‌کنیم:
+%
+%\begin{eqnarray*}
+%	(f \star \Psi)(x)&=&\sum_{y\in \mathbf{Z^2}} f(y)\Psi(y-x)\\
+%	&=&\sum_{y\in \mathbf{Z^2}} f(x+y)\Psi(y)
+%\end{eqnarray*}
+%
+%دو طرف معادله را باتوجه به عبارتی که می‌خواهیم آن را اثبات کنیم بازنویسی می‌کنیم:
+%\end{qsolve}
+%
+%
+%\begin{qsolve}
+%	\begin{eqnarray*}
+%		((L_tf)\star \Psi)(x)&=&((f\circ t^{-1})\star \Psi)(x)\\
+%		&=&\sum_{y\in \mathbf{Z^2}} f(t^{-1} (x+y))\Psi(y)\\
+%		&=&\sum_{y\in \mathbf{Z^2}} f(x+y-t)\Psi(y)
+%	\end{eqnarray*}
+%	
+%	و $L_t(f\star \Psi)$ به صورت زیر تعریف می‌شود:
+%	\begin{eqnarray*}
+%		(L_t(f \star \Psi))(x)&=&(f\star \Psi)(x-t)\\
+%		&=&\sum_{y\in \mathbf{Z^2}} f((x-t)+y)\Psi(y)\\
+%		&=&\sum_{y\in \mathbf{Z^2}} f(x+y-t)\Psi(y)\\
+%	\end{eqnarray*}
+%	
+%	و مشاهده می‌شود که دو طرف تساوی باهم برابر است.
+%	
+%	همچنین از کاربردهای آن می‌توان به موارد زیر اشاره کرد:
+%	
+%	\begin{enumerate}
+%		\item \lr{\textbf{Spatial Consistency}}\\
+%		تضمین می‌کند که الگوها یا ویژگی‌ها را می‌توان بدون توجه به موقعیت آنها در ورودی تشخیص داد و شبکه عصبی را در برابر تغییرات و \lr{Translation} ها انعطاف‌پذیر می‌کند.
+%		
+%		
+%		\item \textbf{کاهش پیچیدگی}\\
+%		از آنجایی که پارامتر‌های یکسان در کل فضای ورودی استفاده می‌شود، \lr{CNN} ها پارامتر کمتری در مقایسه با شبکه‌های \lr{Fully connected} با اندازه مشابه دارند.
+%		
+%		\item تعمیم یادگیری
+%	\end{enumerate}
+%\end{qsolve}
+%
+%
+%
+%\begin{latin}
+%	\begin{thebibliography}{9}
+%		\bibitem{ref1}
+%		Cohen T, Welling M. Group equivariant convolutional networks. InInternational conference on machine learning 2016 Jun 11 (pp. 2990-2999). PMLR.
+%		
+%	\end{thebibliography} 
+%\end{latin}

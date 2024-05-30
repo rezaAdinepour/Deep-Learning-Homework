@@ -1,0 +1,35 @@
+\documentclass[12pt]{article}
+\usepackage{blindtext}
+\usepackage[bordered]{uni-style}
+\usepackage{uni-math}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{color,soul}
+\usepackage{wrapfig}
+\usepackage{capt-of}
+
+\title{\href{https://github.com/M-Sc-AUT/M.Sc-Computer-Architecture/tree/main/Deep Learning}{\textcolor{black}{شبکه‌های عصبی و یادگیری عمیق}}}
+\prof{\href{https://scholar.google.com/citations?user=zFsdqo8AAAAJ&hl=en}{\textcolor{black}{دکتر صفابخش}}}
+\subtitle{شبکه‌های \lr{RNN}}
+\subject{تمرین پنجم}
+\info{
+    \begin{tabular}{lr}
+        \href{https://github.com/rezaAdinepour/}{\textcolor{black}{رضا آدینه پور}} & 402131055\\
+    \end{tabular}
+}
+\date{\today}
+\department{دانشکده مهندسی کامپیوتر}
+
+\usepackage[final]{pdfpages}
+
+\usepackage{xepersian}
+\settextfont{XB Yas}
+
+\begin{document}
+\maketitlepage
+\maketitlestart
+\foreach \x in {1}{
+    \input{questions/Q\x.tex}
+    \clearpage
+}
+\end{document}
