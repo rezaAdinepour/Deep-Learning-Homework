@@ -4,7 +4,26 @@
 \begin{enumerate}
 	\item 
 به‌طور کلی بهینه‌سازها\footnote{\lr{Optimizer}} (نظیر \lr{ADAM}) به دنبال یافتن وزن‌های شبکه‌های عصبی هستند بطوریکه توابع هزینه\footnote{\lr{Loss Functions}} کمینه شود. مشتق‌پذیر بودن توابع یاد شده چه تاثیری در بهینه‌ساز دارد؟ اگر مشتق‌پذیر نباشد، چه رویکردهایی برای بهینه‌سازی آن وجود دارد؟ یک مورد را به دلخواه توضیح دهید.
-	
+\begin{qsolve}
+بهینه‌سازهایی مانند ADAM از گرادیان‌ توابع هزینه برای به‌روزرسانی وزن‌های شبکه استفاده می‌کنند. مشتق‌پذیر بودن این توابع به معنای وجود گرادیان‌ است که به بهینه‌سازها کمک می‌کنند جهت حرکت به سمت مینیمم سراسری را پیدا کنند. بدون مشتق‌پذیری، تعیین دقیق جهت و میزان تغییر وزن‌ها دشوار می‌شود.
+		
+در صورتی که تابع هزینه مشتق‌پذیر نباشد، روش‌های دیگری نظیر الگوریتم‌های مبتنی بر مشتقات تقریبی یا تکنیک‌های بهینه‌سازی بدون مشتق مانند الگوریتم‌ ژنتیک یا بهینه‌سازی ازدحام ذرات
+\lr{(Particle Swarm Optimization)}
+مورد استفاده قرار می‌گیرند.
+
+ بهینه‌سازی ازدحام ذرات (\lr{PSO}) یک روش الهام گرفته از طبیعت است که بدون نیاز به مشتق تابع کار می‌کند. این الگوریتم با استفاده از حرکت ذرات در فضای جستجو و به‌روزرسانی موقعیت‌های آنها بر اساس بهترین موقعیت‌های خود و همسایگانشان، به سمت بهینه و پیدا کردن مینیمم سسراسری حرکت می‌کند.
+ 
+ \begin{latin}
+ 	\begin{thebibliography}{9}
+ 		\bibitem{ref1}
+ 		I. Goodfellow, Y. Bengio \& A. Courville, (2016). Deep Learning. MIT Press (\href{https://www.deeplearningbook.org/}{\textcolor{magenta}{Link}})
+ 		
+ 		\bibitem{ref2}
+ 		Rios, Luis Miguel, and Nikolaos V. Sahinidis. "Derivative-free optimization: a review of algorithms and comparison of software implementations." Journal of Global Optimization 56.3 (2013): 1247-1293.
+ 		
+ 	\end{thebibliography} 
+ \end{latin}
+\end{qsolve}
 	
 	
 	
@@ -14,6 +33,26 @@
 	
 	\item
 محدب\footnote{\lr{Convex}} بودن توابع به چه معناست و چرا مطلوب است که در بهینه‌سازی، توابع هزینه محدب باشد؟ اگر محدب نباشد، چگونه می‌توان آن را بهینه نمود؟
+
+\begin{qsolve}
+یک تابع محدب است اگر خط واصل بین هر دو نقطه از نمودار آن تابع، همیشه بالای نمودار تابع قرار گیرد. این ویژگی باعث می‌شود که هر مینیمم محلی، مینیمم سراسری نیز باشد، که جستجو برای یافتن نقطه بهینه را آسان می‌کند.
+
+توابع محدب از این جهت برای ما مفید هستند چون تضمین می‌کنند که بهینه‌سازها می‌توانند به راحتی و با اطمینان به نقطه بهینه سراسری برسند، بدون اینکه در مینیمم‌های محلی گیر کنند. این ویژگی فرآیند بهینه‌سازی را کارآمدتر و قابل اعتمادتر می‌سازد.
+
+در صورت محدب نبودن توابع هزینه، می‌توان از تکنیک‌هایی نظیر الگوریتم‌های تصادفی (\lr{Stochastic Algorithms})، چندین شروع تصادفی (\lr{Multiple Random Starts})، و روش‌های بهینه‌سازی مبتنی بر شبیه‌سازی (\lr{Simulated Annealing}) برای جستجوی بهینه سراسری استفاده کرد.
+
+\begin{latin}
+	\begin{thebibliography}{9}
+		\bibitem{ref1}
+		S. Boyd \& L. Vandenberghe, (2004). Convex Optimization. Cambridge University Press.
+		(\href{https://web.stanford.edu/~boyd/cvxbook/}{\textcolor{magenta}{Link}})
+		
+		\bibitem{ref2}
+		J. Nocedal, \& S. j. Wright, (2006). Numerical Optimization. Springer. (Chapters on non-convex optimization)
+	\end{thebibliography} 
+\end{latin}
+	
+\end{qsolve}
 	
 	
 	
@@ -22,8 +61,27 @@
 	\item 
 الگوریتم بهینه‌سازی نیوتن را مطالعه کرده و آن را با نزول در راستای گرادیان\footnote{\lr{Gradient Descent}} مقایسه کنید. در چه نوع مسائلی استفاده از الگوریتم نیوتن ارجحیت دارد؟
 	
-	
-	
+\begin{qsolve}
+الگوریتم نیوتون، از مشتق دوم تابع هزینه (\lr{hessian}) برای بهبود به‌روزرسانی وزن‌ها استفاده می‌کند. بروزرسانی وزن‌ها با استفاده از فرمول زیر انجام می‌شود که $H$ همان ماتریس \lr{hessian} است.
+
+$$ \theta_{\text{new}} = \theta_{\text{old}} - H^{-1} \nabla L(\theta_{\text{old}})  $$
+
+نزول گرادیان فقط از مشتق مرتبه اول استفاده می‌کند و به‌روزرسانی وزن‌ها را با توجه به جهت و میزان مشتق انجام می‌دهد. الگوریتم نیوتن به دلیل استفاده از اطلاعات مشتق مرتبه دوم می‌تواند به سرعت به نقطه بهینه نزدیک شود، اما محاسبه و بدست آوردن وارون ماتریس \lr{hessian} هزینه‌بر است.
+
+الگوریتم نیوتن برای مسائلی با تعداد پارامترهای کم و توابع ساده، که محاسبه و وارون‌سازی ماتریس  \lr{hessian} را دشوار نکند، مناسب‌تر است. این الگوریتم در مسائلی که به دقت بالاتر و همگرایی سریع‌تر نیاز داریم، ارجحیت دارد.
+\end{qsolve}
+
+\begin{qsolve}
+	\begin{latin}
+		\begin{thebibliography}{9}
+			\bibitem{ref1}
+			I. Goodfellow, Y. Bengio \& A. Courville, (2016). Deep Learning. MIT Press, (Chapter on Optimization) (\href{https://www.deeplearningbook.org/}{\textcolor{magenta}{Link}})
+			
+			\bibitem{ref2}
+			J. Nocedal, \& J. S. Wright, (2006). Numerical Optimization. Springer. (Chapters on second-order methods)
+		\end{thebibliography} 
+	\end{latin}
+\end{qsolve}
 	
 	
 	
@@ -33,7 +91,21 @@
 \end{enumerate}
 
 فرض کنید مسئله‌ی دسته بندی دودویی بحرانی بودن/نبودن شرایط یک کارگاه صنعتی بر اساس اطلاعاتی محیطی آن را در اختیار دارید که داده‌های دما، رطوبت، فشار و ذرات معلق بر اساس سنسورهای نصب شده در هر یک ثانیه ارسال می‌گردد. شما بایستی با در نظر گرفتن دنباله‌ای از داده‌های ارسالی بتوانید تشخیص دهید که شرایط بحرانی است یا خیر.
+\begin{qsolve}
+\lr{AdaGrad (Adaptive Gradient)}
+الگوریتم بهینه‌سازی‌ای است که نرخ یادگیری را به صورت داینامیک و متناسب با تاریخچه گرادیان‌ تنظیم می‌کند. این الگوریتم با تقسیم نرخ یادگیری اولیه بر مجموع ریشه مربع گرادیان‌های قبلی، نرخ یادگیری را برای هر پارامتر به صورت جداگانه تنظیم می‌کند.
 
+در \lr{AdaGrad}، هر پارامتر نرخ یادگیری خاص خود را دارد که با توجه به میزان نوسانات آن پارامتر تنظیم می‌شود. این کار به الگوریتم اجازه می‌دهد تا در مسیرهای با گرادیان زیاد نرخ یادگیری را کاهش دهد و در مسیرهای با گرادیان کم آن را افزایش دهد، که منجر به بهینه‌سازی دقیق‌تر و جلوگیری از نوسانات شدید می‌شود.
+ \begin{latin}
+	\begin{thebibliography}{9}
+		\bibitem{ref1}
+		J. Duchi, E. Hazan, \& Y. Singer, (2011). Adaptive subgradient methods for online learning and stochastic optimization. Journal of Machine Learning Research, 12(Jul), 2121-2159.
+		
+		\bibitem{ref2}
+		S. Ruder, (2016). An overview of gradient descent optimization algorithms. (\href{https://arxiv.org/abs/1609.04747}{\textcolor{magenta}{Link}})
+	\end{thebibliography} 
+\end{latin}
+\end{qsolve}
 
 
 

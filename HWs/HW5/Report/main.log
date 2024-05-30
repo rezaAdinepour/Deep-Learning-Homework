@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023/Debian) (preloaded format=xelatex 2024.5.4)  30 MAY 2024 17:25
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023/Debian) (preloaded format=xelatex 2024.5.4)  30 MAY 2024 19:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1376,7 +1376,20 @@ persian-tex-text;"
 (fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.: 
 
 
-(./main.aux)
+(./main.aux
+
+LaTeX Warning: Label `ref1' multiply defined.
+
+
+LaTeX Warning: Label `ref2' multiply defined.
+
+
+LaTeX Warning: Label `ref1' multiply defined.
+
+
+LaTeX Warning: Label `ref2' multiply defined.
+
+)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 28.
@@ -1489,24 +1502,56 @@ Underfull \hbox (badness 10000) in paragraph at lines 30--30
 
 File: logo/ce-fa2.png Graphic file (type bmp)
 <logo/ce-fa2.png>
-(./questions/Q1.tex) [1]
+(./questions/Q1.tex
+Overfull \hbox (43.68408pt too wide) in paragraph at lines 17--17
+[][]|  [] [] []
+ []
 
+
+Overfull \hbox (43.68408pt too wide) in paragraph at lines 45--45
+[][]|  [] [] []
+ []
+
+[1]
+Overfull \hbox (43.68408pt too wide) in paragraph at lines 76--76
+[][]|  [] [] []
+ []
+
+LaTeX Font Info:    Font shape `TU/XBYas(0)/m/sl' in size <12> not available
+(Font)              Font shape `TU/XBYas(0)/m/it' tried instead on input line 8
+5.
+[2]
+Overfull \hbox (13.68408pt too wide) in paragraph at lines 100--100
+[][]|  [] [] []
+ []
+
+) [3] 
 enddocument/afterlastpage: lastpage setting LastPage.
 (./main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
  ***********
-Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: F26C8ECE9717CCF19776B6C976D10F6E;161.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+
+Package rerunfilecheck Warning: File `main.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `main.out':
+(rerunfilecheck)             Before: 7B97F7C5F9248CE9A6EC9386BDC685E2;308
+(rerunfilecheck)             After:  C1CCBFFEB0932A2C763941B0D89543AA;357.
  ) 
 Here is how much of TeX's memory you used:
- 43268 strings out of 474878
- 1056851 string characters out of 5762517
- 1928627 words of memory out of 5000000
- 64474 multiletter control sequences out of 15000+600000
- 566952 words of font info for 110 fonts, out of 8000000 for 9000
+ 43331 strings out of 474878
+ 1058471 string characters out of 5762517
+ 1934627 words of memory out of 5000000
+ 64533 multiletter control sequences out of 15000+600000
+ 566976 words of font info for 113 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 101i,11n,112p,1310b,479s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 101i,12n,112p,1310b,781s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (2 pages).
+Output written on main.pdf (4 pages).
