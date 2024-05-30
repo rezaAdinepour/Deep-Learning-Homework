@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023/Debian) (preloaded format=xelatex 2024.5.4)  30 MAY 2024 21:46
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023/Debian) (preloaded format=xelatex 2024.5.4)  30 MAY 2024 23:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1531,7 +1531,10 @@ Overfull \hbox (43.68408pt too wide) in paragraph at lines 101--101
 [][]|  [] [] []
  []
 
-[3] [4]) [5] 
+[3] [4]) [5] (./questions/Q2.tex) [6
+
+]
+
 enddocument/afterlastpage: lastpage setting LastPage.
 (./main.aux)
  ***********
@@ -1543,15 +1546,15 @@ L3 programming layer <2024-01-22>
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: C1CCBFFEB0932A2C763941B0D89543AA;357.
+(rerunfilecheck)             Checksum: 929C7EF48A1053F396C493BADA07EA5B;518.
  ) 
 Here is how much of TeX's memory you used:
- 43477 strings out of 474878
- 1061404 string characters out of 5762517
+ 43498 strings out of 474878
+ 1061739 string characters out of 5762517
  1939627 words of memory out of 5000000
- 64675 multiletter control sequences out of 15000+600000
- 567912 words of font info for 117 fonts, out of 8000000 for 9000
+ 64690 multiletter control sequences out of 15000+600000
+ 568839 words of font info for 120 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 101i,12n,112p,1310b,903s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 101i,12n,112p,1310b,899s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (6 pages).
+Output written on main.pdf (7 pages).
