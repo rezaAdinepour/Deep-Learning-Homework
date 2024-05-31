@@ -20,3 +20,7 @@ You can click  [here](https://t.me/+3NGHZ4OkLoI5YjEx) to join the group
 ## Assignments Quick Link
 
 * [**:pencil2: HW-01**](https://github.com/rezaAdinepour/Deep-Learning-Homework/tree/main/HWs/HW1)
+* [**:pencil2: HW-02**](https://github.com/rezaAdinepour/Deep-Learning-Homework/tree/main/HWs/HW2)
+* [**:pencil2: HW-03**](https://github.com/rezaAdinepour/Deep-Learning-Homework/tree/main/HWs/HW3)
+* [**:pencil2: HW-04**](https://github.com/rezaAdinepour/Deep-Learning-Homework/tree/main/HWs/HW4)
+* [**:pencil2: HW-05**](https://github.com/rezaAdinepour/Deep-Learning-Homework/tree/main/HWs/HW5)
