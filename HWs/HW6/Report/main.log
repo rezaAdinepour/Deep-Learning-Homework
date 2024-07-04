@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023/Debian) (preloaded format=xelatex 2024.5.4)  4 JUL 2024 16:16
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023/Debian) (preloaded format=xelatex 2024.5.4)  4 JUL 2024 19:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1532,20 +1532,54 @@ Missing character: There is no ‬ (U+202C) in font [lmroman10-regular]/OT:scrip
 =latn;language=dflt;mapping=tex-text;!
 File: pics/img1.png Graphic file (type bmp)
 <pics/img1.png>
+
+Underfull \hbox (badness 10000) in paragraph at lines 30--31
+[][]
+ []
+
+
+Overfull \hbox (43.101pt too wide) detected at line 60
+[][][]\OML/cmm/m/it/12 L[] \OT1/cmr/m/n/12 = \U/msb/m/n/12 E[]\OT1/cmr/m/n/12 [
+[](1 \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 D[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12
+ G[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 z; []\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; 
+^^^[]\OT1/cmr/m/n/12 ))] + \OML/cmm/m/it/12 ^^UD[]\OT1/cmr/m/n/12 (\OML/cmm/m/i
+t/12 N\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 ^^V[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 
+^^^[]\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 ^^F[](\OML/cmm/m/it/12
+ ^^^[]\OT1/cmr/m/n/12 ))\OMS/cmsy/m/n/12 k\OML/cmm/m/it/12 N\OT1/cmr/m/n/12 (0\
+OML/cmm/m/it/12 ; I\OT1/cmr/m/n/12 ))\OML/cmm/m/it/12 ;
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 68--69
+[][]
+ []
+
 [1]
+Underfull \hbox (badness 10000) in paragraph at lines 112--113
+[][]
+ []
+
+LaTeX Font Info:    Font shape `TU/XBYas(0)/m/sl' in size <12> not available
+(Font)              Font shape `TU/XBYas(0)/m/it' tried instead on input line 1
+29.
+[2] [3]
+Underfull \hbox (badness 1210) in paragraph at lines 166--167
+[][]\TU/XBYas(0)/b/n/12 تکنیک‌های تنظیم ([]\TU/lmroman10-regular(0)/b/n/12 Regu
+larization[]\TU/XBYas(0)/b/n/12 ): \TU/XBYas(0)/m/n/12 تکنیک‌هایی مانند []\TU/l
+mroman10-regular(0)/m/n/12 gradient penalty[][]
+ []
+
+[4] [5]
 File: pics/img2.png Graphic file (type bmp)
 <pics/img2.png>
-LaTeX Font Info:    Font shape `TU/XBYas(0)/m/sl' in size <12> not available
-(Font)              Font shape `TU/XBYas(0)/m/it' tried instead on input line 7
-7.
- [2]) [3] (./questions/Q2.tex
+ [6]) [7] (./questions/Q2.tex
 File: pics/img3.png Graphic file (type bmp)
 <pics/img3.png>
 File: pics/img4.png Graphic file (type bmp)
 <pics/img4.png>
- [4
+ [8
 
-]) [5]
+]) [9]
 
 enddocument/afterlastpage: lastpage setting LastPage.
 (./main.aux)
@@ -1557,12 +1591,12 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: D7771CD65E35EE65BBF94B2ECBA18196;594.
  ) 
 Here is how much of TeX's memory you used:
- 43395 strings out of 474878
- 1059364 string characters out of 5762517
- 1931627 words of memory out of 5000000
- 64585 multiletter control sequences out of 15000+600000
- 568815 words of font info for 117 fonts, out of 8000000 for 9000
+ 43414 strings out of 474878
+ 1059899 string characters out of 5762517
+ 1939627 words of memory out of 5000000
+ 64602 multiletter control sequences out of 15000+600000
+ 568831 words of font info for 119 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 101i,12n,112p,1310b,740s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 101i,12n,112p,1310b,678s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (6 pages).
+Output written on main.pdf (10 pages).
