@@ -1,184 +1,184 @@
-\section{سوال سوم - نظری}
-
-معماری شبکه کانولوشنی زیر را درنظر بگیرید:
-
-\begin{center}
-	\includegraphics*[width=0.6\linewidth]{pics/img1.png}
-	\captionof{figure}{شبکه کانولوشنی مورد بررسی در سوال سوم}
-	\label{شبکه کانولوشنی مورد بررسی در سوال سوم}
-\end{center}
-
-
-\begin{itemize}
-	\item ابعاد ورودی $785\times 1$ و خروجی شبکه $1\times 1$
-	\item لایه ورودی \lr{X} با \lr{Zero-padding} با طول ۱
-	\item لایه کانولوشنی یک‌بعدی \lr{Conv1} با یک کرنل $2\times 1$ و تابع فعال‌سازی \lr{ReLU}
-	\item لایه \lr{Average-polling(AVGPOOL1)}
-	\item لایه تمام متصل \lr{FC1} با تابع فعال‌سازی \lr{ReLU}
-		\item لایه خروجی \lr{Z} که به لایه \lr{FC1} کاملا متصل است و تابع فعال‌سازی \lr{Sigmoid}
-\end{itemize}
-
-
-
- وزن لایه \lr{FC1} به \lr{Z} را با $W_i^F $، بایاس \lr{Z} را با $b^F$، وزن لایه \lr{AVGPOOL1} به \lr{FC1} را با $W_{ij}^A$، بایاس \lr{FC1} را با $b_i^M$، بردار $W^C$ برابر $[W_1^C, W_2^C]$ و بایاس لایه کانولوشنی را با $b^C$ نشان می‌دهیم. داده‌های مجموعه آموزش به‌صورت $X^i$ و خروجی مورد انتظار به‌صورت $Y^i$ است. همچنین خروجی‌های لایه‌های شبکه به‌ترتیب $c(X^i)$،
- $a(X^i)$،
- $f(X^i)$،
- $z(X^i )$
- می‌نامیم. در این صورت، تابع هزینه به‌صورت زیر تعریف می‌شود:
- 
- $$ cost(X,Y)=\sum_{n} cost(X^{(n)}, Y^{(n)})=\sum_{n}(-Y^{(n)}log(z(X^{(n)}))-(1-Y^{(n)})log(1-z(X^{(n)}))) $$
-
-
-باتوجه به مفروضات بالا، به پرسش‌های زیر پاسخ دهید:
-
-\begin{enumerate}
-	\item تعداد پارامتر‌های شبکه بالا را با ذکر جزئیات محاسبه کنید.
-	
-	\begin{qsolve}
-		بر اساس اطلاعات داده شده برای لایه \lr{conv1}، تعداد پارامترهای این لایه به‌صورت زیر محاسبه می‌شود:
-		\begin{enumerate}
-			\item وزن ها: ۲
-			\item  بایاس: ۱(چون یک کرنل داریم)
-		\end{enumerate}
-		بنابراین پارامتر‌های این لایه می‌شود:
-		$$ \text{conv1: }2+1=3 $$
-		
-		
-		لایه \lr{AVGPOOL1} پارامتری ندارد. زیرا تنها \lr{down-sampling} انجام می‌دهد.
-		
-		در لایه \lr{FC1} داریم:
-		
-		با توجه به \lr{stride=2} ابعاد خروجی برابر است با:
-		$$ \frac{785+2*0-2}{2}+1=393 \rightarrow dim= [1\times 393] $$
-		
-		بنابراین تعداد پارامترهای این لایه می‌شود:
-		
-		\begin{enumerate}
-			\item وزن‌ها: $393\times 20$
-			\item بایاس: ۲۰ (تعداد واحد‌ها)
-		\end{enumerate}
-		
-		$$ (393\times 20) + 20 = 7860 + 20 = 7880$$
-		
-		
-		
-		برای لایه خروجی (\lr{Z}) داریم:
-		$$ 20+1=21 $$
-		
-		و درمجموع تعداد کل پارامتر‌های شبکه برابر است با:
-		
-		\begin{enumerate}
-			\item لایه کانولوشن: ۳
-			\item لایه پولینگ: ۰
-			\item لایه تمام متصل:‌۷۸۸۰
-			\item لایه خروجی:‌ ۲۱
-		\end{enumerate}
-		
-		$$ \text{Total parameters:} 3+0+7880+21=7904 $$
-		
-		
-		
-		
-	\end{qsolve}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	\item برای فقط یک نمونه آموزشی، مقدار 
-	$\frac{\partial Cost}{\partial W_1^C}$ و
-	$\frac{\partial Cost}{\partial W_{ji}^A}$
-	را با جزئیات محاسبه کنید.
-\end{enumerate}
-
-
-
-
-
-\begin{qsolve}
-	خروجی لایه کانولوشن به صورت زیر تعریف می‌شود:
-	$$ c_i=ReLU(W_1^c x_{i-1} + W_2^c x_i + b^c) $$
-	
-	خروجی لایه \lr{AVGPOOL1} به‌صورت زیر تعریف می‌شود:
-	$$ a_j=\frac{x_{2j-1}+c_{2j}}{2} $$
-	
-	خروجی لایه \lr{Fully connected} نیز به‌صورت زیر تعریف می‌شود:
-	$$ f_i=ReLU(\sum_{j} W_{ij}^A a_j + b_i^M) $$
-	
-	و درنهایت خروجی لابه آخر \lr{Z} به‌صورت زیر می‌شود:
-	$$ z=\sigma(\sum_{i} W_i^F f_i + b^F) $$
-	
-	برای بدست آوردن مشتق‌ خطا نسبت به وزن‌ها به صورت زیر عمل می‌کنیم:
-	
-	ابتدا مشتق خطا نسبت به خروجی را بدست می‌آوریم:
-	$$ \frac{\partial Cost}{\partial z}=-\frac{Y}{z}+\frac{1-Y}{1-z} $$
-	
-	با استفاده از قانون مشتق زنجیره‌ای می‌توان نوشت:
-	$$ \frac{\partial Cost}{\partial W_i^F}=\frac{\partial Cost}{\partial z} \cdot \frac{\partial z}{\partial W_i^F} $$
-	
-	$$ \frac{\partial Cost}{\partial W_i^F}=(-\frac{Y}{z}+\frac{1-Y}{1-z})\cdot z(1-z) \cdot f_i $$
-	
-	$$ \frac{\partial Cost}{\partial W_i^F}=(z-Y)\cdot f_i $$
-	
-	برای مشتق خطا نسبت به $b^F$ می‌توان نوشت:
-	
-	$$ \frac{\partial Cost}{\partial b^F}=(z-Y) $$
-	
-	همچنین برای لایه \lr{FC1} می‌توان نوشت:
-	$$ \frac{\partial Cost}{\partial f_i}=\frac{\partial Cost}{\partial z} \cdot \frac{\partial z}{\partial f_i} $$
-	
-	$$ \frac{\partial Cost}{\partial f_i}=(z-Y)\cdot W_i^F $$
-	
-	بنابراین برای $W_{ij}^A$ و $b_i^M$ می‌توان نوشت:
-	
-\end{qsolve}
-
-
-
-\begin{qsolve}
-	$$ \frac{\partial Cost}{\partial W_{ij}^A}=\frac{\partial Cost}{\partial f_i} \cdot \frac{\partial f_i}{\partial W_{ij}^A}$$
-	
-	$$ \frac{\partial Cost}{\partial W_{ij}^A}=(z-Y)\cdot W_i^F\cdot 1 (f_i > 0)\cdot a_j $$
-	$$ \frac{\partial Cost}{\partial b_i^M}=(z-Y)\cdot W_i^F\cdot 1 (f_i > 0) $$
-	
-	
-	
-	برای لایه \lr{AVGPOOL1} می‌توان نوشت:
-	$$ \frac{\partial Cost}{\partial a_j} = \sum_{i} \frac{\partial Cost}{\partial f_i \cdot \frac{\partial f_i}{\partial a_j}}$$
-	$$ \frac{\partial Cost}{\partial a_j}=\sum_{i} (z-Y)\cdot W_i^F\cdot 1(f_i>0)\cdot W_{ij}^A$$
-	
-	
-	و در نهایت برای مشتق نسبت به $W_1^C$ می‌توان نوشت:
-	
-	$$ \frac{\partial Cost}{\partial W_1^C}=\sum_{i} \frac{\partial Cost}{\partial c_i}\cdot \frac{\partial c_i}{\partial W_1^C}$$
-	$$ \frac{\partial Cost}{\partial W_1^C}=\sum_{i} (\frac{\partial Cost}{\partial a_(\frac{i}{2})}\cdot \frac{\partial a(\frac{i}{2})}{\partial c_i})\cdot 1 (c_i>0) \cdot x_{i-1} $$
-	
-	در نهایت داریم:
-	
-	$$
-		\frac{\partial \text{Cost}}{\partial W_1^C} = \sum_i \left( \sum_{j: i \in \{2j-1, 2j\}} (z - Y) \cdot W_j^F \cdot \mathbf{1}(f_j > 0) \cdot W_{ji}^A \right) \cdot \mathbf{1}(c_i > 0) \cdot x_{i-1}
-	$$
-	
-	$$
-		\frac{\partial \text{Cost}}{\partial W_{ji}^A} = (z - Y) \cdot W_i^F \cdot \mathbf{1}(f_i > 0) \cdot a_j
-	$$
-	
-\end{qsolve}
-
-
-
-
-
-
-
-
+%\section{سوال سوم - نظری}
+%
+%معماری شبکه کانولوشنی زیر را درنظر بگیرید:
+%
+%\begin{center}
+%	\includegraphics*[width=0.6\linewidth]{pics/img1.png}
+%	\captionof{figure}{شبکه کانولوشنی مورد بررسی در سوال سوم}
+%	\label{شبکه کانولوشنی مورد بررسی در سوال سوم}
+%\end{center}
+%
+%
+%\begin{itemize}
+%	\item ابعاد ورودی $785\times 1$ و خروجی شبکه $1\times 1$
+%	\item لایه ورودی \lr{X} با \lr{Zero-padding} با طول ۱
+%	\item لایه کانولوشنی یک‌بعدی \lr{Conv1} با یک کرنل $2\times 1$ و تابع فعال‌سازی \lr{ReLU}
+%	\item لایه \lr{Average-polling(AVGPOOL1)}
+%	\item لایه تمام متصل \lr{FC1} با تابع فعال‌سازی \lr{ReLU}
+%		\item لایه خروجی \lr{Z} که به لایه \lr{FC1} کاملا متصل است و تابع فعال‌سازی \lr{Sigmoid}
+%\end{itemize}
+%
+%
+%
+% وزن لایه \lr{FC1} به \lr{Z} را با $W_i^F $، بایاس \lr{Z} را با $b^F$، وزن لایه \lr{AVGPOOL1} به \lr{FC1} را با $W_{ij}^A$، بایاس \lr{FC1} را با $b_i^M$، بردار $W^C$ برابر $[W_1^C, W_2^C]$ و بایاس لایه کانولوشنی را با $b^C$ نشان می‌دهیم. داده‌های مجموعه آموزش به‌صورت $X^i$ و خروجی مورد انتظار به‌صورت $Y^i$ است. همچنین خروجی‌های لایه‌های شبکه به‌ترتیب $c(X^i)$،
+% $a(X^i)$،
+% $f(X^i)$،
+% $z(X^i )$
+% می‌نامیم. در این صورت، تابع هزینه به‌صورت زیر تعریف می‌شود:
+% 
+% $$ cost(X,Y)=\sum_{n} cost(X^{(n)}, Y^{(n)})=\sum_{n}(-Y^{(n)}log(z(X^{(n)}))-(1-Y^{(n)})log(1-z(X^{(n)}))) $$
+%
+%
+%باتوجه به مفروضات بالا، به پرسش‌های زیر پاسخ دهید:
+%
+%\begin{enumerate}
+%	\item تعداد پارامتر‌های شبکه بالا را با ذکر جزئیات محاسبه کنید.
+%	
+%	\begin{qsolve}
+%		بر اساس اطلاعات داده شده برای لایه \lr{conv1}، تعداد پارامترهای این لایه به‌صورت زیر محاسبه می‌شود:
+%		\begin{enumerate}
+%			\item وزن ها: ۲
+%			\item  بایاس: ۱(چون یک کرنل داریم)
+%		\end{enumerate}
+%		بنابراین پارامتر‌های این لایه می‌شود:
+%		$$ \text{conv1: }2+1=3 $$
+%		
+%		
+%		لایه \lr{AVGPOOL1} پارامتری ندارد. زیرا تنها \lr{down-sampling} انجام می‌دهد.
+%		
+%		در لایه \lr{FC1} داریم:
+%		
+%		با توجه به \lr{stride=2} ابعاد خروجی برابر است با:
+%		$$ \frac{785+2*0-2}{2}+1=393 \rightarrow dim= [1\times 393] $$
+%		
+%		بنابراین تعداد پارامترهای این لایه می‌شود:
+%		
+%		\begin{enumerate}
+%			\item وزن‌ها: $393\times 20$
+%			\item بایاس: ۲۰ (تعداد واحد‌ها)
+%		\end{enumerate}
+%		
+%		$$ (393\times 20) + 20 = 7860 + 20 = 7880$$
+%		
+%		
+%		
+%		برای لایه خروجی (\lr{Z}) داریم:
+%		$$ 20+1=21 $$
+%		
+%		و درمجموع تعداد کل پارامتر‌های شبکه برابر است با:
+%		
+%		\begin{enumerate}
+%			\item لایه کانولوشن: ۳
+%			\item لایه پولینگ: ۰
+%			\item لایه تمام متصل:‌۷۸۸۰
+%			\item لایه خروجی:‌ ۲۱
+%		\end{enumerate}
+%		
+%		$$ \text{Total parameters:} 3+0+7880+21=7904 $$
+%		
+%		
+%		
+%		
+%	\end{qsolve}
+%	
+%	
+%	
+%	
+%	
+%	
+%	
+%	
+%	
+%	
+%	
+%	
+%	
+%	
+%	
+%	\item برای فقط یک نمونه آموزشی، مقدار 
+%	$\frac{\partial Cost}{\partial W_1^C}$ و
+%	$\frac{\partial Cost}{\partial W_{ji}^A}$
+%	را با جزئیات محاسبه کنید.
+%\end{enumerate}
+%
+%
+%
+%
+%
+%\begin{qsolve}
+%	خروجی لایه کانولوشن به صورت زیر تعریف می‌شود:
+%	$$ c_i=ReLU(W_1^c x_{i-1} + W_2^c x_i + b^c) $$
+%	
+%	خروجی لایه \lr{AVGPOOL1} به‌صورت زیر تعریف می‌شود:
+%	$$ a_j=\frac{x_{2j-1}+c_{2j}}{2} $$
+%	
+%	خروجی لایه \lr{Fully connected} نیز به‌صورت زیر تعریف می‌شود:
+%	$$ f_i=ReLU(\sum_{j} W_{ij}^A a_j + b_i^M) $$
+%	
+%	و درنهایت خروجی لابه آخر \lr{Z} به‌صورت زیر می‌شود:
+%	$$ z=\sigma(\sum_{i} W_i^F f_i + b^F) $$
+%	
+%	برای بدست آوردن مشتق‌ خطا نسبت به وزن‌ها به صورت زیر عمل می‌کنیم:
+%	
+%	ابتدا مشتق خطا نسبت به خروجی را بدست می‌آوریم:
+%	$$ \frac{\partial Cost}{\partial z}=-\frac{Y}{z}+\frac{1-Y}{1-z} $$
+%	
+%	با استفاده از قانون مشتق زنجیره‌ای می‌توان نوشت:
+%	$$ \frac{\partial Cost}{\partial W_i^F}=\frac{\partial Cost}{\partial z} \cdot \frac{\partial z}{\partial W_i^F} $$
+%	
+%	$$ \frac{\partial Cost}{\partial W_i^F}=(-\frac{Y}{z}+\frac{1-Y}{1-z})\cdot z(1-z) \cdot f_i $$
+%	
+%	$$ \frac{\partial Cost}{\partial W_i^F}=(z-Y)\cdot f_i $$
+%	
+%	برای مشتق خطا نسبت به $b^F$ می‌توان نوشت:
+%	
+%	$$ \frac{\partial Cost}{\partial b^F}=(z-Y) $$
+%	
+%	همچنین برای لایه \lr{FC1} می‌توان نوشت:
+%	$$ \frac{\partial Cost}{\partial f_i}=\frac{\partial Cost}{\partial z} \cdot \frac{\partial z}{\partial f_i} $$
+%	
+%	$$ \frac{\partial Cost}{\partial f_i}=(z-Y)\cdot W_i^F $$
+%	
+%	بنابراین برای $W_{ij}^A$ و $b_i^M$ می‌توان نوشت:
+%	
+%\end{qsolve}
+%
+%
+%
+%\begin{qsolve}
+%	$$ \frac{\partial Cost}{\partial W_{ij}^A}=\frac{\partial Cost}{\partial f_i} \cdot \frac{\partial f_i}{\partial W_{ij}^A}$$
+%	
+%	$$ \frac{\partial Cost}{\partial W_{ij}^A}=(z-Y)\cdot W_i^F\cdot 1 (f_i > 0)\cdot a_j $$
+%	$$ \frac{\partial Cost}{\partial b_i^M}=(z-Y)\cdot W_i^F\cdot 1 (f_i > 0) $$
+%	
+%	
+%	
+%	برای لایه \lr{AVGPOOL1} می‌توان نوشت:
+%	$$ \frac{\partial Cost}{\partial a_j} = \sum_{i} \frac{\partial Cost}{\partial f_i \cdot \frac{\partial f_i}{\partial a_j}}$$
+%	$$ \frac{\partial Cost}{\partial a_j}=\sum_{i} (z-Y)\cdot W_i^F\cdot 1(f_i>0)\cdot W_{ij}^A$$
+%	
+%	
+%	و در نهایت برای مشتق نسبت به $W_1^C$ می‌توان نوشت:
+%	
+%	$$ \frac{\partial Cost}{\partial W_1^C}=\sum_{i} \frac{\partial Cost}{\partial c_i}\cdot \frac{\partial c_i}{\partial W_1^C}$$
+%	$$ \frac{\partial Cost}{\partial W_1^C}=\sum_{i} (\frac{\partial Cost}{\partial a_(\frac{i}{2})}\cdot \frac{\partial a(\frac{i}{2})}{\partial c_i})\cdot 1 (c_i>0) \cdot x_{i-1} $$
+%	
+%	در نهایت داریم:
+%	
+%	$$
+%		\frac{\partial \text{Cost}}{\partial W_1^C} = \sum_i \left( \sum_{j: i \in \{2j-1, 2j\}} (z - Y) \cdot W_j^F \cdot \mathbf{1}(f_j > 0) \cdot W_{ji}^A \right) \cdot \mathbf{1}(c_i > 0) \cdot x_{i-1}
+%	$$
+%	
+%	$$
+%		\frac{\partial \text{Cost}}{\partial W_{ji}^A} = (z - Y) \cdot W_i^F \cdot \mathbf{1}(f_i > 0) \cdot a_j
+%	$$
+%	
+%\end{qsolve}
+%
+%
+%
+%
+%
+%
+%
+%

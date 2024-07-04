@@ -1,286 +1,342 @@
-\section{سوال اول - نظری}
-به سوالات زیر بصورت خلاصه و برای هر یک حداکثر در سه بند پاسخ دهید:
+\section{سوال اول - شبکه‌های مولد تقابلی}
+شبکه‌های مولد تقابلی\footnote{\lr{‫‪Networks‬‬‫‪Adverserial‬‬ ‫‪Generative‬‬}} همانطور که در کلاس با آنها آشنا شدید شامل دو زیرشبکه‌ی تولیدکننده\footnote{\lr{‫‪Generator‬‬}} و تمایزگر\footnote{\lr{‫‪Discriminator‬‬}} هستند که به صورت تقابلی آموزش داده می‌شوند تا داده‌های جدید تولید کنند. تولید جدید هدفی است که در تمامی مدل‌های مولد مد نظر قرار دارد و به شکل‌های مختلف از جمله ترجمه‌ی تصویر به تصویر، تبدیل دامنه و تولید شرطی صورت می‌گیرد. یکی از این اشکال، تولید تصویر با دریافت فرمان زبانی است که امروزه نیز نمونه‌های کاربردی آن همچون \lr{Imagen} و \lr{Dall-E} در دسترس عموم قرار دارند. در این تمرین به طور خاص به پیاده سازی این وظیفه با شبکه‌ی مولد تقابلی پشته‌ای یا \lr{SatckGAN} می‌پردازیم.
+
+
 
 \begin{enumerate}
-	\item 
-به‌طور کلی بهینه‌سازها\footnote{\lr{Optimizer}} (نظیر \lr{ADAM}) به دنبال یافتن وزن‌های شبکه‌های عصبی هستند بطوریکه توابع هزینه\footnote{\lr{Loss Functions}} کمینه شود. مشتق‌پذیر بودن توابع یاد شده چه تاثیری در بهینه‌ساز دارد؟ اگر مشتق‌پذیر نباشد، چه رویکردهایی برای بهینه‌سازی آن وجود دارد؟ یک مورد را به دلخواه توضیح دهید.
-\begin{qsolve}
-بهینه‌سازهایی مانند ADAM از گرادیان‌ توابع هزینه برای به‌روزرسانی وزن‌های شبکه استفاده می‌کنند. مشتق‌پذیر بودن این توابع به معنای وجود گرادیان‌ است که به بهینه‌سازها کمک می‌کنند جهت حرکت به سمت مینیمم سراسری را پیدا کنند. بدون مشتق‌پذیری، تعیین دقیق جهت و میزان تغییر وزن‌ها دشوار می‌شود.
-		
-در صورتی که تابع هزینه مشتق‌پذیر نباشد، روش‌های دیگری نظیر الگوریتم‌های مبتنی بر مشتقات تقریبی یا تکنیک‌های بهینه‌سازی بدون مشتق مانند الگوریتم‌ ژنتیک یا بهینه‌سازی ازدحام ذرات
-\lr{(Particle Swarm Optimization)}
-مورد استفاده قرار می‌گیرند.
-
- بهینه‌سازی ازدحام ذرات (\lr{PSO}) یک روش الهام گرفته از طبیعت است که بدون نیاز به مشتق تابع کار می‌کند. این الگوریتم با استفاده از حرکت ذرات در فضای جستجو و به‌روزرسانی موقعیت‌های آنها بر اساس بهترین موقعیت‌های خود و همسایگانشان، به سمت بهینه و پیدا کردن مینیمم سسراسری حرکت می‌کند.
- 
- \begin{latin}
- 	\begin{thebibliography}{9}
- 		\bibitem{ref1}
- 		I. Goodfellow, Y. Bengio \& A. Courville, (2016). Deep Learning. MIT Press (\href{https://www.deeplearningbook.org/}{\textcolor{magenta}{Link}})
- 		
- 		\bibitem{ref2}
- 		Rios, Luis Miguel, and Nikolaos V. Sahinidis. "Derivative-free optimization: a review of algorithms and comparison of software implementations." Journal of Global Optimization 56.3 (2013): 1247-1293.
- 		
- 	\end{thebibliography} 
- \end{latin}
-\end{qsolve}
-	
-	
-	
-	
-	
-	
-	
 	\item
-محدب\footnote{\lr{Convex}} بودن توابع به چه معناست و چرا مطلوب است که در بهینه‌سازی، توابع هزینه محدب باشد؟ اگر محدب نباشد، چگونه می‌توان آن را بهینه نمود؟
-
-\begin{qsolve}
-یک تابع محدب است اگر خط واصل بین هر دو نقطه از نمودار آن تابع، همیشه بالای نمودار تابع قرار گیرد. این ویژگی باعث می‌شود که هر مینیمم محلی، مینیمم سراسری نیز باشد، که جستجو برای یافتن نقطه بهینه را آسان می‌کند.
-
-توابع محدب از این جهت برای ما مفید هستند چون تضمین می‌کنند که بهینه‌سازها می‌توانند به راحتی و با اطمینان به نقطه بهینه سراسری برسند، بدون اینکه در مینیمم‌های محلی گیر کنند. این ویژگی فرآیند بهینه‌سازی را کارآمدتر و قابل اعتمادتر می‌سازد.
-
-در صورت محدب نبودن توابع هزینه، می‌توان از تکنیک‌هایی نظیر الگوریتم‌های تصادفی (\lr{Stochastic Algorithms})، چندین شروع تصادفی (\lr{Multiple Random Starts})، و روش‌های بهینه‌سازی مبتنی بر شبیه‌سازی (\lr{Simulated Annealing}) برای جستجوی بهینه سراسری استفاده کرد.
-
-\begin{latin}
-	\begin{thebibliography}{9}
-		\bibitem{ref1}
-		S. Boyd \& L. Vandenberghe, (2004). Convex Optimization. Cambridge University Press.
-		(\href{https://web.stanford.edu/~boyd/cvxbook/}{\textcolor{magenta}{Link}})
-		
-		\bibitem{ref2}
-		J. Nocedal, \& S. j. Wright, (2006). Numerical Optimization. Springer. (Chapters on non-convex optimization)
-	\end{thebibliography} 
-\end{latin}
+	به مراجعه به مقاله \href{https://arxiv.org/abs/1612.03242}{\textcolor{magenta}{\lr{StackGAN}}} کلیت ساختار و چگونگی عملکرد این شبکه را توضیح دهید. توضیح دهید که شبکه‌ی تعریف شده در هر گام\footnote{\lr{Stage}} به چه منظور استفاده می‌شود. به طور خاص ذکر کنید که ورودی شبکه‌ی تولیدکننده در هر دو گام چه تفاوتی با ورودی یک شبکه‌ی مولد تقابلی ساده\footnote{\lr{Vanilla GAN}} دارد؟ همچنین بررسی کنید که آموزش این شبکه به چه صورت انجام می‌شود.
 	
-\end{qsolve}
+	\begin{center}
+		\includegraphics*[width=0.9\linewidth]{pics/img1.png}
+		\captionof{figure}{معماری کلی شبکه مولد تقابلی پشته ای}
+		\label{معماری کلی شبکه مولد تقابلی پشته ای}
+	\end{center}
 	
+	\begin{qsolve}
+		 
+	\end{qsolve}
 	
 	
 	
 	
 	\item 
-الگوریتم بهینه‌سازی نیوتن را مطالعه کرده و آن را با نزول در راستای گرادیان\footnote{\lr{Gradient Descent}} مقایسه کنید. در چه نوع مسائلی استفاده از الگوریتم نیوتن ارجحیت دارد؟
-	
-\begin{qsolve}
-الگوریتم نیوتون، از مشتق دوم تابع هزینه (\lr{hessian}) برای بهبود به‌روزرسانی وزن‌ها استفاده می‌کند. بروزرسانی وزن‌ها با استفاده از فرمول زیر انجام می‌شود که $H$ همان ماتریس \lr{hessian} است.
-
-$$ \theta_{\text{new}} = \theta_{\text{old}} - H^{-1} \nabla L(\theta_{\text{old}})  $$
-
-نزول گرادیان فقط از مشتق مرتبه اول استفاده می‌کند و به‌روزرسانی وزن‌ها را با توجه به جهت و میزان مشتق انجام می‌دهد. الگوریتم نیوتن به دلیل استفاده از اطلاعات مشتق مرتبه دوم می‌تواند به سرعت به نقطه بهینه نزدیک شود، اما محاسبه و بدست آوردن وارون ماتریس \lr{hessian} هزینه‌بر است.
-
-الگوریتم نیوتن برای مسائلی با تعداد پارامترهای کم و توابع ساده، که محاسبه و وارون‌سازی ماتریس  \lr{hessian} را دشوار نکند، مناسب‌تر است. این الگوریتم در مسائلی که به دقت بالاتر و همگرایی سریع‌تر نیاز داریم، ارجحیت دارد.
-\end{qsolve}
-
-\begin{qsolve}
-	\begin{latin}
-		\begin{thebibliography}{9}
-			\bibitem{ref1}
-			I. Goodfellow, Y. Bengio \& A. Courville, (2016). Deep Learning. MIT Press, (Chapter on Optimization) (\href{https://www.deeplearningbook.org/}{\textcolor{magenta}{Link}})
-			
-			\bibitem{ref2}
-			J. Nocedal, \& J. S. Wright, (2006). Numerical Optimization. Springer. (Chapters on second-order methods)
-		\end{thebibliography} 
-	\end{latin}
-\end{qsolve}
 	
 	
 	
 	
-	\item
-ضمن مطالعه کلی الگوریتم \lr{AdaGrad}، بیان کنید که چگونه می‌توان از آن برای بهینه ساختن نرخ یادگیری\footnote{\lr{Learning Rate}} بهره گرفت.
-
-فرض کنید مسئله‌ی دسته بندی دودویی بحرانی بودن/نبودن شرایط یک کارگاه صنعتی بر اساس اطلاعاتی محیطی آن را در اختیار دارید که داده‌های دما، رطوبت، فشار و ذرات معلق بر اساس سنسورهای نصب شده در هر یک ثانیه ارسال می‌گردد. شما بایستی با در نظر گرفتن دنباله‌ای از داده‌های ارسالی بتوانید تشخیص دهید که شرایط بحرانی است یا خیر.
-
-
-\begin{qsolve}
-	\lr{AdaGrad (Adaptive Gradient)}
-	الگوریتم بهینه‌سازی‌ای است که نرخ یادگیری را به صورت داینامیک و متناسب با تاریخچه گرادیان‌ تنظیم می‌کند. این الگوریتم با تقسیم نرخ یادگیری اولیه بر مجموع ریشه مربع گرادیان‌های قبلی، نرخ یادگیری را برای هر پارامتر به صورت جداگانه تنظیم می‌کند.
-	
-	در \lr{AdaGrad}، هر پارامتر نرخ یادگیری خاص خود را دارد که با توجه به میزان نوسانات آن پارامتر تنظیم می‌شود. این کار به الگوریتم اجازه می‌دهد تا در مسیرهای با گرادیان زیاد نرخ یادگیری را کاهش دهد و در مسیرهای با گرادیان کم آن را افزایش دهد، که منجر به بهینه‌سازی دقیق‌تر و جلوگیری از نوسانات شدید می‌شود.
-	\begin{latin}
-		\begin{thebibliography}{9}
-			\bibitem{ref1}
-			J. Duchi, E. Hazan, \& Y. Singer, (2011). Adaptive subgradient methods for online learning and stochastic optimization. Journal of Machine Learning Research, 12(Jul), 2121-2159.
-			
-			\bibitem{ref2}
-			S. Ruder, (2016). An overview of gradient descent optimization algorithms. (\href{https://arxiv.org/abs/1609.04747}{\textcolor{magenta}{Link}})
-		\end{thebibliography} 
-	\end{latin}
-\end{qsolve}
-
-
-
-	\item
-یک شبکه‌ی بازرخدادی \lr{Elman} که با دولایه‌ی مخفی که به ترتیب سه و دو نورون تعبیه شده است، طراحی نمایید و تعداد وزن‌های مورد نیاز برای یادگیری در این شبکه را با بیان علت محاسبه نموده و ابعاد تمامی بردارهای (\lr{Vectors \& Tensors}) مشاهده شده در شبکه (ورودی‌ها/میانی‌ها/خروجی‌ها) را با محاسبات و استدلال نمایش دهید. انتظار می‌رود که شما بتوانید سیر تغییرات ابعاد بردارها و چگونگی آن را نشان دهید؛ مثلا شکل بردار ورودی برای یک دسته (batch) چگونه تعیین می‌شود و تا رسیدن به خروجی شکل آن چرا و چگونه تغییر پیدا کرده است و با چه وزن‌هایی متاثر شده است.
-
-
-
-\begin{qsolve}
-طبق صورت مسئله، فرضیات و نوتیشن‌های زیر را درنظر می‌گیریم:
-
-\begin{enumerate}
-	\item ورودی $x(t)$ با ابعاد $n_x$ است
-	\item لایه مخفی اول ($h_1(t)$) دارای ۳ نورون با ابعاد ۳
-	\item لایه مخفی دوم ($h_2(t)$) دارای ۲ نورون مخفی با ابعاد ۲
-	\item خروجی $y(t)$ با ابعاد $n_y$
-\end{enumerate}
-
-در مرحله اول تعداد وزن‌های لایه‌های مختلف را با بیان جزئیات محاسبه می‌کنیم:
-
-\begin{enumerate}
-	\item 
-	\textbf{لایه ورودی به لایه مخفی اول: }
-	\begin{itemize}
-		\item وزن‌های بین ورودی و لایه مخفی اول: \lr{$\mathbf{W}_{xh1}$} با ابعاد \lr{$3 \times n_x$}
-		\item وزن‌های بازگشتی از خروجی لایه مخفی اول به خودش: \lr{$\mathbf{W}_{h1h1}$} با ابعاد \lr{$3 \times 3$}
-		\item بایاس‌های لایه مخفی اول: \lr{$\mathbf{b}_{h1}$} با ابعاد ۳
-	\end{itemize}
-	
-	\[
-	\text{تعداد وزن‌های لایه اول} = 3 \times n_x + 3 \times 3 + 3
-	\]
-	
-	\item 
-	\textbf{لایه مخفی اول به لایه مخفی دوم: }
-	\begin{itemize}
-		\item وزن‌های بین لایه مخفی اول و دوم: \lr{$\mathbf{W}_{h1h2}$} با ابعاد \lr{$2 \times 3$}
-		\item وزن‌های بازگشتی از خروجی لایه مخفی دوم به خودش: \lr{$\mathbf{W}_{h2h2}$} با ابعاد \lr{$2 \times 2$}.
-		\item بایاس‌های لایه مخفی دوم: \lr{$\mathbf{b}_{h2}$} با ابعاد ۲
-	\end{itemize}
-	\[
-	\text{تعداد وزن‌های لایه دوم} = 2 \times 3 + 2 \times 2 + 2=12
-	\]
 	
 	
-	\item 
-	\textbf{لایه مخفی دوم به لایه خروجی: }
-	\begin{itemize}
-		\item وزن‌های بین لایه مخفی دوم و خروجی: \lr{$\mathbf{W}_{h2y}$} با ابعاد \lr{$n_y \times 2$}
-		\item بایاس‌های لایه خروجی: \lr{$\mathbf{b}_{y}$} با ابعاد \lr{$n_y$}
-	\end{itemize}
-	\[
-	\text{تعداد وزن‌های لایه خروجی} = n_y \times 2 + n_y
-	\]
 \end{enumerate}
 
 
 
-در ادامه ابعاد بردارها در شبکه را محاسبه می‌کنیم:
-\begin{enumerate}
-	\item
-	\textbf{ورودی: }
-	\begin{itemize}
-		\item بردار ورودی \lr{$\mathbf{x}(t)$} با ابعاد \lr{$n_x$}
-	\end{itemize}
-\end{enumerate}
-\end{qsolve}
 
 
 
-\begin{qsolve}
-	\begin{enumerate}
-		\item
-		\textbf{لایه مخفی اول: }
-		\begin{itemize}
-			\item ورودی به لایه مخفی اول: 
-			\[
-			\mathbf{h}_1(t) = \sigma(\mathbf{W}_{xh1} \mathbf{x}(t) + \mathbf{W}_{h1h1} \mathbf{h}_1(t-1) + \mathbf{b}_{h1}) 
-			\]
-			\item ابعاد \lr{$\mathbf{h}_1(t)$}: ۳
-		\end{itemize}
-		
-		
-		
-		
-		\item
-		\textbf{لایه مخفی دوم: }
-		\begin{itemize}
-			\item ورودی به لایه مخفی دوم:
-			\[
-			\mathbf{h}_2(t) = \sigma(\mathbf{W}_{h1h2} \mathbf{h}_1(t) + \mathbf{W}_{h2h2} \mathbf{h}_2(t-1) + \mathbf{b}_{h2})
-			\]
-			\item ابعاد \lr{$\mathbf{h}_2(t)$}: ۲.
-		\end{itemize}
-		
-		
-		\item 
-		\textbf{خروجی: }
-		\begin{itemize}
-		\item خروجی:
-		\[
-		\mathbf{y}(t) = \mathbf{W}_{h2y} \mathbf{h}_2(t) + \mathbf{b}_{y}
-		\]
-		\item ابعاد \lr{$\mathbf{y}(t)$}: \lr{$n_y$}.
-		\end{itemize}
-	\end{enumerate}
-	
-	درنهایت با ترکیب همه وزن‌ها و بایاس‌ها تعداد کل وزن‌های شبکه به‌صورت زیر می‌شود:
-	\[
-	\text{تعداد کل وزن‌ها} = (3 \times n_x + 3 \times 3 + 3) + (2 \times 3 + 2 \times 2 + 2) + (n_y \times 2 + n_y)
-	\]
-	\[
-	= (3n_x + 9 + 3) + (6 + 4 + 2) + (2n_y + n_y)
-	\]
-	\[
-	= 3n_x + 3n_y + 24
-	\]	
-	
-		درنهایت دیاگرام شبکه طراحی شده به‌صورت زیر است:
-\end{qsolve}
 
 
 
-\begin{figure}[h]
-	\centering
-	\begin{tikzpicture}[scale=1, transform shape]
-		
-		% Input layer
-		\node[draw, circle] (input) at (0, 0) {\textbf{$\mathbf{x}(t)$}};
-		\node at (0, -1) {ورودی};
-		
-		% First hidden layer
-		\node[draw, circle] (h1_1) at (3, 1.5) {$h_{1,1}$};
-		\node[draw, circle] (h1_2) at (3, 0) {$h_{1,2}$};
-		\node[draw, circle] (h1_3) at (3, -1.5) {$h_{1,3}$};
-		\node at (3, -3) {لایه مخفی اول};
-		
-		% Second hidden layer
-		\node[draw, circle] (h2_1) at (6, 0.75) {$h_{2,1}$};
-		\node[draw, circle] (h2_2) at (6, -0.75) {$h_{2,2}$};
-		\node at (6, -2.5) {لایه مخفی دوم};
-		
-		% Output layer
-		\node[draw, circle] (output) at (9, 0) {\textbf{$\mathbf{y}(t)$}};
-		\node at (9, -1) {خروجی};
-		
-		% Connections from input to first hidden layer
-		\draw[->] (input) -- (h1_1);
-		\draw[->] (input) -- (h1_2);
-		\draw[->] (input) -- (h1_3);
-		
-		% Recurrent connections in first hidden layer
-		\draw[->, loop above] (h1_1) to (h1_1);
-		\draw[->, loop above] (h1_2) to (h1_2);
-		\draw[->, loop below] (h1_3) to (h1_3);
-		
-		% Connections from first hidden layer to second hidden layer
-		\draw[->] (h1_1) -- (h2_1);
-		\draw[->] (h1_2) -- (h2_1);
-		\draw[->] (h1_3) -- (h2_1);
-		\draw[->] (h1_1) -- (h2_2);
-		\draw[->] (h1_2) -- (h2_2);
-		\draw[->] (h1_3) -- (h2_2);
-		
-		% Recurrent connections in second hidden layer
-		\draw[->, loop above] (h2_1) to (h2_1);
-		\draw[->, loop below] (h2_2) to (h2_2);
-		
-		% Connections from second hidden layer to output layer
-		\draw[->] (h2_1) -- (output);
-		\draw[->] (h2_2) -- (output);
-		
-	\end{tikzpicture}
-	\caption{دیاگرام شبکه Elman با دو لایه مخفی}
-	\label{fig:elman_network}
-\end{figure}
-\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%\section{سوال اول - نظری}
+%به سوالات زیر بصورت خلاصه و برای هر یک حداکثر در سه بند پاسخ دهید:
+%
+%\begin{enumerate}
+%	\item 
+%به‌طور کلی بهینه‌سازها\footnote{\lr{Optimizer}} (نظیر \lr{ADAM}) به دنبال یافتن وزن‌های شبکه‌های عصبی هستند بطوریکه توابع هزینه\footnote{\lr{Loss Functions}} کمینه شود. مشتق‌پذیر بودن توابع یاد شده چه تاثیری در بهینه‌ساز دارد؟ اگر مشتق‌پذیر نباشد، چه رویکردهایی برای بهینه‌سازی آن وجود دارد؟ یک مورد را به دلخواه توضیح دهید.
+%\begin{qsolve}
+%بهینه‌سازهایی مانند ADAM از گرادیان‌ توابع هزینه برای به‌روزرسانی وزن‌های شبکه استفاده می‌کنند. مشتق‌پذیر بودن این توابع به معنای وجود گرادیان‌ است که به بهینه‌سازها کمک می‌کنند جهت حرکت به سمت مینیمم سراسری را پیدا کنند. بدون مشتق‌پذیری، تعیین دقیق جهت و میزان تغییر وزن‌ها دشوار می‌شود.
+%		
+%در صورتی که تابع هزینه مشتق‌پذیر نباشد، روش‌های دیگری نظیر الگوریتم‌های مبتنی بر مشتقات تقریبی یا تکنیک‌های بهینه‌سازی بدون مشتق مانند الگوریتم‌ ژنتیک یا بهینه‌سازی ازدحام ذرات
+%\lr{(Particle Swarm Optimization)}
+%مورد استفاده قرار می‌گیرند.
+%
+% بهینه‌سازی ازدحام ذرات (\lr{PSO}) یک روش الهام گرفته از طبیعت است که بدون نیاز به مشتق تابع کار می‌کند. این الگوریتم با استفاده از حرکت ذرات در فضای جستجو و به‌روزرسانی موقعیت‌های آنها بر اساس بهترین موقعیت‌های خود و همسایگانشان، به سمت بهینه و پیدا کردن مینیمم سسراسری حرکت می‌کند.
+% 
+% \begin{latin}
+% 	\begin{thebibliography}{9}
+% 		\bibitem{ref1}
+% 		I. Goodfellow, Y. Bengio \& A. Courville, (2016). Deep Learning. MIT Press (\href{https://www.deeplearningbook.org/}{\textcolor{magenta}{Link}})
+% 		
+% 		\bibitem{ref2}
+% 		Rios, Luis Miguel, and Nikolaos V. Sahinidis. "Derivative-free optimization: a review of algorithms and comparison of software implementations." Journal of Global Optimization 56.3 (2013): 1247-1293.
+% 		
+% 	\end{thebibliography} 
+% \end{latin}
+%\end{qsolve}
+%	
+%	
+%	
+%	
+%	
+%	
+%	
+%	\item
+%محدب\footnote{\lr{Convex}} بودن توابع به چه معناست و چرا مطلوب است که در بهینه‌سازی، توابع هزینه محدب باشد؟ اگر محدب نباشد، چگونه می‌توان آن را بهینه نمود؟
+%
+%\begin{qsolve}
+%یک تابع محدب است اگر خط واصل بین هر دو نقطه از نمودار آن تابع، همیشه بالای نمودار تابع قرار گیرد. این ویژگی باعث می‌شود که هر مینیمم محلی، مینیمم سراسری نیز باشد، که جستجو برای یافتن نقطه بهینه را آسان می‌کند.
+%
+%توابع محدب از این جهت برای ما مفید هستند چون تضمین می‌کنند که بهینه‌سازها می‌توانند به راحتی و با اطمینان به نقطه بهینه سراسری برسند، بدون اینکه در مینیمم‌های محلی گیر کنند. این ویژگی فرآیند بهینه‌سازی را کارآمدتر و قابل اعتمادتر می‌سازد.
+%
+%در صورت محدب نبودن توابع هزینه، می‌توان از تکنیک‌هایی نظیر الگوریتم‌های تصادفی (\lr{Stochastic Algorithms})، چندین شروع تصادفی (\lr{Multiple Random Starts})، و روش‌های بهینه‌سازی مبتنی بر شبیه‌سازی (\lr{Simulated Annealing}) برای جستجوی بهینه سراسری استفاده کرد.
+%
+%\begin{latin}
+%	\begin{thebibliography}{9}
+%		\bibitem{ref1}
+%		S. Boyd \& L. Vandenberghe, (2004). Convex Optimization. Cambridge University Press.
+%		(\href{https://web.stanford.edu/~boyd/cvxbook/}{\textcolor{magenta}{Link}})
+%		
+%		\bibitem{ref2}
+%		J. Nocedal, \& S. j. Wright, (2006). Numerical Optimization. Springer. (Chapters on non-convex optimization)
+%	\end{thebibliography} 
+%\end{latin}
+%	
+%\end{qsolve}
+%	
+%	
+%	
+%	
+%	
+%	\item 
+%الگوریتم بهینه‌سازی نیوتن را مطالعه کرده و آن را با نزول در راستای گرادیان\footnote{\lr{Gradient Descent}} مقایسه کنید. در چه نوع مسائلی استفاده از الگوریتم نیوتن ارجحیت دارد؟
+%	
+%\begin{qsolve}
+%الگوریتم نیوتون، از مشتق دوم تابع هزینه (\lr{hessian}) برای بهبود به‌روزرسانی وزن‌ها استفاده می‌کند. بروزرسانی وزن‌ها با استفاده از فرمول زیر انجام می‌شود که $H$ همان ماتریس \lr{hessian} است.
+%
+%$$ \theta_{\text{new}} = \theta_{\text{old}} - H^{-1} \nabla L(\theta_{\text{old}})  $$
+%
+%نزول گرادیان فقط از مشتق مرتبه اول استفاده می‌کند و به‌روزرسانی وزن‌ها را با توجه به جهت و میزان مشتق انجام می‌دهد. الگوریتم نیوتن به دلیل استفاده از اطلاعات مشتق مرتبه دوم می‌تواند به سرعت به نقطه بهینه نزدیک شود، اما محاسبه و بدست آوردن وارون ماتریس \lr{hessian} هزینه‌بر است.
+%
+%الگوریتم نیوتن برای مسائلی با تعداد پارامترهای کم و توابع ساده، که محاسبه و وارون‌سازی ماتریس  \lr{hessian} را دشوار نکند، مناسب‌تر است. این الگوریتم در مسائلی که به دقت بالاتر و همگرایی سریع‌تر نیاز داریم، ارجحیت دارد.
+%\end{qsolve}
+%
+%\begin{qsolve}
+%	\begin{latin}
+%		\begin{thebibliography}{9}
+%			\bibitem{ref1}
+%			I. Goodfellow, Y. Bengio \& A. Courville, (2016). Deep Learning. MIT Press, (Chapter on Optimization) (\href{https://www.deeplearningbook.org/}{\textcolor{magenta}{Link}})
+%			
+%			\bibitem{ref2}
+%			J. Nocedal, \& J. S. Wright, (2006). Numerical Optimization. Springer. (Chapters on second-order methods)
+%		\end{thebibliography} 
+%	\end{latin}
+%\end{qsolve}
+%	
+%	
+%	
+%	
+%	\item
+%ضمن مطالعه کلی الگوریتم \lr{AdaGrad}، بیان کنید که چگونه می‌توان از آن برای بهینه ساختن نرخ یادگیری\footnote{\lr{Learning Rate}} بهره گرفت.
+%
+%فرض کنید مسئله‌ی دسته بندی دودویی بحرانی بودن/نبودن شرایط یک کارگاه صنعتی بر اساس اطلاعاتی محیطی آن را در اختیار دارید که داده‌های دما، رطوبت، فشار و ذرات معلق بر اساس سنسورهای نصب شده در هر یک ثانیه ارسال می‌گردد. شما بایستی با در نظر گرفتن دنباله‌ای از داده‌های ارسالی بتوانید تشخیص دهید که شرایط بحرانی است یا خیر.
+%
+%
+%\begin{qsolve}
+%	\lr{AdaGrad (Adaptive Gradient)}
+%	الگوریتم بهینه‌سازی‌ای است که نرخ یادگیری را به صورت داینامیک و متناسب با تاریخچه گرادیان‌ تنظیم می‌کند. این الگوریتم با تقسیم نرخ یادگیری اولیه بر مجموع ریشه مربع گرادیان‌های قبلی، نرخ یادگیری را برای هر پارامتر به صورت جداگانه تنظیم می‌کند.
+%	
+%	در \lr{AdaGrad}، هر پارامتر نرخ یادگیری خاص خود را دارد که با توجه به میزان نوسانات آن پارامتر تنظیم می‌شود. این کار به الگوریتم اجازه می‌دهد تا در مسیرهای با گرادیان زیاد نرخ یادگیری را کاهش دهد و در مسیرهای با گرادیان کم آن را افزایش دهد، که منجر به بهینه‌سازی دقیق‌تر و جلوگیری از نوسانات شدید می‌شود.
+%	\begin{latin}
+%		\begin{thebibliography}{9}
+%			\bibitem{ref1}
+%			J. Duchi, E. Hazan, \& Y. Singer, (2011). Adaptive subgradient methods for online learning and stochastic optimization. Journal of Machine Learning Research, 12(Jul), 2121-2159.
+%			
+%			\bibitem{ref2}
+%			S. Ruder, (2016). An overview of gradient descent optimization algorithms. (\href{https://arxiv.org/abs/1609.04747}{\textcolor{magenta}{Link}})
+%		\end{thebibliography} 
+%	\end{latin}
+%\end{qsolve}
+%
+%
+%
+%	\item
+%یک شبکه‌ی بازرخدادی \lr{Elman} که با دولایه‌ی مخفی که به ترتیب سه و دو نورون تعبیه شده است، طراحی نمایید و تعداد وزن‌های مورد نیاز برای یادگیری در این شبکه را با بیان علت محاسبه نموده و ابعاد تمامی بردارهای (\lr{Vectors \& Tensors}) مشاهده شده در شبکه (ورودی‌ها/میانی‌ها/خروجی‌ها) را با محاسبات و استدلال نمایش دهید. انتظار می‌رود که شما بتوانید سیر تغییرات ابعاد بردارها و چگونگی آن را نشان دهید؛ مثلا شکل بردار ورودی برای یک دسته (batch) چگونه تعیین می‌شود و تا رسیدن به خروجی شکل آن چرا و چگونه تغییر پیدا کرده است و با چه وزن‌هایی متاثر شده است.
+%
+%
+%
+%\begin{qsolve}
+%طبق صورت مسئله، فرضیات و نوتیشن‌های زیر را درنظر می‌گیریم:
+%
+%\begin{enumerate}
+%	\item ورودی $x(t)$ با ابعاد $n_x$ است
+%	\item لایه مخفی اول ($h_1(t)$) دارای ۳ نورون با ابعاد ۳
+%	\item لایه مخفی دوم ($h_2(t)$) دارای ۲ نورون مخفی با ابعاد ۲
+%	\item خروجی $y(t)$ با ابعاد $n_y$
+%\end{enumerate}
+%
+%در مرحله اول تعداد وزن‌های لایه‌های مختلف را با بیان جزئیات محاسبه می‌کنیم:
+%
+%\begin{enumerate}
+%	\item 
+%	\textbf{لایه ورودی به لایه مخفی اول: }
+%	\begin{itemize}
+%		\item وزن‌های بین ورودی و لایه مخفی اول: \lr{$\mathbf{W}_{xh1}$} با ابعاد \lr{$3 \times n_x$}
+%		\item وزن‌های بازگشتی از خروجی لایه مخفی اول به خودش: \lr{$\mathbf{W}_{h1h1}$} با ابعاد \lr{$3 \times 3$}
+%		\item بایاس‌های لایه مخفی اول: \lr{$\mathbf{b}_{h1}$} با ابعاد ۳
+%	\end{itemize}
+%	
+%	\[
+%	\text{تعداد وزن‌های لایه اول} = 3 \times n_x + 3 \times 3 + 3
+%	\]
+%	
+%	\item 
+%	\textbf{لایه مخفی اول به لایه مخفی دوم: }
+%	\begin{itemize}
+%		\item وزن‌های بین لایه مخفی اول و دوم: \lr{$\mathbf{W}_{h1h2}$} با ابعاد \lr{$2 \times 3$}
+%		\item وزن‌های بازگشتی از خروجی لایه مخفی دوم به خودش: \lr{$\mathbf{W}_{h2h2}$} با ابعاد \lr{$2 \times 2$}.
+%		\item بایاس‌های لایه مخفی دوم: \lr{$\mathbf{b}_{h2}$} با ابعاد ۲
+%	\end{itemize}
+%	\[
+%	\text{تعداد وزن‌های لایه دوم} = 2 \times 3 + 2 \times 2 + 2=12
+%	\]
+%	
+%	
+%	\item 
+%	\textbf{لایه مخفی دوم به لایه خروجی: }
+%	\begin{itemize}
+%		\item وزن‌های بین لایه مخفی دوم و خروجی: \lr{$\mathbf{W}_{h2y}$} با ابعاد \lr{$n_y \times 2$}
+%		\item بایاس‌های لایه خروجی: \lr{$\mathbf{b}_{y}$} با ابعاد \lr{$n_y$}
+%	\end{itemize}
+%	\[
+%	\text{تعداد وزن‌های لایه خروجی} = n_y \times 2 + n_y
+%	\]
+%\end{enumerate}
+%
+%
+%
+%در ادامه ابعاد بردارها در شبکه را محاسبه می‌کنیم:
+%\begin{enumerate}
+%	\item
+%	\textbf{ورودی: }
+%	\begin{itemize}
+%		\item بردار ورودی \lr{$\mathbf{x}(t)$} با ابعاد \lr{$n_x$}
+%	\end{itemize}
+%\end{enumerate}
+%\end{qsolve}
+%
+%
+%
+%\begin{qsolve}
+%	\begin{enumerate}
+%		\item
+%		\textbf{لایه مخفی اول: }
+%		\begin{itemize}
+%			\item ورودی به لایه مخفی اول: 
+%			\[
+%			\mathbf{h}_1(t) = \sigma(\mathbf{W}_{xh1} \mathbf{x}(t) + \mathbf{W}_{h1h1} \mathbf{h}_1(t-1) + \mathbf{b}_{h1}) 
+%			\]
+%			\item ابعاد \lr{$\mathbf{h}_1(t)$}: ۳
+%		\end{itemize}
+%		
+%		
+%		
+%		
+%		\item
+%		\textbf{لایه مخفی دوم: }
+%		\begin{itemize}
+%			\item ورودی به لایه مخفی دوم:
+%			\[
+%			\mathbf{h}_2(t) = \sigma(\mathbf{W}_{h1h2} \mathbf{h}_1(t) + \mathbf{W}_{h2h2} \mathbf{h}_2(t-1) + \mathbf{b}_{h2})
+%			\]
+%			\item ابعاد \lr{$\mathbf{h}_2(t)$}: ۲.
+%		\end{itemize}
+%		
+%		
+%		\item 
+%		\textbf{خروجی: }
+%		\begin{itemize}
+%		\item خروجی:
+%		\[
+%		\mathbf{y}(t) = \mathbf{W}_{h2y} \mathbf{h}_2(t) + \mathbf{b}_{y}
+%		\]
+%		\item ابعاد \lr{$\mathbf{y}(t)$}: \lr{$n_y$}.
+%		\end{itemize}
+%	\end{enumerate}
+%	
+%	درنهایت با ترکیب همه وزن‌ها و بایاس‌ها تعداد کل وزن‌های شبکه به‌صورت زیر می‌شود:
+%	\[
+%	\text{تعداد کل وزن‌ها} = (3 \times n_x + 3 \times 3 + 3) + (2 \times 3 + 2 \times 2 + 2) + (n_y \times 2 + n_y)
+%	\]
+%	\[
+%	= (3n_x + 9 + 3) + (6 + 4 + 2) + (2n_y + n_y)
+%	\]
+%	\[
+%	= 3n_x + 3n_y + 24
+%	\]	
+%	
+%		درنهایت دیاگرام شبکه طراحی شده به‌صورت زیر است:
+%\end{qsolve}
+%
+%
+%
+%\begin{figure}[h]
+%	\centering
+%	\begin{tikzpicture}[scale=1, transform shape]
+%		
+%		% Input layer
+%		\node[draw, circle] (input) at (0, 0) {\textbf{$\mathbf{x}(t)$}};
+%		\node at (0, -1) {ورودی};
+%		
+%		% First hidden layer
+%		\node[draw, circle] (h1_1) at (3, 1.5) {$h_{1,1}$};
+%		\node[draw, circle] (h1_2) at (3, 0) {$h_{1,2}$};
+%		\node[draw, circle] (h1_3) at (3, -1.5) {$h_{1,3}$};
+%		\node at (3, -3) {لایه مخفی اول};
+%		
+%		% Second hidden layer
+%		\node[draw, circle] (h2_1) at (6, 0.75) {$h_{2,1}$};
+%		\node[draw, circle] (h2_2) at (6, -0.75) {$h_{2,2}$};
+%		\node at (6, -2.5) {لایه مخفی دوم};
+%		
+%		% Output layer
+%		\node[draw, circle] (output) at (9, 0) {\textbf{$\mathbf{y}(t)$}};
+%		\node at (9, -1) {خروجی};
+%		
+%		% Connections from input to first hidden layer
+%		\draw[->] (input) -- (h1_1);
+%		\draw[->] (input) -- (h1_2);
+%		\draw[->] (input) -- (h1_3);
+%		
+%		% Recurrent connections in first hidden layer
+%		\draw[->, loop above] (h1_1) to (h1_1);
+%		\draw[->, loop above] (h1_2) to (h1_2);
+%		\draw[->, loop below] (h1_3) to (h1_3);
+%		
+%		% Connections from first hidden layer to second hidden layer
+%		\draw[->] (h1_1) -- (h2_1);
+%		\draw[->] (h1_2) -- (h2_1);
+%		\draw[->] (h1_3) -- (h2_1);
+%		\draw[->] (h1_1) -- (h2_2);
+%		\draw[->] (h1_2) -- (h2_2);
+%		\draw[->] (h1_3) -- (h2_2);
+%		
+%		% Recurrent connections in second hidden layer
+%		\draw[->, loop above] (h2_1) to (h2_1);
+%		\draw[->, loop below] (h2_2) to (h2_2);
+%		
+%		% Connections from second hidden layer to output layer
+%		\draw[->] (h2_1) -- (output);
+%		\draw[->] (h2_2) -- (output);
+%		
+%	\end{tikzpicture}
+%	\caption{دیاگرام شبکه Elman با دو لایه مخفی}
+%	\label{fig:elman_network}
+%\end{figure}
+%\end{enumerate}
