@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023/Debian) (preloaded format=xelatex 2024.5.4)  5 JUL 2024 14:36
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023/Debian) (preloaded format=xelatex 2024.5.4)  5 JUL 2024 18:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1585,37 +1585,6 @@ Overfull \vbox (17.85526pt too high) has occurred while \output is active []
 
 
 [11]
-Missing character: There is no ت ("62A) in font cmmi8!
-Missing character: There is no ت ("62A) in font cmmi8!
-Missing character: There is no ت ("62A) in font cmmi8!
-Missing character: There is no ت ("62A) in font cmmi8!
-Missing character: There is no ت ("62A) in font cmmi8!
-Missing character: There is no ت ("62A) in font cmmi8!
-Missing character: There is no ت ("62A) in font cmmi12!
-Missing character: There is no ت ("62A) in font cmmi8!
-Missing character: There is no ت ("62A) in font cmmi8!
-Missing character: There is no ت ("62A) in font cmmi8!
-Missing character: There is no ت ("62A) in font cmmi8!
-Missing character: There is no ت ("62A) in font cmmi12!
-Missing character: There is no ت ("62A) in font cmmi8!
-Missing character: There is no ت ("62A) in font cmmi12!
-Missing character: There is no ت ("62A) in font cmmi8!
-Missing character: There is no ت ("62A) in font cmmi8!
-Missing character: There is no ت ("62A) in font cmmi8!
-Missing character: There is no ت ("62A) in font cmmi8!
-Missing character: There is no ت ("62A) in font cmmi8!
-Missing character: There is no ت ("62A) in font cmmi8!
-Missing character: There is no ت ("62A) in font cmmi8!
-Missing character: There is no ت ("62A) in font cmmi8!
-Missing character: There is no ت ("62A) in font cmmi8!
-Missing character: There is no ت ("62A) in font cmmi8!
-Missing character: There is no ت ("62A) in font cmmi8!
-Missing character: There is no ت ("62A) in font cmmi8!
-Missing character: There is no ت ("62A) in font cmmi8!
-Missing character: There is no ت ("62A) in font cmmi8!
-Missing character: There is no ت ("62A) in font cmmi8!
-Missing character: There is no ت ("62A) in font cmmi8!
-Missing character: There is no ت ("62A) in font cmmi8!
 Missing character: There is no ت ("62A) in font cmmi12!
 [12]) [13] 
 enddocument/afterlastpage: lastpage setting LastPage.
@@ -1628,10 +1597,10 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: D7771CD65E35EE65BBF94B2ECBA18196;594.
  ) 
 Here is how much of TeX's memory you used:
- 43430 strings out of 474878
- 1060234 string characters out of 5762517
+ 43431 strings out of 474878
+ 1060253 string characters out of 5762517
  1939627 words of memory out of 5000000
- 64617 multiletter control sequences out of 15000+600000
+ 64618 multiletter control sequences out of 15000+600000
  568839 words of font info for 120 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  101i,12n,112p,1310b,678s stack positions out of 10000i,1000n,20000p,200000b,200000s
