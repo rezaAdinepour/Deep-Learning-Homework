@@ -179,7 +179,7 @@
 	 		
 	 		
 	 		\item تابع هزینه:\\
-- هدف آموزشی به حداقل رساندن واگرایی (\lr{KL}) بین توزیع پسین واقعی \( q(\mathbf{x}_{t-1} | \mathbf{x}_t, \mathbf{x}_0) \) و مدل \( p_\theta(\mathbf{x}_{t-1} | \mathbf{x}_t) \) است:
+- هدف آموزشی به حداقل رساندن واگرایی کلوینباک-لیبلر (KL) بین توزیع پسین واقعی \( q(\mathbf{x}_{t-1} | \mathbf{x}_t, \mathbf{x}_0) \) و مدل \( p_\theta(\mathbf{x}_{t-1} | \mathbf{x}_t) \) است:
 
 	 		\[
 	 		\mathbb{E}_{q} \left[ \sum_{t=1}^T D_{KL}(q(\mathbf{x}_{t-1} | \mathbf{x}_t, \mathbf{x}_0) \parallel p_\theta(\mathbf{x}_{t-1} | \mathbf{x}_t)) \right]
@@ -230,7 +230,7 @@
 یک مساله‌ی اساسی در مدل‌های پخشی این است که در هیچ یک از گام‌ها محاسبات در بعد کوچکتری صورت نمی‌گیرند در نتیجه در صورت بزرگ بودن دیتاست و اندازه‌ی تصاویر ورودی مدل‌های پخشی بسیار پرهزینه و حجیم خواهد شد. مدل \lr{Latent Stable Diffusion} برای حل این چالش از چه رویکردی استفاده می‌کند؟ به نظر شما چرا برای کاهش حجم نیاز به مدل‌های تغییراتی\footnote{Variational Models} داریم؟
 
 \begin{qsolve}
-مدل \lr{Latent Stable Diffusion} برای کاهش هزینه‌های محاسباتی و حجیم بودن در مجموعه داده‌های بزرگ و تصاویر با وضوح بالا، فرآیند انتشار را در فضای نهان با ابعاد پایین‌تر انجام می‌دهد. این روش با استفاده از یک رمزگذار، تصاویر را به فضای نهان تبدیل کرده و سپس فرآیند انتشار و حذف نویز را در این فضا انجام می‌دهد و در نهایت با رمزگشا تصاویر را بازسازی می‌کند. مدل‌های تغییراتی، مانند خودرمزگذارهای تغییراتی (\lr{VAE})، با کاهش ابعاد و تنظیم‌سازی، فضای نهان ساختاریافته‌ای ایجاد می‌کنند که برای این مدل‌ها مفید است. این روش باعث می‌شود تا مدل بتواند داده‌های بزرگ و تصاویر با وضوح بالا را با کارایی بیشتری مدیریت کند.
+	
 \end{qsolve}
 
 
@@ -241,97 +241,6 @@
 
 	\item 
 یک مدل پخشی را بر روی داده‌های \lr{MNIST} آموزش دهید. تعداد پارامترهای مدل، تصاویر میان فرآیند رو به جلو و فرآیند رو به عقب را برای یک تصویر گزارش کنید. همچنین ۵ تصویر تولید شده توسط این مدل را نمایش دهید.
-
-
-\begin{qsolve}
-	
-مدل استفاده‌شده در این پیاده‌سازی \texttt{U-Net} است که به طور خاص به عنوان \texttt{UNet2DModel} از کتابخانه \texttt{diffusers} تعریف شده است. در ادامخ مشخصات آن آورده شده است:
-	
-\begin{latin}
-	\begin{verbatim}
-		model = diffusers.UNet2DModel(
-		sample_size=config.image_size,
-		in_channels=1,
-		out_channels=1,
-		layers_per_block=2,
-		block_out_channels=(128, 128, 256, 512),
-		down_block_types=(
-		"DownBlock2D",
-		"DownBlock2D",
-		"AttnDownBlock2D",
-		"DownBlock2D",
-		),
-		up_block_types=(
-		"UpBlock2D",
-		"AttnUpBlock2D",
-		"UpBlock2D",
-		"UpBlock2D",
-		),
-		)
-	\end{verbatim}
-\end{latin}
-
-
-
-یکی از ورودی‌های شبکه قبل از اعمال نویز به‌صورت زیر است:
-
-\begin{center}
-	\includegraphics*[width=0.9\linewidth]{pics/img5.png}
-	\captionof{figure}{تصویر بدون نویز ورودی}
-	\label{تصویر بدون نویز ورودی}
-\end{center}
-
-پس از اعمال نویز گوسی تصویر به‌صورت زیر می‌شود:
-\end{qsolve}
-
-
-
-
-\begin{qsolve}
-	\begin{center}
-		\includegraphics*[width=0.9\linewidth]{pics/img6.png}
-		\captionof{figure}{تصویر نویزی خروجی}
-		\label{تصویر نویزی خروجی}
-	\end{center}
-\end{qsolve}
-
-
-خروجی‌های مرحله معکوس به صورت زیر است:
-	\begin{center}
-	\begin{figure}[htbp]
-		\centering
-		\begin{minipage}[b]{0.3\textwidth}
-			\includegraphics[width=0.5\linewidth]{pics/img7.png}
-		\end{minipage}
-		\hfill
-		\begin{minipage}[b]{0.3\textwidth}
-			\includegraphics[width=0.5\linewidth]{pics/img8.png}
-		\end{minipage}
-		\hfill
-		\begin{minipage}[b]{0.3\textwidth}
-			\includegraphics[width=0.5\linewidth]{pics/img9.png}
-		\end{minipage}
-		
-		\vspace{0.3cm}
-		
-		\begin{minipage}[b]{0.3\textwidth}
-			\includegraphics[width=0.5\linewidth]{pics/img10.png}
-		\end{minipage}
-		\hfill
-		\begin{minipage}[b]{0.3\textwidth}
-			\includegraphics[width=0.5\linewidth]{pics/img11.png}
-		\end{minipage}
-		\hfill
-		\begin{minipage}[b]{0.3\textwidth}
-			\includegraphics[width=0.5\linewidth]{pics/img12.png}
-		\end{minipage}
-		
-		\caption{خروجی‌های تولید شده در مرحله معکوس}
-	\end{figure}
-\end{center}
-
-
-
 
 
 \end{enumerate}

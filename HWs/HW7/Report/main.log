@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023/Debian) (preloaded format=xelatex 2024.5.4)  5 JUL 2024 20:35
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023/Debian) (preloaded format=xelatex 2024.5.4)  9 JUL 2024 00:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1528,195 +1528,44 @@ Underfull \hbox (badness 10000) in paragraph at lines 32--32
 
 File: logo/ce-fa2.png Graphic file (type bmp)
 <logo/ce-fa2.png>
-(./questions/Q1.tex
-Missing character: There is no ‫ (U+202B) in font [lmroman10-regular]/OT:script
-=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no ‪ (U+202A) in font [lmroman10-regular]/OT:script
-=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no ‬ (U+202C) in font [lmroman10-regular]/OT:script
-=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no ‬ (U+202C) in font [lmroman10-regular]/OT:script
-=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no ‫ (U+202B) in font [lmroman10-regular]/OT:script
-=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no ‪ (U+202A) in font [lmroman10-regular]/OT:script
-=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no ‬ (U+202C) in font [lmroman10-regular]/OT:script
-=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no ‬ (U+202C) in font [lmroman10-regular]/OT:script
-=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no ‫ (U+202B) in font [lmroman10-regular]/OT:script
-=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no ‪ (U+202A) in font [lmroman10-regular]/OT:script
-=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no ‬ (U+202C) in font [lmroman10-regular]/OT:script
-=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no ‬ (U+202C) in font [lmroman10-regular]/OT:script
-=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no ‫ (U+202B) in font [lmroman10-regular]/OT:script
-=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no ‪ (U+202A) in font [lmroman10-regular]/OT:script
-=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no ‬ (U+202C) in font [lmroman10-regular]/OT:script
-=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no ‬ (U+202C) in font [lmroman10-regular]/OT:script
-=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no ‫ (U+202B) in font [lmroman10-regular]/OT:script
-=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no ‪ (U+202A) in font [lmroman10-regular]/OT:script
-=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no ‬ (U+202C) in font [lmroman10-regular]/OT:script
-=latn;language=dflt;mapping=tex-text;!
-Missing character: There is no ‬ (U+202C) in font [lmroman10-regular]/OT:script
-=latn;language=dflt;mapping=tex-text;!
-File: pics/img1.png Graphic file (type bmp)
-<pics/img1.png>
-
-Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 12.
-See the caption package documentation for explanation.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 30--31
-[][]
- []
-
-
-Overfull \hbox (43.101pt too wide) detected at line 60
-[][][]\OML/cmm/m/it/12 L[] \OT1/cmr/m/n/12 = \U/msb/m/n/12 E[]\OT1/cmr/m/n/12 [
-[](1 \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 D[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12
- G[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 z; []\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; 
-^^^[]\OT1/cmr/m/n/12 ))] + \OML/cmm/m/it/12 ^^UD[]\OT1/cmr/m/n/12 (\OML/cmm/m/i
-t/12 N\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 ^^V[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 
-^^^[]\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 ^^F[](\OML/cmm/m/it/12
- ^^^[]\OT1/cmr/m/n/12 ))\OMS/cmsy/m/n/12 k\OML/cmm/m/it/12 N\OT1/cmr/m/n/12 (0\
-OML/cmm/m/it/12 ; I\OT1/cmr/m/n/12 ))\OML/cmm/m/it/12 ;
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 68--69
-[][]
- []
-
-[1]
-Underfull \hbox (badness 10000) in paragraph at lines 112--113
-[][]
- []
-
+(./questions/Q1.tex) [1] (./questions/Q2.tex)
 LaTeX Font Info:    Font shape `TU/XBYas(0)/m/sl' in size <12> not available
-(Font)              Font shape `TU/XBYas(0)/m/it' tried instead on input line 1
-29.
-[2] [3]
-Underfull \hbox (badness 1210) in paragraph at lines 166--167
-[][]\TU/XBYas(0)/b/n/12 تکنیک‌های تنظیم ([]\TU/lmroman10-regular(0)/b/n/12 Regu
-larization[]\TU/XBYas(0)/b/n/12 ): \TU/XBYas(0)/m/n/12 تکنیک‌هایی مانند []\TU/l
-mroman10-regular(0)/m/n/12 gradient penalty[][]
- []
+(Font)              Font shape `TU/XBYas(0)/m/it' tried instead on input line 3
+6.
+ [2
 
-[4] [5] [6] [7]
-File: pics/img2.png Graphic file (type bmp)
-<pics/img2.png>
-
-
-Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 357.
-See the caption package documentation for explanation.
-
-File: pics/img13.jpg Graphic file (type bmp)
-<pics/img13.jpg>
-
-Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 369.
-See the caption package documentation for explanation.
-
-File: pics/img14.jpg Graphic file (type bmp)
-<pics/img14.jpg>
-
-Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 375.
-See the caption package documentation for explanation.
-
-File: pics/img15.jpg Graphic file (type bmp)
-<pics/img15.jpg>
-
-Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 385.
-See the caption package documentation for explanation.
-
-[8]) [9] (./questions/Q2.tex
-File: pics/img3.png Graphic file (type bmp)
-<pics/img3.png>
-
-
-Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 14.
-See the caption package documentation for explanation.
-
-[10
+] (./questions/Q3.tex) [3
 
 ]
-File: pics/img4.png Graphic file (type bmp)
-<pics/img4.png>
+(./questions/Q4.tex) [4
 
+] (./questions/Q5.tex) [5
 
-Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 60.
-See the caption package documentation for explanation.
+]
 
-[11]
-Overfull \vbox (17.85526pt too high) has occurred while \output is active []
-
-
-[12]
-Missing character: There is no ت ("62A) in font cmmi12!
-[13]
-File: pics/img5.png Graphic file (type bmp)
-<pics/img5.png>
-
-
-Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 280.
-See the caption package documentation for explanation.
-
-[14]
-File: pics/img6.png Graphic file (type bmp)
-<pics/img6.png>
-
-
-Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 293.
-See the caption package documentation for explanation.
-
-[15]
-File: pics/img7.png Graphic file (type bmp)
-<pics/img7.png>
-File: pics/img8.png Graphic file (type bmp)
-<pics/img8.png>
-File: pics/img9.png Graphic file (type bmp)
-<pics/img9.png>
-File: pics/img10.png Graphic file (type bmp)
-<pics/img10.png>
-File: pics/img11.png Graphic file (type bmp)
-<pics/img11.png>
-File: pics/img12.png Graphic file (type bmp)
-<pics/img12.png>
-) [16] 
 enddocument/afterlastpage: lastpage setting LastPage.
 (./main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
  ***********
-Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: D7771CD65E35EE65BBF94B2ECBA18196;594.
+
+
+Package rerunfilecheck Warning: File `main.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `main.out':
+(rerunfilecheck)             Before: 0AAE8C255D71E2415DCF083E62D235F9;869
+(rerunfilecheck)             After:  BFD5C6DD5AF3B9DF98D80172BB1F05A5;861.
  ) 
 Here is how much of TeX's memory you used:
- 44946 strings out of 474878
- 1089973 string characters out of 5762517
- 1939627 words of memory out of 5000000
- 66104 multiletter control sequences out of 15000+600000
- 568847 words of font info for 121 fonts, out of 8000000 for 9000
+ 44723 strings out of 474878
+ 1085923 string characters out of 5762517
+ 1933627 words of memory out of 5000000
+ 65901 multiletter control sequences out of 15000+600000
+ 566952 words of font info for 110 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 101i,12n,112p,1310b,759s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 101i,12n,112p,1310b,575s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (17 pages).
+Output written on main.pdf (6 pages).
