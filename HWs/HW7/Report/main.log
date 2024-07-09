@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023/Debian) (preloaded format=xelatex 2024.5.4)  10 JUL 2024 00:16
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023/Debian) (preloaded format=xelatex 2024.5.4)  10 JUL 2024 00:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1549,7 +1549,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 72--73
 
 [4
 
-]) [5] (./questions/Q5.tex) [6
+]
+Overfull \hbox (0.38614pt too wide) in paragraph at lines 100--100
+[][]|  [] [] []
+ []
+
+) [5] (./questions/Q5.tex) [6
 
 ] (./questions/Q6.tex) [7
 
@@ -1562,14 +1567,14 @@ LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 95CBAF96D163E770543B47B86D3E99AC;1022.
+(rerunfilecheck)             Checksum: C2D718F6905E86E68A38BB340B8BCA56;1071.
  ) 
 Here is how much of TeX's memory you used:
- 44753 strings out of 474878
- 1086481 string characters out of 5762517
+ 44760 strings out of 474878
+ 1086711 string characters out of 5762517
  1936627 words of memory out of 5000000
- 65926 multiletter control sequences out of 15000+600000
- 566960 words of font info for 111 fonts, out of 8000000 for 9000
+ 65932 multiletter control sequences out of 15000+600000
+ 566968 words of font info for 112 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  101i,12n,112p,1310b,657s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
