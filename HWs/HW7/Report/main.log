@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023/Debian) (preloaded format=xelatex 2024.5.4)  10 JUL 2024 23:55
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023/Debian) (preloaded format=xelatex 2024.5.4)  11 JUL 2024 00:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1704,6 +1704,7 @@ Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 110.
 See the caption package documentation for explanation.
 
+Missing character: There is no ‏ (U+200F) in font [lmmono12-regular]:!
 Missing character: There is no ‏ (U+200F) in font [lmmono12-regular]:!
 ) [13] [14] 
 enddocument/afterlastpage: lastpage setting LastPage.
