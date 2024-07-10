@@ -8,55 +8,109 @@
 	\item 
 	دو فایل \texttt{in\_domain\_train.tsv} و \texttt{out\_of\_domain\_dev.tsv} در اختیار شما قرار گرفته است. این فایل‌ها را در محیط برنامه‌نویسی خود بارگزاری کنید. پیش پردازش‌های لازم (مانند اضافه کردن کارکترهای خاص \lr{[SEP]} و ...) به جملات، توکنایز کردن و ...
 	
-	\begin{qsolve}
-		
-	\end{qsolve}
-	
-	
-	
 	
 	\item 
 ۱۰ درصد از داده‌های \texttt{"in\_domain\_train.tsv"} را به برای اعتبارسنجی در نظر بگیرید.
-	\begin{qsolve}
-		
-	\end{qsolve}
 	
 	
 	
 	\item 
 مدل \lr{BERT} را بارگذاری و پیکره‌بندی کنید. (پیشنهاد می‌شود از کتابخانه \lr{transformers}) استفاده کنید.
-	\begin{qsolve}
-		
-	\end{qsolve}
-
-
 
 
 
 	\item 
 مدل را آموزش دهید. در هر \lr{epoch}، خطا و صحت را برای داده‌های اعتبارسنجی چاپ کنید. همچنین بعد از اتمام آموزش نمودار خطا را به ازای هر دسته (\lr{batch}) آموزش رسم کنید. (هر \lr{epoch} می‌تواند شامل چندین دسته باشد).
-	\begin{qsolve}
-		
-	\end{qsolve}
-	
-	
-	
 	
 	
 	\item 
 از داده‌های \texttt{out\_of\_domain\_dev.tsv} برای ارزیابی مدل تنظیم-دقیق شده خود استفاده کنید. برای این قسمت از معیار \lr{F1} و \lr{MCC1} استفاده کنید. این معیار را توضیح دهید و بگویید چرا استفاده از این معیار در اینجا نسبت به \lr{F1} بهتر است.
-	\begin{qsolve}
-		
-	\end{qsolve}
-	
-	
-	
-	
-	
+
 	
 	\item 
 معیار \lr{MCC} شما برای داده‌های \texttt{out\_of\_domain\_dev.tsv} نباید کوچکتر از ۰.۵ باشد.
 
-
-	
 \end{enumerate}
+
+
+
+
+
+
+
+\begin{qsolve}
+	ابتدا دیتاست را لود می‌کنیم. اندازه داده‌های آموزش $(8551, 4)$ است:
+	
+	\begin{center}
+		\includegraphics*[width=0.9\linewidth]{pics/img11.png}
+		\captionof{figure}{داده‌های آموزش دیتاست \texttt{in\_domain\_train.tsv}}
+		\label{داده‌های آموزش دومین}
+	\end{center}	
+\end{qsolve}
+
+
+\begin{qsolve}
+		
+	همانند سوال قبل، پیش‌پردازش های لازم مانند \lr{Tokenize} کردن و حذف کلمات \lr{Stop}، و اضاف نمودن \texttt{[CLS]} و \texttt{[SEP]} به توکن ها را انجام می‌دهیم.
+	
+	برای مثال، خروجی \lr{Tokenize} شده یکی از ورودی ها به‌صورت زیر است:
+	
+	\begin{center}
+		\includegraphics*[width=0.9\linewidth]{pics/img12.png}
+		\captionof{figure}{خروجی \lr{Tokenize} شده}
+		\label{خروجی توکنایز شده}
+	\end{center}
+	
+	برای آموزش شبکه از مدل از پیش آموزش دیده \texttt{Bert} استفاده می‌کنیم. مدل به صورت زیر تعرریف شده است:
+	
+	\begin{latin}
+		\texttt{model = BertForSequenceClassification.from\_pretrained(}\\
+		\texttt{"bert-base-uncased",}\\
+		\texttt{num\_labels = 2,}\\
+		\texttt{output\_attentions = False,}\\
+		\texttt{output\_hidden\_states = False, )}
+	\end{latin}
+	
+	\begin{center}
+		\includegraphics*[width=0.9\linewidth]{pics/img13.png}
+		\captionof{figure}{معماری مدل}
+		\label{معماری مدل}
+	\end{center}
+\end{qsolve}
+
+
+
+\begin{qsolve}
+	همچنین پارامتر‌های شبکه به‌صورت زیر است:
+	
+	\begin{center}
+		\includegraphics*[width=0.7\linewidth]{pics/img14.png}
+		\captionof{figure}{پارامتر‌های شبکه}
+		\label{پارامتر‌های شبکه}
+	\end{center}
+	
+	و درنهایت شبکه را \lr{Fine tune} می‌کنیم. از آنجایی که مدل از پیش آموزش دیده است، نیازی به آموزش طولانی نیست. در حد ۵ الی ۱۰ دوره برای آموزش مناسب می‌باشد. در اینجا ما تعداد دوره های آموزشی را ۱۰ انتخاب کردیم.
+	
+	در نهایت پس از اتمام آموزش، مقدار خطا و دقت به‌صورت زیر به‌دست می‌آید:
+	
+	\begin{center}
+		\includegraphics*[width=0.5\linewidth]{pics/img16.png}
+		\captionof{figure}{مقدار دقت و خطا در پایان آموزش}
+		\label{مقدار دقت و خطا در پایان آموزش}
+	\end{center}
+\end{qsolve}
+
+
+
+\begin{qsolve}
+	نمودار خطای آموزش برحسب تعداد \lr{Epoch} نیز به‌صورت زیر بدست می‌آید:
+	
+	\begin{center}
+		\includegraphics*[width=0.8\linewidth]{pics/img15.png}
+		\captionof{figure}{نمودار خطای آموزش}
+		\label{نمودار خطای آموزش}
+	\end{center}
+	
+	
+	
+\end{qsolve}
