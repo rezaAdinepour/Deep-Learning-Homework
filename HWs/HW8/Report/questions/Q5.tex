@@ -1,0 +1,201 @@
+\section{سوال پنجم - عملی}
+
+در دوران ابتدایی برای اینکه درک بهتری از جملات و جایگاه کلمات در جمله داشته باشیم تمرینی تحت عنوان "با کلمات زیر جمله بسازید" داشتیم. دراین سوال می‌خواهیم یک مدل ترنسفورمر را از ابتدا برای این وظیفه آموزش دهیم. به این منظور مراحل زیر را دنبال کنید.
+
+\begin{enumerate}
+	\item مجموعه‌داده‌ای فارسی به انتخاب خودتان از اینترنت دانلود کنید.
+	
+	
+	\item جملات هر متن را جدا کنید. (ممکن است چالش‌هایی داشته باشید. ایده این قسمت را بطور کامل بیان کنید. در صورتی که بتوانید تا حد خوبی جملات هر متن را جدا کنید، نمره اضافه برای شما در نظر گرفته می‌شود.)
+	
+	
+	
+	\item مجموعه‌داده مربوط به این سوال را بسازید. ستون اول جمله‌ای که به صورت تصادفی کلماتش جابجا شدند و ستون دوم مرتب شده آن جمله است.
+	
+	
+	
+	
+	\item مدل ترنسفورمر خود را پیاده‌سازی کنید و مدل را آموزش دهید. دقت کنید برای رسیدن به صحت مناسب به دیتا زیادی نیاز دارید و ممکن است منابع شما محدود باشد. در این‌جا با توجه به منابع خودتان این موضوع را مدیریت کنید. یک دقت حداقلی برای این سوال کافی است.
+	
+	
+	
+	
+	
+	\item مدل را با داده‌های آزمون ارزیابی کرده. ۵ نمونه از داده‌های آزمون را به صورت تصادفی انتخاب کرده، کلمات آن را جابجا کنید و به مدل بدهید. قبل و بعد این ۵ نمونه را در گزارش خود بیاورید.
+	
+	
+	
+	
+	
+	\item توضیح دهید در مرحله قبل با چه روشی مدل را ارزیابی کردید و دلایل خود را بیان کنید.
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+\begin{qsolve}
+	دیتاستی که در این سوال از آن استفاده کردیم، دیتاست مجوعه توییت‌های فارسی است که می‌توانید آن را از \href{https://www.kaggle.com/datasets/behdadkarimi/persian-tweets-emotional-dataset}{\textcolor{magenta}{اینجا}} دانلود کنید.
+	
+	این دیتاست شامل دسته‌های زیر است:
+	\begin{enumerate}
+		\item \texttt{anger.csv}
+		\item \texttt{disgust.csv}
+		\item \texttt{fear.csv}
+		\item \texttt{joy.csv}
+		\item \texttt{sad.csv}
+		\item \texttt{surprise.csv}
+	\end{enumerate}
+	
+	که ما از مجموعه داده \texttt{anger.csv} برای آموزش و تست شبکه استفاده کرده‌ایم.
+	
+	ابعاد این مجموعه $(20069, 8)$ است. که نمونه‌هایی از آن را می‌توانید در شکل «\ref{دیتاست anger}» ببینید.
+\end{qsolve}
+
+
+
+
+\begin{qsolve}
+	
+	\begin{center}
+		\includegraphics*[width=0.9\linewidth]{pics/img1.png}
+		\captionof{figure}{دیتاست \texttt{anger.csv}}
+		\label{دیتاست anger}
+	\end{center}
+	
+	
+	ابتدا در فاز \lr{Preprocessing} علائم های نگارشی را از جملات حذف کرده و بخشی خروجی به صورت زیر می‌شود:
+	
+	\begin{center}
+		\includegraphics*[width=0.7\linewidth]{pics/img2.png}
+		\captionof{figure}{دیتاست پس از حذف علائم نگارشی}
+		\label{دیتاست پس از حذف علائم نگارشی}
+	\end{center}
+	
+	سپس با استفاده از کتابخانه \texttt{nltk} کلمات را از داخل جملات \lr{tokenize} می‌کنیم. و خروجی به صورت زیر می‌شود:
+	
+	\begin{center}
+		\includegraphics*[width=0.7\linewidth]{pics/img3.png}
+		\captionof{figure}{جملات \lr{Tokenize} شده}
+		\label{جملات توکنایز شده}
+	\end{center}
+	
+	سپس کلمات \lr{Stop} را حذف می‌کنیم.
+\end{qsolve}
+
+
+
+\begin{qsolve}
+	\begin{center}
+		\includegraphics*[width=0.7\linewidth]{pics/img4.png}
+		\captionof{figure}{حذف کلمات \lr{Stop}}
+		\label{حذف کلمات ایست}
+	\end{center}
+	
+	و در مرجله بعد کلمات موجود در هر جمله را به صورت رندوم \lr{Shuffle} می‌کنیم:
+	
+	\begin{center}
+		\includegraphics*[width=0.7\linewidth]{pics/img5.png}
+		\captionof{figure}{کلمات بهم ریخته در جمله}
+		\label{کلمات بهم ریخته در جمله}
+	\end{center}
+	
+	از میان پارامترهای این دیتاست، طول جمله و تعداد هشتک های هر توییت را به عنوان ویژگی های مدل استخراج کردیم و درنهایت ابعاد داده ما $(20069, 15)$ شد. و آن را در فایلی به‌نام \texttt{processed\_anger.csv} ذخیره می‌کنیم تا از آن در مرحله بعد استفاده کنیم.
+	
+	
+	\begin{center}
+		\includegraphics*[width=1\linewidth]{pics/img6.png}
+		\captionof{figure}{دیتاست پردازش شده}
+		\label{دیتاست پردازش شده}
+	\end{center}
+	
+	
+	
+	
+	در مرحله بعد که مرحله آموزش باشد، داده‌های پیش‌پردازش شده را از فایل \texttt{processed\_anger.csv} می‌خوانیم و توکن ها را به \lr{string} تبدیل می‌کنیم:
+\end{qsolve}
+
+
+\begin{qsolve}
+	\begin{center}
+		\includegraphics*[width=1\linewidth]{pics/img7.png}
+		\captionof{figure}{توکن های \lr{string} شده}
+		\label{توکن‌های استرینگ شده}
+	\end{center}
+	
+	۸۰ درصد داده‌ها را به‌عنوان داده‌های آموزش و ۲۰ درصد باقی مانده را به عنوان داده‌های اعتبارسنجی درنظر می‌گیریم.
+	
+	مدلی که برای این شبکه درنظر گرفتیم به‌صورت زیر است:
+	\begin{latin}
+		\texttt{%
+			class TransformerModel(nn.Module):\\
+			\ \ \ \ def \_\_init\_\_(self, vocab\_size, d\_model, nhead, num\_encoder\_layers, num\_decoder\_layers, dim\_feedforward, max\_seq\_length):\\
+			\ \ \ \ \ \ \ \ super(TransformerModel, self).\_\_init\_\_()\\
+			\ \ \ \ \ \ \ \ self.embedding = nn.Embedding(vocab\_size, d\_model)\\
+			\ \ \ \ \ \ \ \ self.positional\_encoding = nn.Parameter(torch.zeros(1, max\_seq\_length, d\_model))\\
+			\ \ \ \ \ \ \ \ self.transformer = nn.Transformer(d\_model, nhead, num\_encoder\_layers, num\_decoder\_layers, dim\_feedforward)\\
+			\ \ \ \ \ \ \ \ self.fc\_out = nn.Linear(d\_model, vocab\_size)}
+	\end{latin}
+	
+	
+	
+	پارامتر‌های مدل نیز به‌صورت زیر تنظیم شده است:
+	
+	\begin{latin}
+		\begin{enumerate}
+			\item \texttt{d\_model = 512}
+			\item \texttt{nhead = 8}
+			\item \texttt{num\_encoder\_layers = 6}
+			\item \texttt{num\_decoder\_layers = 6}
+			\item \texttt{dim\_feedforward = 2048}
+			\item \texttt{max\_seq\_length = maxlen}
+			\item \texttt{learning\_rule = 0.001}
+			\item \texttt{batch\_size = 32}	
+		\end{enumerate}
+	\end{latin}
+	
+	
+	درنهایت شبکه را آموزش می‌دهیم و نمودار‌های خطا و دقت برای داده‌های آموزش و اعتبارسنجی به‌صورت زیر به‌دست آمده است:
+\end{qsolve}
+
+
+
+\begin{qsolve}
+	\begin{center}
+		\includegraphics*[width=1\linewidth]{pics/img8.png}
+		\captionof{figure}{نمودار‌های دقت و خطا}
+		\label{نمودار‌های دقت و خطا}
+	\end{center}
+	
+	
+	علت اینکه شبکه نتوانسته است به خوبی آموزش ببیند و مقدار خطا بالاست، این است که با توجه به محدودیت های سخت‌افزاری، \lr{Colab} در افزایش اندازه داده‌های ورودی، نمی‌توانیم ورودی‌های زیادی را در اندازه‌های \lr{LLM}ها به شبکه بدهیم. به همین دلیل مدل نمی‌تواند با این دیتای محدود به خوبی آموزش ببیند و خطای خود را مینیمم کند.
+	
+	
+	برای ارزیابی شبکه، یکی از ورودی های دیتاست بهم‌ریخته را به شبکه می‌دهیمِ و انتظار داریم که شبکه کلمات را مرتب کند.
+	
+	برای مثال ورودی زیر را به شبکه می‌دهیم:
+	
+	\begin{center}
+		\includegraphics*[width=1\linewidth]{pics/img9.png}
+		\captionof{figure}{جمله ورودی و خروجی مطلوب}
+		\label{جمله ورودی و خروجی مطلوب}
+	\end{center}
+	
+	ذکر این نکته الزامیست که به دلیل حذف کاراکتر‌های اضافی و کلمات \lr{Stop} ممکن است جمله اصلی (مرتب) نیز بی معنی به‌نظر برسد.
+	
+	خروجی شبکه برای مرتب کردن دو کلمه از جمله به صورت زیر شده است:
+	
+	\begin{center}
+		\includegraphics*[width=0.5\linewidth]{pics/img10.png}
+		\captionof{figure}{خروجی مرتب شده}
+		\label{خروجی مرتب شده}
+	\end{center}
+	
+	
+	
+	
+\end{qsolve}
