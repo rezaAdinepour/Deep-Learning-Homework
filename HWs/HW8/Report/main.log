@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023/Debian) (preloaded format=xelatex 2024.5.4)  13 JUL 2024 23:29
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023/Debian) (preloaded format=xelatex 2024.5.4)  14 JUL 2024 00:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1640,17 +1640,26 @@ Missing character: There is no ‫ (U+202B) in font [lmroman10-regular]/OT:scrip
 =latn;language=dflt;mapping=tex-text;!
 Missing character: There is no ‪ (U+202A) in font [lmroman10-regular]/OT:script
 =latn;language=dflt;mapping=tex-text;!
-[1])
+[1]
+Overfull \vbox (18.66661pt too high) has occurred while \output is active []
+
 LaTeX Font Info:    Font shape `TU/XBYas(0)/m/sl' in size <12> not available
-(Font)              Font shape `TU/XBYas(0)/m/it' tried instead on input line 3
-6.
- [2] (./questions/Q2.tex) [3
+(Font)              Font shape `TU/XBYas(0)/m/it' tried instead on input line 7
+9.
 
-] (./questions/Q3.tex) [4
+[2]
+Overfull \hbox (0.38614pt too wide) in paragraph at lines 99--99
+[][]|  [] [] []
+ []
 
-] (./questions/Q4.tex) [5
+) [3] (./questions/Q2.tex) [4
 
-] (./questions/Q5.tex) [6
+] (./questions/Q3.tex) [5
+
+] (./questions/Q4.tex)
+[6
+
+] (./questions/Q5.tex) [7
 
 ] (./questions/Q6.tex
 Missing character: There is no ‫ (U+202B) in font [lmroman10-regular]/OT:script
@@ -1661,7 +1670,7 @@ Missing character: There is no ‬ (U+202C) in font [lmroman10-regular]/OT:scrip
 =latn;language=dflt;mapping=tex-text;!
 Missing character: There is no ‬ (U+202C) in font [lmroman10-regular]/OT:script
 =latn;language=dflt;mapping=tex-text;!
-) [7
+) [8
 
 ] (./questions/Q7.tex
 Missing character: There is no ‫ (U+202B) in font [lmroman10-regular]/OT:script
@@ -1687,9 +1696,9 @@ Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 28.
 See the caption package documentation for explanation.
 
-[8
+[9
 
-]) [9] 
+]) [10] 
 enddocument/afterlastpage: lastpage setting LastPage.
 (./main.aux)
  ***********
@@ -1697,15 +1706,15 @@ LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: C8429195AAEC96D9D0FD7A05F7D379E3;1199.
+(rerunfilecheck)             Checksum: 39E3F36175C8F8806076A4047477C1F1;1248.
  ) 
 Here is how much of TeX's memory you used:
- 44811 strings out of 474878
- 1087615 string characters out of 5762517
- 1932627 words of memory out of 5000000
- 65974 multiletter control sequences out of 15000+600000
- 566992 words of font info for 115 fonts, out of 8000000 for 9000
+ 44825 strings out of 474878
+ 1088034 string characters out of 5762517
+ 1936627 words of memory out of 5000000
+ 65986 multiletter control sequences out of 15000+600000
+ 567008 words of font info for 117 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  101i,13n,112p,1310b,611s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (10 pages).
+Output written on main.pdf (11 pages).

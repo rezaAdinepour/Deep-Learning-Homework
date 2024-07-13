@@ -16,7 +16,7 @@
 	\begin{itemize}
 		\item \textbf{روش \lr{FGSM}}:
 		
-		این روش در سال ۲۰۱۵ در مقاله \lr{Explaining and Harnessing Adversarial Examples} معرفی شد که یکی از ساده ترین روش های حملات خصمانه است. همانطور که در صورت سوال نیز توضیح داده شد، هدف اصلی \lr{FGSM} ایجاد نمونه‌های خصمانه‌ای است که از نظر بصری تفاوت زیادی با ورودی اصلی نداشته باشند ولی باعث شوند مدل یادگیری ماشین خطا کند.
+		این روش در سال ۲۰۱۵ در مقاله \lr{\textit{Explaining and Harnessing Adversarial Examples}} معرفی شد که یکی از ساده ترین روش های حملات خصمانه است. همانطور که در صورت سوال نیز توضیح داده شد، هدف اصلی \lr{FGSM} ایجاد نمونه‌های خصمانه‌ای است که از نظر بصری تفاوت زیادی با ورودی اصلی نداشته باشند ولی باعث شوند مدل یادگیری ماشین خطا کند.
 	\end{itemize}
 \end{qsolve}
 
@@ -26,8 +26,8 @@
 	
 	\begin{itemize}
 		\item FGSM با اضافه کردن یک اختلال به داده‌های ورودی اصلی کار می‌کند.
-		\item اختلال با استفاده از گرادیان تابع هزینه نسبت به داده‌های ورودی محاسبه می‌شود.
-		\item به طور خاص، اختلال به صورت زیر محاسبه می‌شود:
+		\item این اختلال با استفاده از گرادیان تابع هزینه نسبت به داده‌های ورودی محاسبه می‌شود.
+		\item به طور خاص، می‌توان فرمول این اختلال را به‌صورت زیر بیان نمود:
 		\[
 		\eta = \epsilon \cdot \text{sign}(\nabla_x J(\theta, x, y))
 		\]
@@ -43,16 +43,69 @@
 		\]
 	\end{itemize}
 	
+	از مزایا و معایب \lr{FGSM} می‌توان به موارد زیر اشاره کرد:
+	
+	\textbf{مزایا}: از نظر محاسباتی کارآمد و ساده است و به همین دلیل انتخاب محبوبی برای مطالعات اولیه در مورد حملات خصمانه است.
+	
+	\textbf{معایب}: سادگی FGSM می‌تواند به عنوان یک نقطه ضعف نیز عمل کند، زیرا اختلالات ایجاد شده ممکن است در مقابل مدل‌های مقاوم‌تر به اندازه‌ی کافی مؤثر نباشند.
+	
+	
+	\begin{itemize}
+		\item \textbf{روش \lr{PGD}}:
+		
+همانطور که در صورت سوال نیز گفته شد، روش \lr{PGD} یک روش بهبود یافته نسبت به \lr{FGSM} است که درسال ۲۰۱۷ در مقاله‌ی \lr{\textit{Towards Deep Learning Models Resistant to Adversarial Attacks}} معرفی شد. هدف اصلی این روش، ایجاد نمونه‌های خصمانه قوی‌تر با انجام چندین به‌روزرسانی گرادیانی و اطمینان از ماندن اختلالات در یک محدوده‌ی مشخص است.
+
+در ادامه، روش انجام این الگوریتم را توضیح می‌دهیم:
+
+	\begin{itemize}
+		\item PGD به طور مکرر نمونه‌ی خصمانه را با گرفتن چندین گام گرادیانی اصلاح می‌کند.
+		\item هر گام شامل مراحل زیر است:
+		\begin{enumerate}
+			\item \textbf{محاسبه‌ی گرادیان}: گرادیان تابع هزینه نسبت به نمونه‌ی خصمانه‌ی فعلی محاسبه می‌شود.
+			\item \textbf{گام به‌روزرسانی}: نمونه‌ی خصمانه با حرکت در جهت گرادیان به‌روزرسانی می‌شود:
+			\[
+			x_{t+1} = x_t + \alpha \cdot \text{sign}(\nabla_x J(\theta, x_t, y))
+			\]
+			که \(\alpha\) اندازه‌ی گام است.
+			\item \textbf{پروژه‌سازی}: اطمینان حاصل می‌شود که نمونه‌ی خصمانه‌ی به‌روز شده در یک کره‌ی \(\epsilon\) حول ورودی اصلی باقی می‌ماند:
+			\[
+			x_{t+1} = \text{clip}(x_{t+1}, x - \epsilon, x + \epsilon)
+			\]
+			این مرحله اطمینان می‌دهد که اختلال از محدوده‌ی مجاز تجاوز نمی‌کند.
+		\end{enumerate}
+	\end{itemize}
+	\end{itemize}
 \end{qsolve}
 
 
 
-%\begin{latin}
-%	\begin{thebibliography}{9}
-%		\bibitem{ref1}
-%		"Rethinking Attention with Performers" by Choromanski et al. (2021), which introduces the Performer model using kernel-based approximations to reduce the complexity of self-attention.
-%	\end{thebibliography} 
-%\end{latin}
+\begin{qsolve}
+	این فرآیند برای تعداد معینی از تکرارها یا تا همگرایی تکرار می‌شود.
+	
+	
+	از مزایا و معایب \lr{PGD} می‌توان به موارد زیر اشاره کرد:
+	
+	\begin{enumerate}
+		\item \textbf{مزایا}: PGD به دلیل اینکه فضای اختلالات ممکن را با تکرارهای متعدد به طور جامع‌تری کاوش می‌کند، به عنوان یک روش حمله‌ی قوی‌تر نسبت به FGSM شناخته می‌شود.
+		
+		
+		\item \textbf{معایب}: طبیعت تکراری PGD باعث می‌شود که از نظر محاسباتی پرهزینه‌تر از FGSM باشد.
+	\end{enumerate}
+\end{qsolve}
+
+
+
+\begin{latin}
+	\begin{thebibliography}{9}
+		\bibitem{ref1}
+		Goodfellow, I. J., Shlens, J., \& Szegedy, C. (2015). Explaining and harnessing adversarial examples. In Proceedings of the International Conference on Learning Representations (ICLR) \href{https://arxiv.org/abs/1412.6572}{\textcolor{magenta}{[Link]}}
+		
+		
+		
+		\bibitem{ref2}
+		Madry, A., Makelov, A., Schmidt, L., Tsipras, D., \& Vladu, A. (2018). Towards deep learning models resistant to adversarial attacks. In Proceedings of the International Conference on Learning Representations (ICLR) \href{https://arxiv.org/abs/1706.06083}{\textcolor{magenta}{[Link]}}
+	\end{thebibliography} 
+\end{latin}
 
 
 
