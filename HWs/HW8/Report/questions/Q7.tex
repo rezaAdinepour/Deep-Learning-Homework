@@ -95,11 +95,17 @@
 
 		\item \textbf{شبکه \lr{Transformer}:}\\
 		این شبکه متشکل از یک \lr{Encoder} و یک \lr{Decoder} است
-		\begin{itemize}
-			\item 
-		\end{itemize}
 	\end{enumerate}
-	
-	
-	
+\end{qsolve}
+
+
+
+\begin{qsolve}
+	\begin{itemize}
+		\item \lr{Encoder}:\\
+		ویژگی‌های استخراج شده از تصویر از طریق یک رمزگذار مبتنی بر \lr{Transformer} منتقل می‌شوند. این رمزگذار نمایندگی ورودی‌ها را با استفاده از مکانیزم‌ \lr{Self-Attention} برای درک بهتر زمینه تقویت می‌کند.
+		
+		\item \lr{Decoder}:\\
+		این مدل خروجی رمزگذار و داده‌های متنی (دنباله‌ها) را به عنوان ورودی می‌گیرد. این مدل برای تولید توضیحات (کپشن‌ها) با استفاده از مکانیزم‌ \lr{Self-Attention} و \lr{Cross-Attention} آموزش می‌بیند. در این ساختار از \lr{positional embeddings} برای مشخص کردن تزتیب کلمات در جمله استفاده شده است.
+	\end{itemize}
 \end{qsolve}
