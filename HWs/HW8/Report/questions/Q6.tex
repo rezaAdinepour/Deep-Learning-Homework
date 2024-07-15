@@ -37,5 +37,148 @@
 
 
 \begin{qsolve}
+در ابتدا می‌بایست دیتاست \texttt{CIFAR10} را دانلود نموده. این دیتاست را دانلود کردیم و ۵ تصویر از ۱۰ کلاس موجود در این دیتاست را به صورت زیر نمایش دادیم:
+\end{qsolve}
 
+\begin{qsolve}
+	\begin{center}
+		\includegraphics*[width=1\linewidth]{pics/img3.png}
+		\captionof{figure}{تصاویری رندوم از دیتاست \texttt{CIFAR10}}
+		\label{تصاویری رندوم از دیتاست CIFAR10}
+	\end{center}
+\end{qsolve}
+
+\begin{qsolve}
+سپس وزن‌های شبکه از‌پیش آموزش داده شده \texttt{ResNet18} را لود می‌کنیم. چون شبکه \texttt{ResNet} بر روی دیتاست \texttt{ImageNet} آموزش دیده است، نیاز است که حتما آن را در چند \lr{Epoch} محدود با دیتاست خودمان آموزش مجدد بدهیم (\lr{Fine-tune} کنیم).
+
+این کار را در ۵۰ ایپاک انجام داده‌ایم و دقت و خطای آموزش شبکه به صورت زیر شده است:
+
+\begin{center}
+	\includegraphics*[width=0.5\linewidth]{pics/img5.png}
+	\captionof{figure}{روند تغییر دقت و خطای آموزش}
+	\label{روند تغییر دقت و خطای آموزش}
+\end{center}
+
+همچنین نمودار خطا و دقت آموزش به صورت زیر بدست آمده است:
+
+\begin{center}
+	\includegraphics*[width=1\linewidth]{pics/img4.png}
+	\captionof{figure}{نمودار خطا و دقت آموزش}
+	\label{نمودار خطا و دقت آموزش}
+\end{center}
+\end{qsolve}
+
+
+
+
+\begin{qsolve}
+	همچنین دقت شبکه برای داده‌های \lr{test} نیز به صوزت زیر به‌دست آمده است:
+	
+\begin{latin}
+	\texttt{Test Accuracy : 74.7\%}
+\end{latin}
+
+در مرحله بعد، حمله خصمانه \lr{FGSM} را با استفاده از کتابخانه \texttt{torchattacks} به ازای مقدار $\epsilon$ های متفاوت انجام می‌دهیم و مقدار دقت شبکه را به ازای هر $\epsilon$ نمایش می‌دهیم:
+
+\begin{center}
+	\includegraphics*[width=0.7\linewidth]{pics/img6.png}
+	\captionof{figure}{روند تغییر دقت مدل به ازای $\epsilon$ های متفاوت}
+	\label{روند تغییر دقت شبکه به ازای اپسیلون های متفاوت}
+\end{center}
+
+
+همچنین نمودار این تغییرات نیز به‌صورت زیر شده است:
+\begin{center}
+	\includegraphics*[width=0.8\linewidth]{pics/img7.png}
+	\captionof{figure}{نمودار تغییرات دقت مدل به ازای $\epsilon$ های متفاوت}
+	\label{نمودار تغییرات دقت شبکه به ازای اپسیلون های متفاوت}
+\end{center}
+
+و سپس شبکه را تست می‌کنیم. به صورت رندوم تعدادی از تصاویر را انتخاب می‌کنیم. تصاویر انتخاب شده و کلاس آنها به صورت زیر است:
+
+\begin{center}
+	\includegraphics*[width=0.8\linewidth]{pics/img8.png}
+	\captionof{figure}{تصاویر رندوم انتخاب شده}
+	\label{تصاویر رندوم انتخاب شده}
+\end{center}
+
+\end{qsolve}
+
+
+
+
+\begin{qsolve}
+	
+	
+	خروجی شبکه متخاصم به ازای $\epsilon=2/255$
+	\begin{center}
+		\includegraphics*[width=0.8\linewidth]{pics/img9.png}
+		\captionof{figure}{خروجی شبکه متخاصم به ازای $\epsilon=2/255$}
+		\label{خروجی شبکه متخاصم به ازای epsilon=2/255}
+	\end{center}
+	
+	
+	خروجی شبکه متخاصم به ازای $\epsilon=4/255$
+	\begin{center}
+		\includegraphics*[width=0.8\linewidth]{pics/img10.png}
+		\captionof{figure}{خروجی شبکه متخاصم به ازای $\epsilon=4/255$}
+		\label{خروجی شبکه متخاصم به ازای epsilon=4/255}
+	\end{center}
+	
+	
+	خروجی شبکه متخاصم به ازای $\epsilon=6/255$
+	
+	\begin{center}
+		\includegraphics*[width=0.8\linewidth]{pics/img11.png}
+		\captionof{figure}{خروجی شبکه متخاصم به ازای $\epsilon=6/255$}
+		\label{خروجی شبکه متخاصم به ازای epsilon=6/255}
+	\end{center}
+	
+	مشاهده می‌شود که شبکه در تشخصی به اشتباه افتاده از و تعدادی از نمونه ها را اشتباه تشخصی داده است. برای حل این موضوع، شبکه را مجددا آموزش می‌دهیم. اما این بار آموزش خصمانه.
+	
+	شبکه را در ۱۰۰ دوره آموزش می‌دهیم. روند تغییرات خطا و دقت به صورت زیر به‌دست آمده است:
+\end{qsolve}
+
+
+
+\begin{qsolve}
+	\begin{center}
+		\includegraphics*[width=0.5\linewidth]{pics/img12.png}
+		\captionof{figure}{روند تغییرات خطا و دقت شبکه در آموزش خصمانه}
+		\label{روند تغییرات خطا و دقت شبکه در آموزش خصمانه}
+	\end{center}
+	
+	همچنین نمودار خروجی نیز به‌صورت زیر است:
+	
+	\begin{center}
+		\includegraphics*[width=1\linewidth]{pics/img13.png}
+		\captionof{figure}{نمودار خطا و دقت شبکه در آموزش خصمانه}
+		\label{نمودار خطا و دقت شبکه در آموزش خصمانه}
+	\end{center}
+	
+	مجددا شبکه را به ازای مقادیر قبلی $\epsilon$ تست می‌کنیم. مقادیر بدست آمده به صورت زیر است:
+\end{qsolve}
+
+
+
+\begin{qsolve}
+	\begin{center}
+		\includegraphics*[width=0.7\linewidth]{pics/img14.png}
+		\captionof{figure}{تست نمونه ها با شبکه آموزش داده شده جدید به ازای $\epsilon$ های متفاوت}
+		\label{تست نمونه ها با شبکه آموزش داده شده جدید به ازای epsilon های متفاوت}
+	\end{center}
+	
+	نمودار تغییرات دقت به ازای $\epsilon$ های متفاوت نیز به صورت زیر به‌دست می‌آید:
+	
+	\begin{center}
+		\includegraphics*[width=0.7\linewidth]{pics/img15.png}
+		\captionof{figure}{نمودار تغییرات دقت شبکه به ازای $\epsilon$ های متفاوت}
+		\label{نمودار تغییرات دقت شبکه به ازای epsilon های متفاوت}
+	\end{center}
+	
+	
+	با مقایسه نغییرات در دو مرحله متوجه می‌شویم که با انجام آموزش خصمانه دقت شبکه در به‌دست آوردن خروجی های دستکاری شده افزایش یافته است. برای مثال به زای $\epsilon=8/255$، 
+	۱۲٫۵ درصد افزایش دقت داشته ایم.
+	
+	
 \end{qsolve}
