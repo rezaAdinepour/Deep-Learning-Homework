@@ -33,5 +33,59 @@
 توجه فرمایید نمره این تمرین (۳۰ + ۳۰) امتیازی است. یعنی در صورتی که مراحل پیش‌پردازش، معماری مدل، صحت نهایی و به طور کلی روش حل مسئله، دارای خلاقیت و کیفیت مورد قبولی باشد، علاوه بر نمره اصلی تا ۳۰ امتیاز، نمره اضافی برای شما در نظر گرفته خواهد شد.
 
 \begin{qsolve}
+	
+ابتدا دیتاست را دانلود می‌کنیم. ابعاد دیتاست $(1459, 6)$ است.
 
+\begin{center}
+	\includegraphics*[width=1\linewidth]{pics/img20.png}
+	\captionof{figure}{دیتاست ورودی}
+	\label{دیتاست ورودی}
+\end{center}
+
+همانطور که دز صورت سوال نیز گفته شد، از ستون \lr{title} خبر به‌عنوان \lr{caption} استفاده می‌کنیم. به همین منظور ابتدا تمامی عنوان ها را استخراج کرده و در یک دیکشنری ذخیره می‌کنیم:
+
+\begin{center}
+	\includegraphics*[width=0.8\linewidth]{pics/img21.png}
+	\captionof{figure}{عنوان‌های خبر}
+	\label{عنوان‌های خبر}
+\end{center}
+
+به صورت رندوم، ۳ نمونه از عکس‌های دیتاست را با عنوان های خود نمایش می‌دهیم:
+\end{qsolve}
+
+
+
+\begin{qsolve}
+	\begin{center}
+		\includegraphics*[width=1\linewidth]{pics/img22.png}
+		\captionof{figure}{تصاویری از دیتاست}
+		\label{تصاویری از دیتاست}
+	\end{center}
+	
+	همچنین تکرار و طول کلمات نیز به صورت زیر استخراج شده است:
+	
+	\begin{center}
+		\includegraphics*[width=0.8\linewidth]{pics/img23.png}
+		\captionof{figure}{طول و تکرار کلمات در دیتاست}
+		\label{طول و تکرار کلمات در دیتاست}
+	\end{center}
+	
+	در مرحله بعد، برای \lr{vectorize} کردن داده‌ها از ماژول \texttt{TextVectorization} موجود در کتابخانه \lr{hazm} استفاده می‌کنیم. پس از انجام این مرحله، تعداد کل توکن ها و توکن های منحثر‌به‌فرد به صورت زیر گزارش شده است:
+	
+	\begin{latin}
+		\texttt{all tokens len: 8404}
+		\texttt{len unique tokens: 3281}
+	\end{latin}
+	
+	
+	و برای مشخص شدن دقیق‌تر، برای مثال یکی از عنوان‌های خبری به‌صورت زیر \lr{tokenize} می‌شود:
+	
+	\begin{center}
+		\includegraphics*[width=0.8\linewidth]{pics/img24.png}
+		\captionof{figure}{عنوان \lr{tokenize} شده}
+		\label{عنوان tokenize شده}
+	\end{center}
+	
+	
+	
 \end{qsolve}
