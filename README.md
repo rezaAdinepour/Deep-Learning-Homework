@@ -25,3 +25,4 @@ You can click  [here](https://t.me/+3NGHZ4OkLoI5YjEx) to join the group
 * [**:pencil2: HW-04**](https://github.com/rezaAdinepour/Deep-Learning-Homework/tree/main/HWs/HW4)
 * [**:pencil2: HW-05**](https://github.com/rezaAdinepour/Deep-Learning-Homework/tree/main/HWs/HW5)
 * [**:pencil2: HW-06**](https://github.com/rezaAdinepour/Deep-Learning-Homework/tree/main/HWs/HW6)
+* [**:pencil2: HW-07**](https://github.com/rezaAdinepour/Deep-Learning-Homework/tree/main/HWs/HW7)
